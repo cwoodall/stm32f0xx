@@ -1,0 +1,13 @@
+[package]
+authors = ["Christopher J. Woodall <chris.j.woodall@gmail.com>"]
+description = "Memory map for STM32F0XX microcontrollers"
+documentation = "https://docs.rs/stm32f0xx"
+keywords = ["no-std", "arm", "cortex-m", "stm32"]
+license = "MIT OR Apache-2.0"
+name = "stm32f0xx"
+repository = "https://github.com/cwoodall/stm32f0xx"
+version = "0.1.0"
+
+[dependencies]
+cortex-m = "0.2.0"
+vcell = "0.1.0"
