@@ -1,12 +1,16 @@
 # `stm32f0xx`
 > Peripheral access API for STM32F0XX microcontrollers
 
+![crates.io badge](https://img.shields.io/crates/v/stm32f0xx.svg)
+
 Generated using [svd2rust] v0.6.1 from [STM32F0xx.svd], which is
 edited to add, writeConstraints and enumerated data types where
 applicable.
 
 [STM32F0xx.svd]: resources/STM32F0xx.svd
 [svd2rust]: https://github.com/japaric/svd2rust
+
+# [Documentation](https://docs.rs/stm32f0xx/0.1.0/stm32f0xx/)
 
 # License
 
