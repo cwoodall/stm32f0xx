@@ -133,6 +133,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MODER15</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>30</bitOffset>
@@ -140,6 +141,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER14</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>28</bitOffset>
@@ -147,6 +149,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER13</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>26</bitOffset>
@@ -154,6 +157,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER12</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>24</bitOffset>
@@ -161,6 +165,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER11</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>22</bitOffset>
@@ -168,6 +173,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER10</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>20</bitOffset>
@@ -175,6 +181,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER9</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>18</bitOffset>
@@ -182,6 +189,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER8</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>16</bitOffset>
@@ -189,6 +197,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER7</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -196,6 +205,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER6</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -203,6 +213,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER5</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -210,6 +221,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER4</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -217,6 +229,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER3</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -224,6 +237,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER2</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -231,6 +245,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER1</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -238,6 +253,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER0</name>
+              <enumeratedValues>
+                <name>PortMode</name>
+                <enumeratedValue>
+                    <name>input</name>
+                    <description>Input mode (Reset).</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>output</name>
+                    <description>General purpose output mode.</description>
+                    <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>alternate</name>
+                    <description>Alternate function mode.</description>
+                    <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>analog</name>
+                    <description>Analog mode .</description>
+                    <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -256,6 +294,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>OT15</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit
               15</description>
               <bitOffset>15</bitOffset>
@@ -263,6 +302,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT14</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit
               14</description>
               <bitOffset>14</bitOffset>
@@ -270,6 +310,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT13</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit
               13</description>
               <bitOffset>13</bitOffset>
@@ -277,6 +318,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT12</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit
               12</description>
               <bitOffset>12</bitOffset>
@@ -284,6 +326,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT11</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit
               11</description>
               <bitOffset>11</bitOffset>
@@ -291,6 +334,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT10</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit
               10</description>
               <bitOffset>10</bitOffset>
@@ -298,60 +342,82 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT9</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit 9</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>OT8</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit 8</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>OT7</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit 7</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>OT6</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit 6</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>OT5</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit 5</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>OT4</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit 4</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>OT3</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit 3</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>OT2</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit 2</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>OT1</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bit 1</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>OT0</name>
+              <enumeratedValues>
+                <name>OutputType</name>
+                <enumeratedValue>
+                    <name>push_pull</name>
+                    <description>Output push-pull (reset state).</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>open_drain</name>
+                    <description>Output open-drain.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x configuration bit 0</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -370,6 +436,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>OSPEEDR15</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>30</bitOffset>
@@ -377,6 +444,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR14</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>28</bitOffset>
@@ -384,6 +452,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR13</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>26</bitOffset>
@@ -391,6 +460,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR12</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>24</bitOffset>
@@ -398,6 +468,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR11</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>22</bitOffset>
@@ -405,6 +476,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR10</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>20</bitOffset>
@@ -412,6 +484,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR9</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>18</bitOffset>
@@ -419,6 +492,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR8</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>16</bitOffset>
@@ -426,6 +500,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR7</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -433,6 +508,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR6</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -440,6 +516,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR5</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -447,6 +524,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR4</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -454,6 +532,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR3</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -461,6 +540,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR2</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -468,6 +548,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR1</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -475,6 +556,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR0</name>
+              <enumeratedValues>
+                <name>OutputSpeed</name>
+                <enumeratedValue>
+                    <name>low_speed</name>
+                    <description>Low Speed.</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>medium_speed</name>
+                    <description>Medium speed.</description>
+                    <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>low_speed_1</name>
+                    <description>Low speed.</description>
+                    <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>high_speed</name>
+                    <description>High speed .</description>
+                    <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -494,6 +598,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>PUPDR15</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>30</bitOffset>
@@ -501,6 +606,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR14</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>28</bitOffset>
@@ -508,6 +614,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR13</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>26</bitOffset>
@@ -515,6 +622,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR12</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>24</bitOffset>
@@ -522,6 +630,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR11</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>22</bitOffset>
@@ -529,6 +638,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR10</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>20</bitOffset>
@@ -536,6 +646,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR9</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>18</bitOffset>
@@ -543,6 +654,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR8</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>16</bitOffset>
@@ -550,6 +662,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR7</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -557,6 +670,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR6</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -564,6 +678,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR5</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -571,6 +686,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR4</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -578,6 +694,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR3</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -585,6 +702,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR2</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -592,6 +710,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR1</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -599,6 +718,24 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR0</name>
+              <enumeratedValues>
+                <name>PUPDSelect</name>
+                <enumeratedValue>
+                    <name>floating</name>
+                    <description>No Pull-up or Pull-Down.</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>pull_up</name>
+                    <description>Pull down.</description>
+                    <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>pull_down</name>
+                    <description>Pull up.</description>
+                    <value>2</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -617,6 +754,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>IDR15</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>15</bitOffset>
@@ -624,6 +762,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR14</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -631,6 +770,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR13</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>13</bitOffset>
@@ -638,6 +778,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR12</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -645,6 +786,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR11</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>11</bitOffset>
@@ -652,6 +794,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR10</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -659,6 +802,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR9</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>9</bitOffset>
@@ -666,6 +810,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR8</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -673,6 +818,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR7</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>7</bitOffset>
@@ -680,6 +826,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR6</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -687,6 +834,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR5</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>5</bitOffset>
@@ -694,6 +842,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR4</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -701,6 +850,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR3</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>3</bitOffset>
@@ -708,6 +858,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR2</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -715,6 +866,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR1</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>1</bitOffset>
@@ -722,6 +874,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR0</name>
+              <enumeratedValues>
+                <name>GpioState</name>
+                <enumeratedValue>
+                    <name>not_set</name>
+                    <description>Not set flag.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>set</name>
+                    <description>Set flag.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -740,6 +905,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>ODR15</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>15</bitOffset>
@@ -747,6 +913,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR14</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -754,6 +921,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR13</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>13</bitOffset>
@@ -761,6 +929,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR12</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -768,6 +937,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR11</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>11</bitOffset>
@@ -775,6 +945,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR10</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -782,6 +953,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR9</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>9</bitOffset>
@@ -789,6 +961,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR8</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -796,6 +969,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR7</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>7</bitOffset>
@@ -803,6 +977,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR6</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -810,6 +985,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR5</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>5</bitOffset>
@@ -817,6 +993,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR4</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -824,6 +1001,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR3</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>3</bitOffset>
@@ -831,6 +1009,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR2</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -838,6 +1017,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR1</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>1</bitOffset>
@@ -845,6 +1025,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR0</name>
+              <enumeratedValues>
+                <name>GpioState</name>
+                <enumeratedValue>
+                    <name>not_set</name>
+                    <description>Not set flag.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>set</name>
+                    <description>Set flag.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -864,6 +1057,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>BR15</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>31</bitOffset>
@@ -871,6 +1065,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR14</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>30</bitOffset>
@@ -878,6 +1073,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR13</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>29</bitOffset>
@@ -885,6 +1081,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR12</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>28</bitOffset>
@@ -892,6 +1089,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR11</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>27</bitOffset>
@@ -899,6 +1097,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR10</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>26</bitOffset>
@@ -906,6 +1105,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR9</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>25</bitOffset>
@@ -913,6 +1113,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR8</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>24</bitOffset>
@@ -920,6 +1121,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR7</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>23</bitOffset>
@@ -927,6 +1129,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR6</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>22</bitOffset>
@@ -934,6 +1137,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR5</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>21</bitOffset>
@@ -941,6 +1145,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR4</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>20</bitOffset>
@@ -948,6 +1153,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR3</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>19</bitOffset>
@@ -955,6 +1161,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR2</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>18</bitOffset>
@@ -962,6 +1169,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR1</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>17</bitOffset>
@@ -969,6 +1177,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR0</name>
+              <enumeratedValues>
+                <name>ResetFlag</name>
+                <enumeratedValue>
+                    <name>no_action</name>
+                    <description>No Action.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>16</bitOffset>
@@ -976,6 +1197,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS15</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>15</bitOffset>
@@ -983,6 +1205,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS14</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -990,6 +1213,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS13</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>13</bitOffset>
@@ -997,6 +1221,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS12</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -1004,6 +1229,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS11</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>11</bitOffset>
@@ -1011,6 +1237,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS10</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -1018,6 +1245,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS9</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>9</bitOffset>
@@ -1025,6 +1253,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS8</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -1032,6 +1261,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS7</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>7</bitOffset>
@@ -1039,6 +1269,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS6</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -1046,6 +1277,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS5</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>5</bitOffset>
@@ -1053,6 +1285,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS4</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -1060,6 +1293,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS3</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>3</bitOffset>
@@ -1067,6 +1301,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS2</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -1074,6 +1309,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS1</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>1</bitOffset>
@@ -1081,6 +1317,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS0</name>
+              <enumeratedValues>
+                <name>SetFlag</name>
+                <enumeratedValue>
+                    <name>no_action</name>
+                    <description>No Action.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>set</name>
+                    <description>Set action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -1100,12 +1349,14 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>LCKK</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>LCK15</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>15</bitOffset>
@@ -1113,6 +1364,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK14</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -1120,6 +1372,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK13</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>13</bitOffset>
@@ -1127,6 +1380,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK12</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -1134,6 +1388,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK11</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>11</bitOffset>
@@ -1141,6 +1396,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK10</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -1148,6 +1404,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK9</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>9</bitOffset>
@@ -1155,6 +1412,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK8</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -1162,6 +1420,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK7</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>7</bitOffset>
@@ -1169,6 +1428,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK6</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -1176,6 +1436,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK5</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>5</bitOffset>
@@ -1183,6 +1444,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK4</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -1190,6 +1452,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK3</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>3</bitOffset>
@@ -1197,6 +1460,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK2</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -1204,6 +1468,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK1</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>1</bitOffset>
@@ -1211,6 +1476,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK0</name>
+              <enumeratedValues>
+                <name>LockFlag</name>
+                <enumeratedValue>
+                    <name>not_locked</name>
+                    <description>Port configuration not locked.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>locked</name>
+                    <description>Port configuration locked.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -1230,6 +1508,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>AFRL7</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>28</bitOffset>
@@ -1237,6 +1516,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL6</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>24</bitOffset>
@@ -1244,6 +1524,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL5</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>20</bitOffset>
@@ -1251,6 +1532,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL4</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>16</bitOffset>
@@ -1258,6 +1540,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL3</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>12</bitOffset>
@@ -1265,6 +1548,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL2</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>8</bitOffset>
@@ -1272,6 +1556,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL1</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>4</bitOffset>
@@ -1279,6 +1564,50 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL0</name>
+              <enumeratedValues>
+                <name>AlternativeFunctionSelection</name>
+                <enumeratedValue>
+                    <name>AF0</name>
+                    <description>Select Alternate Function 0.</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF1</name>
+                    <description>Select Alternate Function 1.</description>
+                    <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF2</name>
+                    <description>Select Alternate Function 2.</description>
+                    <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF3</name>
+                    <description>Select Alternate Function 3.</description>
+                    <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF4</name>
+                    <description>Select Alternate Function 4.</description>
+                    <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF5</name>
+                    <description>Select Alternate Function 5.</description>
+                    <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF6</name>
+                    <description>Select Alternate Function 6.</description>
+                    <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF7</name>
+                    <description>Select Alternate Function 7.</description>
+                    <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>0</bitOffset>
@@ -1298,6 +1627,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>AFRH15</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>28</bitOffset>
@@ -1305,6 +1635,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH14</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>24</bitOffset>
@@ -1312,6 +1643,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH13</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>20</bitOffset>
@@ -1319,6 +1651,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH12</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>16</bitOffset>
@@ -1326,6 +1659,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH11</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>12</bitOffset>
@@ -1333,6 +1667,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH10</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>8</bitOffset>
@@ -1340,6 +1675,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH9</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>4</bitOffset>
@@ -1347,6 +1683,50 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH8</name>
+              <enumeratedValues>
+                <name>AlternativeFunctionSelection</name>
+                <enumeratedValue>
+                    <name>AF0</name>
+                    <description>Select Alternate Function 0.</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF1</name>
+                    <description>Select Alternate Function 1.</description>
+                    <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF2</name>
+                    <description>Select Alternate Function 2.</description>
+                    <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF3</name>
+                    <description>Select Alternate Function 3.</description>
+                    <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF4</name>
+                    <description>Select Alternate Function 4.</description>
+                    <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF5</name>
+                    <description>Select Alternate Function 5.</description>
+                    <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF6</name>
+                    <description>Select Alternate Function 6.</description>
+                    <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF7</name>
+                    <description>Select Alternate Function 7.</description>
+                    <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>0</bitOffset>
@@ -1365,96 +1745,124 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>BR0</name>
+              <enumeratedValues>
+                <name>ResetFlag</name>
+                <enumeratedValue>
+                    <name>no_action</name>
+                    <description>No Action.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR1</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR2</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR3</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR4</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR5</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR6</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR7</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR8</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR9</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR10</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR11</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR12</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR13</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR14</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR15</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
@@ -1501,6 +1909,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MODER15</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>30</bitOffset>
@@ -1508,6 +1917,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER14</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>28</bitOffset>
@@ -1515,6 +1925,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER13</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>26</bitOffset>
@@ -1522,6 +1933,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER12</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>24</bitOffset>
@@ -1529,6 +1941,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER11</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>22</bitOffset>
@@ -1536,6 +1949,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER10</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>20</bitOffset>
@@ -1543,6 +1957,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER9</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>18</bitOffset>
@@ -1550,6 +1965,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER8</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>16</bitOffset>
@@ -1557,6 +1973,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER7</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -1564,6 +1981,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER6</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -1571,6 +1989,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER5</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -1578,6 +1997,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER4</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -1585,6 +2005,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER3</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -1592,6 +2013,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER2</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -1599,6 +2021,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER1</name>
+              <enumeratedValues derivedFrom="PortMode"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -1606,6 +2029,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>MODER0</name>
+              <enumeratedValues>
+                <name>PortMode</name>
+                <enumeratedValue>
+                    <name>input</name>
+                    <description>Input mode (Reset).</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>output</name>
+                    <description>General purpose output mode.</description>
+                    <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>alternate</name>
+                    <description>Alternate function mode.</description>
+                    <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>analog</name>
+                    <description>Analog mode .</description>
+                    <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -1624,6 +2070,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>OT15</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>15</bitOffset>
@@ -1631,6 +2078,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT14</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -1638,6 +2086,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT13</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>13</bitOffset>
@@ -1645,6 +2094,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT12</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -1652,6 +2102,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT11</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>11</bitOffset>
@@ -1659,6 +2110,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT10</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -1666,6 +2118,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT9</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>9</bitOffset>
@@ -1673,6 +2126,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT8</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -1680,6 +2134,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT7</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>7</bitOffset>
@@ -1687,6 +2142,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT6</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -1694,6 +2150,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT5</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>5</bitOffset>
@@ -1701,6 +2158,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT4</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -1708,6 +2166,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT3</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>3</bitOffset>
@@ -1715,6 +2174,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT2</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -1722,6 +2182,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT1</name>
+              <enumeratedValues derivedFrom="OutputType"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>1</bitOffset>
@@ -1729,6 +2190,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OT0</name>
+              <enumeratedValues>
+                <name>OutputType</name>
+                <enumeratedValue>
+                    <name>push_pull</name>
+                    <description>Output push-pull (reset state).</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>open_drain</name>
+                    <description>Output open-drain.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -1748,6 +2222,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>OSPEEDR15</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>30</bitOffset>
@@ -1755,6 +2230,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR14</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>28</bitOffset>
@@ -1762,6 +2238,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR13</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>26</bitOffset>
@@ -1769,6 +2246,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR12</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>24</bitOffset>
@@ -1776,6 +2254,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR11</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>22</bitOffset>
@@ -1783,6 +2262,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR10</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>20</bitOffset>
@@ -1790,6 +2270,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR9</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>18</bitOffset>
@@ -1797,6 +2278,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR8</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>16</bitOffset>
@@ -1804,6 +2286,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR7</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -1811,6 +2294,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR6</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -1818,6 +2302,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR5</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -1825,6 +2310,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR4</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -1832,6 +2318,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR3</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -1839,6 +2326,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR2</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -1846,6 +2334,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR1</name>
+              <enumeratedValues derivedFrom="OutputSpeed"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -1853,6 +2342,29 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OSPEEDR0</name>
+              <enumeratedValues>
+                <name>OutputSpeed</name>
+                <enumeratedValue>
+                    <name>low_speed</name>
+                    <description>Low Speed.</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>medium_speed</name>
+                    <description>Medium speed.</description>
+                    <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>low_speed_1</name>
+                    <description>Low speed.</description>
+                    <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>high_speed</name>
+                    <description>High speed .</description>
+                    <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -1872,6 +2384,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>PUPDR15</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>30</bitOffset>
@@ -1879,6 +2392,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR14</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>28</bitOffset>
@@ -1886,6 +2400,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR13</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>26</bitOffset>
@@ -1893,6 +2408,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR12</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>24</bitOffset>
@@ -1900,6 +2416,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR11</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>22</bitOffset>
@@ -1907,6 +2424,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR10</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>20</bitOffset>
@@ -1914,6 +2432,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR9</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>18</bitOffset>
@@ -1921,6 +2440,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR8</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>16</bitOffset>
@@ -1928,6 +2448,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR7</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -1935,6 +2456,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR6</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -1942,6 +2464,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR5</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -1949,6 +2472,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR4</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -1956,6 +2480,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR3</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -1963,6 +2488,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR2</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -1970,6 +2496,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR1</name>
+              <enumeratedValues derivedFrom="PUPDSelect"></enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -1977,6 +2504,24 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PUPDR0</name>
+              <enumeratedValues>
+                <name>PUPDSelect</name>
+                <enumeratedValue>
+                    <name>floating</name>
+                    <description>No Pull-up or Pull-Down.</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>pull_up</name>
+                    <description>Pull down.</description>
+                    <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>pull_down</name>
+                    <description>Pull up.</description>
+                    <value>2</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x configuration bits (y =
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -1995,6 +2540,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>IDR15</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>15</bitOffset>
@@ -2002,6 +2548,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR14</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -2009,6 +2556,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR13</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>13</bitOffset>
@@ -2016,6 +2564,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR12</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -2023,6 +2572,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR11</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>11</bitOffset>
@@ -2030,6 +2580,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR10</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -2037,6 +2588,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR9</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>9</bitOffset>
@@ -2044,6 +2596,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR8</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -2051,6 +2604,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR7</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>7</bitOffset>
@@ -2058,6 +2612,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR6</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -2065,6 +2620,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR5</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>5</bitOffset>
@@ -2072,6 +2628,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR4</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -2079,6 +2636,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR3</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>3</bitOffset>
@@ -2086,6 +2644,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR2</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -2093,6 +2652,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR1</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>1</bitOffset>
@@ -2100,6 +2660,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IDR0</name>
+              <enumeratedValues>
+                <name>GpioState</name>
+                <enumeratedValue>
+                    <name>not_set</name>
+                    <description>Not set flag.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>set</name>
+                    <description>Set flag.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port input data (y =
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -2118,6 +2691,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>ODR15</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>15</bitOffset>
@@ -2125,6 +2699,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR14</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -2132,6 +2707,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR13</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>13</bitOffset>
@@ -2139,6 +2715,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR12</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -2146,6 +2723,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR11</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>11</bitOffset>
@@ -2153,6 +2731,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR10</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -2160,6 +2739,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR9</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>9</bitOffset>
@@ -2167,6 +2747,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR8</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -2174,6 +2755,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR7</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>7</bitOffset>
@@ -2181,6 +2763,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR6</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -2188,6 +2771,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR5</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>5</bitOffset>
@@ -2195,6 +2779,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR4</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -2202,6 +2787,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR3</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>3</bitOffset>
@@ -2209,6 +2795,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR2</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -2216,6 +2803,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR1</name>
+              <enumeratedValues derivedFrom="GpioState"></enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>1</bitOffset>
@@ -2223,6 +2811,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ODR0</name>
+              <enumeratedValues>
+                <name>GpioState</name>
+                <enumeratedValue>
+                    <name>not_set</name>
+                    <description>Not set flag.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>set</name>
+                    <description>Set flag.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port output data (y =
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -2242,6 +2843,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>BR15</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>31</bitOffset>
@@ -2249,6 +2851,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR14</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>30</bitOffset>
@@ -2256,6 +2859,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR13</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>29</bitOffset>
@@ -2263,6 +2867,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR12</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>28</bitOffset>
@@ -2270,6 +2875,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR11</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>27</bitOffset>
@@ -2277,6 +2883,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR10</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>26</bitOffset>
@@ -2284,6 +2891,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR9</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>25</bitOffset>
@@ -2291,6 +2899,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR8</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>24</bitOffset>
@@ -2298,6 +2907,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR7</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>23</bitOffset>
@@ -2305,6 +2915,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR6</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>22</bitOffset>
@@ -2312,6 +2923,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR5</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>21</bitOffset>
@@ -2319,6 +2931,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR4</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>20</bitOffset>
@@ -2326,6 +2939,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR3</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>19</bitOffset>
@@ -2333,6 +2947,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR2</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>18</bitOffset>
@@ -2340,6 +2955,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR1</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x reset bit y (y =
               0..15)</description>
               <bitOffset>17</bitOffset>
@@ -2347,6 +2963,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BR0</name>
+              <enumeratedValues>
+                <name>ResetFlag</name>
+                <enumeratedValue>
+                    <name>no_action</name>
+                    <description>No Action.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>16</bitOffset>
@@ -2354,6 +2983,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS15</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>15</bitOffset>
@@ -2361,6 +2991,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS14</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -2368,6 +2999,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS13</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>13</bitOffset>
@@ -2375,6 +3007,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS12</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -2382,6 +3015,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS11</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>11</bitOffset>
@@ -2389,6 +3023,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS10</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -2396,6 +3031,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS9</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>9</bitOffset>
@@ -2403,6 +3039,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS8</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -2410,6 +3047,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS7</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>7</bitOffset>
@@ -2417,6 +3055,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS6</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -2424,6 +3063,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS5</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>5</bitOffset>
@@ -2431,6 +3071,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS4</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -2438,6 +3079,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS3</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>3</bitOffset>
@@ -2445,6 +3087,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS2</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -2452,6 +3095,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS1</name>
+              <enumeratedValues derivedFrom="SetFlag"></enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>1</bitOffset>
@@ -2459,6 +3103,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BS0</name>
+              <enumeratedValues>
+                <name>SetFlag</name>
+                <enumeratedValue>
+                    <name>no_action</name>
+                    <description>No Action.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>set</name>
+                    <description>Set action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x set bit y (y=
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -2478,6 +3135,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>LCKK</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>16</bitOffset>
@@ -2485,6 +3143,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK15</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>15</bitOffset>
@@ -2492,6 +3151,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK14</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>14</bitOffset>
@@ -2499,6 +3159,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK13</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>13</bitOffset>
@@ -2506,6 +3167,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK12</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>12</bitOffset>
@@ -2513,6 +3175,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK11</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>11</bitOffset>
@@ -2520,6 +3183,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK10</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>10</bitOffset>
@@ -2527,6 +3191,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK9</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>9</bitOffset>
@@ -2534,6 +3199,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK8</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>8</bitOffset>
@@ -2541,6 +3207,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK7</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>7</bitOffset>
@@ -2548,6 +3215,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK6</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>6</bitOffset>
@@ -2555,6 +3223,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK5</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>5</bitOffset>
@@ -2562,6 +3231,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK4</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>4</bitOffset>
@@ -2569,6 +3239,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK3</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>3</bitOffset>
@@ -2576,6 +3247,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK2</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>2</bitOffset>
@@ -2583,6 +3255,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK1</name>
+              <enumeratedValues derivedFrom="LockFlag"></enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>1</bitOffset>
@@ -2590,6 +3263,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LCK0</name>
+              <enumeratedValues>
+                <name>LockFlag</name>
+                <enumeratedValue>
+                    <name>not_locked</name>
+                    <description>Port configuration not locked.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>locked</name>
+                    <description>Port configuration locked.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x lock bit y (y=
               0..15)</description>
               <bitOffset>0</bitOffset>
@@ -2609,6 +3295,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>AFRL7</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>28</bitOffset>
@@ -2616,6 +3303,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL6</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>24</bitOffset>
@@ -2623,6 +3311,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL5</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>20</bitOffset>
@@ -2630,6 +3319,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL4</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>16</bitOffset>
@@ -2637,6 +3327,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL3</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>12</bitOffset>
@@ -2644,6 +3335,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL2</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>8</bitOffset>
@@ -2651,6 +3343,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL1</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>4</bitOffset>
@@ -2658,6 +3351,50 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRL0</name>
+              <enumeratedValues>
+                <name>AlternativeFunctionSelection</name>
+                <enumeratedValue>
+                    <name>AF0</name>
+                    <description>Select Alternate Function 0.</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF1</name>
+                    <description>Select Alternate Function 1.</description>
+                    <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF2</name>
+                    <description>Select Alternate Function 2.</description>
+                    <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF3</name>
+                    <description>Select Alternate Function 3.</description>
+                    <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF4</name>
+                    <description>Select Alternate Function 4.</description>
+                    <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF5</name>
+                    <description>Select Alternate Function 5.</description>
+                    <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF6</name>
+                    <description>Select Alternate Function 6.</description>
+                    <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF7</name>
+                    <description>Select Alternate Function 7.</description>
+                    <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+
               <description>Alternate function selection for port x
               bit y (y = 0..7)</description>
               <bitOffset>0</bitOffset>
@@ -2677,6 +3414,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>AFRH15</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>28</bitOffset>
@@ -2684,6 +3422,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH14</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>24</bitOffset>
@@ -2691,6 +3430,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH13</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>20</bitOffset>
@@ -2698,6 +3438,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH12</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>16</bitOffset>
@@ -2705,6 +3446,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH11</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>12</bitOffset>
@@ -2712,6 +3454,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH10</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>8</bitOffset>
@@ -2719,6 +3462,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH9</name>
+              <enumeratedValues derivedFrom="AlternativeFunctionSelection"></enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>4</bitOffset>
@@ -2726,6 +3470,49 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AFRH8</name>
+              <enumeratedValues>
+                <name>AlternativeFunctionSelection</name>
+                <enumeratedValue>
+                    <name>AF0</name>
+                    <description>Select Alternate Function 0.</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF1</name>
+                    <description>Select Alternate Function 1.</description>
+                    <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF2</name>
+                    <description>Select Alternate Function 2.</description>
+                    <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF3</name>
+                    <description>Select Alternate Function 3.</description>
+                    <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF4</name>
+                    <description>Select Alternate Function 4.</description>
+                    <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF5</name>
+                    <description>Select Alternate Function 5.</description>
+                    <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF6</name>
+                    <description>Select Alternate Function 6.</description>
+                    <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>AF7</name>
+                    <description>Select Alternate Function 7.</description>
+                    <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Alternate function selection for port x
               bit y (y = 8..15)</description>
               <bitOffset>0</bitOffset>
@@ -2744,96 +3531,124 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>BR0</name>
+              <enumeratedValues>
+                <name>ResetFlag</name>
+                <enumeratedValue>
+                    <name>no_action</name>
+                    <description>No Action.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR1</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR2</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR3</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR4</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR5</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR6</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR7</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR8</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR9</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR10</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR11</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR12</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR13</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR14</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BR15</name>
+              <enumeratedValues derivedFrom="ResetFlag"></enumeratedValues>
               <description>Port x Reset bit y</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
