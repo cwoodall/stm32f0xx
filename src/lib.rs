@@ -14315,15 +14315,42 @@ pub mod spi1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CrcenR {
-            bits: u8,
+        #[doc = "Possible values of the field `CRCEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CrcenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl CrcenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CrcenR::Disabled => 0,
+                    CrcenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CrcenR {
+                match bits {
+                    0 => CrcenR::Disabled,
+                    1 => CrcenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == CrcenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == CrcenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -14477,14 +14504,49 @@ pub mod spi1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CRCEN`"]
+        pub enum CrcenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl CrcenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CrcenW::Disabled => 0,
+                    CrcenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CrcenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CrcenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CrcenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(CrcenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(CrcenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 13;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -14686,12 +14748,11 @@ pub mod spi1 {
             #[doc = "Bit 13 - Hardware CRC calculation enable"]
             #[inline ( always )]
             pub fn crcen(&self) -> CrcenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 13;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CrcenR { bits }
+                CrcenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 13;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 12 - CRC transfer next"]
             #[inline ( always )]
@@ -14929,26 +14990,80 @@ pub mod spi1 {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct RxdmaenR {
-            bits: u8,
+        #[doc = "Possible values of the field `RXDMAEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum RxdmaenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl RxdmaenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    RxdmaenR::Disabled => 0,
+                    RxdmaenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> RxdmaenR {
+                match bits {
+                    0 => RxdmaenR::Disabled,
+                    1 => RxdmaenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == RxdmaenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == RxdmaenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct TxdmaenR {
-            bits: u8,
+        #[doc = "Possible values of the field `TXDMAEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum TxdmaenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl TxdmaenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    TxdmaenR::Disabled => 0,
+                    TxdmaenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> TxdmaenR {
+                match bits {
+                    0 => TxdmaenR::Disabled,
+                    1 => TxdmaenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == TxdmaenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == TxdmaenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -15061,14 +15176,49 @@ pub mod spi1 {
                 self.bits
             }
         }
+        #[doc = "Values that can be written to the field `RXDMAEN`"]
+        pub enum RxdmaenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl RxdmaenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    RxdmaenW::Disabled => 0,
+                    RxdmaenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _RxdmaenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _RxdmaenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: RxdmaenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(RxdmaenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(RxdmaenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -15076,14 +15226,49 @@ pub mod spi1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TXDMAEN`"]
+        pub enum TxdmaenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl TxdmaenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    TxdmaenW::Disabled => 0,
+                    TxdmaenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _TxdmaenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _TxdmaenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: TxdmaenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(TxdmaenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(TxdmaenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -15250,22 +15435,20 @@ pub mod spi1 {
             #[doc = "Bit 0 - Rx buffer DMA enable"]
             #[inline ( always )]
             pub fn rxdmaen(&self) -> RxdmaenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                RxdmaenR { bits }
+                RxdmaenR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 0;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 1 - Tx buffer DMA enable"]
             #[inline ( always )]
             pub fn txdmaen(&self) -> TxdmaenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                TxdmaenR { bits }
+                TxdmaenR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 1;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 2 - SS output enable"]
             #[inline ( always )]
@@ -18455,26 +18638,80 @@ pub mod i2c1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct TxdmaenR {
-            bits: u8,
+        #[doc = "Possible values of the field `TXDMAEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum TxdmaenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl TxdmaenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    TxdmaenR::Disabled => 0,
+                    TxdmaenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> TxdmaenR {
+                match bits {
+                    0 => TxdmaenR::Disabled,
+                    1 => TxdmaenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == TxdmaenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == TxdmaenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct RxdmaenR {
-            bits: u8,
+        #[doc = "Possible values of the field `RXDMAEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum RxdmaenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl RxdmaenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    RxdmaenR::Disabled => 0,
+                    RxdmaenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> RxdmaenR {
+                match bits {
+                    0 => RxdmaenR::Disabled,
+                    1 => RxdmaenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == RxdmaenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == RxdmaenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -18499,70 +18736,232 @@ pub mod i2c1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct WupenR {
-            bits: u8,
+        #[doc = "Possible values of the field `WUPEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum WupenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl WupenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    WupenR::Disabled => 0,
+                    WupenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> WupenR {
+                match bits {
+                    0 => WupenR::Disabled,
+                    1 => WupenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == WupenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == WupenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct GcenR {
-            bits: u8,
+        #[doc = "Possible values of the field `GCEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum GcenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl GcenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    GcenR::Disabled => 0,
+                    GcenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> GcenR {
+                match bits {
+                    0 => GcenR::Disabled,
+                    1 => GcenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == GcenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == GcenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct SmbhenR {
-            bits: u8,
+        #[doc = "Possible values of the field `SMBHEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum SmbhenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl SmbhenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    SmbhenR::Disabled => 0,
+                    SmbhenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> SmbhenR {
+                match bits {
+                    0 => SmbhenR::Disabled,
+                    1 => SmbhenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == SmbhenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == SmbhenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct SmbdenR {
-            bits: u8,
+        #[doc = "Possible values of the field `SMBDEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum SmbdenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl SmbdenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    SmbdenR::Disabled => 0,
+                    SmbdenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> SmbdenR {
+                match bits {
+                    0 => SmbdenR::Disabled,
+                    1 => SmbdenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == SmbdenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == SmbdenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct AlertenR {
-            bits: u8,
+        #[doc = "Possible values of the field `ALERTEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum AlertenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl AlertenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    AlertenR::Disabled => 0,
+                    AlertenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> AlertenR {
+                match bits {
+                    0 => AlertenR::Disabled,
+                    1 => AlertenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == AlertenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == AlertenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct PecenR {
-            bits: u8,
+        #[doc = "Possible values of the field `PECEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum PecenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl PecenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    PecenR::Disabled => 0,
+                    PecenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> PecenR {
+                match bits {
+                    0 => PecenR::Disabled,
+                    1 => PecenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == PecenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == PecenR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -18715,14 +19114,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWRST`"]
+        pub enum SwrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl SwrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    SwrstW::NoEffect => 0,
+                    SwrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _SwrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _SwrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: SwrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(SwrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(SwrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 13;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -18730,14 +19164,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TXDMAEN`"]
+        pub enum TxdmaenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl TxdmaenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    TxdmaenW::Disabled => 0,
+                    TxdmaenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _TxdmaenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _TxdmaenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: TxdmaenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(TxdmaenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(TxdmaenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -18745,14 +19214,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `RXDMAEN`"]
+        pub enum RxdmaenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl RxdmaenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    RxdmaenW::Disabled => 0,
+                    RxdmaenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _RxdmaenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _RxdmaenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: RxdmaenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(RxdmaenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(RxdmaenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 15;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -18790,14 +19294,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `WUPEN`"]
+        pub enum WupenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl WupenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    WupenW::Disabled => 0,
+                    WupenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _WupenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _WupenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: WupenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(WupenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(WupenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 18;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -18805,14 +19344,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `GCEN`"]
+        pub enum GcenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl GcenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    GcenW::Disabled => 0,
+                    GcenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _GcenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _GcenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: GcenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(GcenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(GcenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 19;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -18820,14 +19394,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SMBHEN`"]
+        pub enum SmbhenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl SmbhenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    SmbhenW::Disabled => 0,
+                    SmbhenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _SmbhenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _SmbhenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: SmbhenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(SmbhenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(SmbhenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 20;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -18835,14 +19444,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SMBDEN`"]
+        pub enum SmbdenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl SmbdenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    SmbdenW::Disabled => 0,
+                    SmbdenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _SmbdenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _SmbdenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: SmbdenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(SmbdenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(SmbdenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 21;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -18850,14 +19494,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `ALERTEN`"]
+        pub enum AlertenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl AlertenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    AlertenW::Disabled => 0,
+                    AlertenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _AlertenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _AlertenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: AlertenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(AlertenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(AlertenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 22;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -18865,14 +19544,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PECEN`"]
+        pub enum PecenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl PecenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    PecenW::Disabled => 0,
+                    PecenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _PecenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _PecenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: PecenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(PecenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(PecenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 23;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -18989,22 +19703,20 @@ pub mod i2c1 {
             #[doc = "Bit 14 - DMA transmission requests enable"]
             #[inline ( always )]
             pub fn txdmaen(&self) -> TxdmaenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                TxdmaenR { bits }
+                TxdmaenR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 14;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 15 - DMA reception requests enable"]
             #[inline ( always )]
             pub fn rxdmaen(&self) -> RxdmaenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 15;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                RxdmaenR { bits }
+                RxdmaenR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 15;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 16 - Slave byte control"]
             #[inline ( always )]
@@ -19029,62 +19741,56 @@ pub mod i2c1 {
             #[doc = "Bit 18 - Wakeup from STOP enable"]
             #[inline ( always )]
             pub fn wupen(&self) -> WupenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 18;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                WupenR { bits }
+                WupenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 18;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 19 - General call enable"]
             #[inline ( always )]
             pub fn gcen(&self) -> GcenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 19;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                GcenR { bits }
+                GcenR::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 19;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 20 - SMBus Host address enable"]
             #[inline ( always )]
             pub fn smbhen(&self) -> SmbhenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 20;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                SmbhenR { bits }
+                SmbhenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 20;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 21 - SMBus Device Default address enable"]
             #[inline ( always )]
             pub fn smbden(&self) -> SmbdenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 21;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                SmbdenR { bits }
+                SmbdenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 21;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 22 - SMBUS alert enable"]
             #[inline ( always )]
             pub fn alerten(&self) -> AlertenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 22;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                AlertenR { bits }
+                AlertenR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 22;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 23 - PEC enable"]
             #[inline ( always )]
             pub fn pecen(&self) -> PecenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 23;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                PecenR { bits }
+                PecenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 23;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
         }
         impl W {
@@ -19886,15 +20592,42 @@ pub mod i2c1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Oa1enR {
-            bits: u8,
+        #[doc = "Possible values of the field `OA1EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Oa1enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Oa1enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Oa1enR::Disabled => 0,
+                    Oa1enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Oa1enR {
+                match bits {
+                    0 => Oa1enR::Disabled,
+                    1 => Oa1enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Oa1enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Oa1enR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -19957,14 +20690,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `OA1EN`"]
+        pub enum Oa1enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Oa1enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Oa1enW::Disabled => 0,
+                    Oa1enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Oa1enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Oa1enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Oa1enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Oa1enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Oa1enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 15;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -20021,12 +20789,11 @@ pub mod i2c1 {
             #[doc = "Bit 15 - Own Address 1 enable"]
             #[inline ( always )]
             pub fn oa1en(&self) -> Oa1enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 15;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Oa1enR { bits }
+                Oa1enR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 15;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
         }
         impl W {
@@ -20131,15 +20898,42 @@ pub mod i2c1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Oa2enR {
-            bits: u8,
+        #[doc = "Possible values of the field `OA2EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Oa2enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Oa2enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Oa2enR::Disabled => 0,
+                    Oa2enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Oa2enR {
+                match bits {
+                    0 => Oa2enR::Disabled,
+                    1 => Oa2enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Oa2enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Oa2enR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -20172,14 +20966,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `OA2EN`"]
+        pub enum Oa2enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Oa2enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Oa2enW::Disabled => 0,
+                    Oa2enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Oa2enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Oa2enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Oa2enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Oa2enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Oa2enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 15;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -20216,12 +21045,11 @@ pub mod i2c1 {
             #[doc = "Bit 15 - Own Address 2 enable"]
             #[inline ( always )]
             pub fn oa2en(&self) -> Oa2enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 15;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Oa2enR { bits }
+                Oa2enR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 15;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
         }
         impl W {
@@ -20583,15 +21411,42 @@ pub mod i2c1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct TimoutenR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIMOUTEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum TimoutenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl TimoutenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    TimoutenR::Disabled => 0,
+                    TimoutenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> TimoutenR {
+                match bits {
+                    0 => TimoutenR::Disabled,
+                    1 => TimoutenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == TimoutenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == TimoutenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -20605,15 +21460,42 @@ pub mod i2c1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct TextenR {
-            bits: u8,
+        #[doc = "Possible values of the field `TEXTEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum TextenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl TextenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    TextenR::Disabled => 0,
+                    TextenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> TextenR {
+                match bits {
+                    0 => TextenR::Disabled,
+                    1 => TextenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == TextenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == TextenR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -20646,14 +21528,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIMOUTEN`"]
+        pub enum TimoutenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl TimoutenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    TimoutenW::Disabled => 0,
+                    TimoutenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _TimoutenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _TimoutenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: TimoutenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(TimoutenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(TimoutenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 15;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -20676,14 +21593,49 @@ pub mod i2c1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TEXTEN`"]
+        pub enum TextenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl TextenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    TextenW::Disabled => 0,
+                    TextenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _TextenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _TextenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: TextenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(TextenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(TextenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 31;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -20720,12 +21672,11 @@ pub mod i2c1 {
             #[doc = "Bit 15 - Clock timeout enable"]
             #[inline ( always )]
             pub fn timouten(&self) -> TimoutenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 15;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                TimoutenR { bits }
+                TimoutenR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 15;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
             #[doc = "Bits 16:27 - Bus timeout B"]
             #[inline ( always )]
@@ -20740,12 +21691,11 @@ pub mod i2c1 {
             #[doc = "Bit 31 - Extended clock timeout enable"]
             #[inline ( always )]
             pub fn texten(&self) -> TextenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 31;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                TextenR { bits }
+                TextenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 31;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
         }
         impl W {
@@ -22786,15 +23736,42 @@ pub mod tim1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CenR {
-            bits: u8,
+        #[doc = "Possible values of the field `CEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl CenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CenR::Disabled => 0,
+                    CenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CenR {
+                match bits {
+                    0 => CenR::Disabled,
+                    1 => CenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == CenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == CenR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -22902,14 +23879,49 @@ pub mod tim1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CEN`"]
+        pub enum CenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl CenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CenW::Disabled => 0,
+                    CenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(CenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(CenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -22996,12 +24008,11 @@ pub mod tim1 {
             #[doc = "Bit 0 - Counter enable"]
             #[inline ( always )]
             pub fn cen(&self) -> CenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CenR { bits }
+                CenR::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 0;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
         }
         impl W {
@@ -29220,15 +30231,42 @@ pub mod tim2 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CenR {
-            bits: u8,
+        #[doc = "Possible values of the field `CEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl CenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CenR::Disabled => 0,
+                    CenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CenR {
+                match bits {
+                    0 => CenR::Disabled,
+                    1 => CenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == CenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == CenR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -29336,14 +30374,49 @@ pub mod tim2 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CEN`"]
+        pub enum CenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl CenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CenW::Disabled => 0,
+                    CenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(CenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(CenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -29430,12 +30503,11 @@ pub mod tim2 {
             #[doc = "Bit 0 - Counter enable"]
             #[inline ( always )]
             pub fn cen(&self) -> CenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CenR { bits }
+                CenR::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 0;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
         }
         impl W {
@@ -34719,15 +35791,42 @@ pub mod tim14 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CenR {
-            bits: u8,
+        #[doc = "Possible values of the field `CEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl CenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CenR::Disabled => 0,
+                    CenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CenR {
+                match bits {
+                    0 => CenR::Disabled,
+                    1 => CenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == CenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == CenR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -34790,14 +35889,49 @@ pub mod tim14 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CEN`"]
+        pub enum CenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl CenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CenW::Disabled => 0,
+                    CenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(CenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(CenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -34854,12 +35988,11 @@ pub mod tim14 {
             #[doc = "Bit 0 - Counter enable"]
             #[inline ( always )]
             pub fn cen(&self) -> CenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CenR { bits }
+                CenR::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 0;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
         }
         impl W {
@@ -36539,15 +37672,42 @@ pub mod tim6 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CenR {
-            bits: u8,
+        #[doc = "Possible values of the field `CEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl CenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CenR::Disabled => 0,
+                    CenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CenR {
+                match bits {
+                    0 => CenR::Disabled,
+                    1 => CenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == CenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == CenR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -36610,14 +37770,49 @@ pub mod tim6 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CEN`"]
+        pub enum CenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl CenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CenW::Disabled => 0,
+                    CenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(CenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(CenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -36674,12 +37869,11 @@ pub mod tim6 {
             #[doc = "Bit 0 - Counter enable"]
             #[inline ( always )]
             pub fn cen(&self) -> CenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CenR { bits }
+                CenR::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 0;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
         }
         impl W {
@@ -37508,312 +38702,114 @@ pub mod exti {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Mr0R {
-            bits: u8,
+        #[doc = "Possible values of the field `MR0`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Mr0R {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Mr0R {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Mr0R::Disabled => 0,
+                    Mr0R::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Mr0R {
+                match bits {
+                    0 => Mr0R::Disabled,
+                    1 => Mr0R::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Mr0R::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Mr0R::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Mr1R {
-            bits: u8,
+        #[doc = "Possible values of the field `MR1`"]
+        pub type Mr1R = Mr0R;
+        #[doc = "Possible values of the field `MR2`"]
+        pub type Mr2R = Mr0R;
+        #[doc = "Possible values of the field `MR3`"]
+        pub type Mr3R = Mr0R;
+        #[doc = "Possible values of the field `MR4`"]
+        pub type Mr4R = Mr0R;
+        #[doc = "Possible values of the field `MR5`"]
+        pub type Mr5R = Mr0R;
+        #[doc = "Possible values of the field `MR6`"]
+        pub type Mr6R = Mr0R;
+        #[doc = "Possible values of the field `MR7`"]
+        pub type Mr7R = Mr0R;
+        #[doc = "Possible values of the field `MR8`"]
+        pub type Mr8R = Mr0R;
+        #[doc = "Possible values of the field `MR9`"]
+        pub type Mr9R = Mr0R;
+        #[doc = "Possible values of the field `MR10`"]
+        pub type Mr10R = Mr0R;
+        #[doc = "Possible values of the field `MR11`"]
+        pub type Mr11R = Mr0R;
+        #[doc = "Possible values of the field `MR12`"]
+        pub type Mr12R = Mr0R;
+        #[doc = "Possible values of the field `MR13`"]
+        pub type Mr13R = Mr0R;
+        #[doc = "Possible values of the field `MR14`"]
+        pub type Mr14R = Mr0R;
+        #[doc = "Possible values of the field `MR15`"]
+        pub type Mr15R = Mr0R;
+        #[doc = "Possible values of the field `MR16`"]
+        pub type Mr16R = Mr0R;
+        #[doc = "Possible values of the field `MR17`"]
+        pub type Mr17R = Mr0R;
+        #[doc = "Possible values of the field `MR18`"]
+        pub type Mr18R = Mr0R;
+        #[doc = "Possible values of the field `MR19`"]
+        pub type Mr19R = Mr0R;
+        #[doc = "Possible values of the field `MR20`"]
+        pub type Mr20R = Mr0R;
+        #[doc = "Possible values of the field `MR21`"]
+        pub type Mr21R = Mr0R;
+        #[doc = "Possible values of the field `MR22`"]
+        pub type Mr22R = Mr0R;
+        #[doc = "Possible values of the field `MR23`"]
+        pub type Mr23R = Mr0R;
+        #[doc = "Possible values of the field `MR24`"]
+        pub type Mr24R = Mr0R;
+        #[doc = "Possible values of the field `MR25`"]
+        pub type Mr25R = Mr0R;
+        #[doc = "Possible values of the field `MR26`"]
+        pub type Mr26R = Mr0R;
+        #[doc = "Possible values of the field `MR27`"]
+        pub type Mr27R = Mr0R;
+        #[doc = "Values that can be written to the field `MR0`"]
+        pub enum Mr0W {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
-        impl Mr1R {
-            #[doc = r" Value of the field as raw bits"]
+        impl Mr0W {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
             #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr2R {
-            bits: u8,
-        }
-        impl Mr2R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr3R {
-            bits: u8,
-        }
-        impl Mr3R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr4R {
-            bits: u8,
-        }
-        impl Mr4R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr5R {
-            bits: u8,
-        }
-        impl Mr5R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr6R {
-            bits: u8,
-        }
-        impl Mr6R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr7R {
-            bits: u8,
-        }
-        impl Mr7R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr8R {
-            bits: u8,
-        }
-        impl Mr8R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr9R {
-            bits: u8,
-        }
-        impl Mr9R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr10R {
-            bits: u8,
-        }
-        impl Mr10R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr11R {
-            bits: u8,
-        }
-        impl Mr11R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr12R {
-            bits: u8,
-        }
-        impl Mr12R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr13R {
-            bits: u8,
-        }
-        impl Mr13R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr14R {
-            bits: u8,
-        }
-        impl Mr14R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr15R {
-            bits: u8,
-        }
-        impl Mr15R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr16R {
-            bits: u8,
-        }
-        impl Mr16R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr17R {
-            bits: u8,
-        }
-        impl Mr17R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr18R {
-            bits: u8,
-        }
-        impl Mr18R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr19R {
-            bits: u8,
-        }
-        impl Mr19R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr20R {
-            bits: u8,
-        }
-        impl Mr20R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr21R {
-            bits: u8,
-        }
-        impl Mr21R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr22R {
-            bits: u8,
-        }
-        impl Mr22R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr23R {
-            bits: u8,
-        }
-        impl Mr23R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr24R {
-            bits: u8,
-        }
-        impl Mr24R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr25R {
-            bits: u8,
-        }
-        impl Mr25R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr26R {
-            bits: u8,
-        }
-        impl Mr26R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr27R {
-            bits: u8,
-        }
-        impl Mr27R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Mr0W::Disabled => 0,
+                    Mr0W::Enabled => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -37821,9 +38817,26 @@ pub mod exti {
             w: &'a mut W,
         }
         impl<'a> _Mr0W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr0W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37831,14 +38844,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR1`"]
+        pub type Mr1W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr1W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr1W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr1W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37846,14 +38878,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR2`"]
+        pub type Mr2W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr2W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr2W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr2W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 2;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37861,14 +38912,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR3`"]
+        pub type Mr3W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr3W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr3W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr3W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 3;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37876,14 +38946,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR4`"]
+        pub type Mr4W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr4W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr4W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr4W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 4;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37891,14 +38980,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR5`"]
+        pub type Mr5W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr5W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr5W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr5W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 5;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37906,14 +39014,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR6`"]
+        pub type Mr6W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr6W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr6W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr6W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 6;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37921,14 +39048,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR7`"]
+        pub type Mr7W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr7W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr7W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr7W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 7;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37936,14 +39082,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR8`"]
+        pub type Mr8W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr8W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr8W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr8W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 8;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37951,14 +39116,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR9`"]
+        pub type Mr9W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr9W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr9W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr9W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 9;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37966,14 +39150,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR10`"]
+        pub type Mr10W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr10W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr10W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr10W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 10;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37981,14 +39184,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR11`"]
+        pub type Mr11W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr11W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr11W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr11W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -37996,14 +39218,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR12`"]
+        pub type Mr12W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr12W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr12W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr12W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 12;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38011,14 +39252,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR13`"]
+        pub type Mr13W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr13W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr13W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr13W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 13;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38026,14 +39286,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR14`"]
+        pub type Mr14W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr14W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr14W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr14W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38041,14 +39320,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR15`"]
+        pub type Mr15W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr15W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr15W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr15W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 15;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38056,14 +39354,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR16`"]
+        pub type Mr16W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr16W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr16W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr16W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38071,14 +39388,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR17`"]
+        pub type Mr17W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr17W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr17W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr17W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38086,14 +39422,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR18`"]
+        pub type Mr18W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr18W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr18W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr18W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 18;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38101,14 +39456,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR19`"]
+        pub type Mr19W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr19W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr19W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr19W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 19;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38116,14 +39490,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR20`"]
+        pub type Mr20W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr20W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr20W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr20W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 20;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38131,14 +39524,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR21`"]
+        pub type Mr21W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr21W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr21W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr21W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 21;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38146,14 +39558,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR22`"]
+        pub type Mr22W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr22W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr22W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr22W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 22;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38161,14 +39592,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR23`"]
+        pub type Mr23W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr23W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr23W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr23W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 23;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38176,14 +39626,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR24`"]
+        pub type Mr24W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr24W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr24W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr24W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 24;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38191,14 +39660,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR25`"]
+        pub type Mr25W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr25W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr25W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr25W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 25;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38206,14 +39694,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR26`"]
+        pub type Mr26W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr26W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr26W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr26W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 26;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38221,14 +39728,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR27`"]
+        pub type Mr27W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr27W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr27W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr27W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 27;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -38245,282 +39771,254 @@ pub mod exti {
             #[doc = "Bit 0 - Interrupt Mask on line 0"]
             #[inline ( always )]
             pub fn mr0(&self) -> Mr0R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr0R { bits }
+                Mr0R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 0;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 1 - Interrupt Mask on line 1"]
             #[inline ( always )]
             pub fn mr1(&self) -> Mr1R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr1R { bits }
+                Mr1R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 1;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 2 - Interrupt Mask on line 2"]
             #[inline ( always )]
             pub fn mr2(&self) -> Mr2R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 2;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr2R { bits }
+                Mr2R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 2;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 3 - Interrupt Mask on line 3"]
             #[inline ( always )]
             pub fn mr3(&self) -> Mr3R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 3;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr3R { bits }
+                Mr3R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 3;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 4 - Interrupt Mask on line 4"]
             #[inline ( always )]
             pub fn mr4(&self) -> Mr4R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 4;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr4R { bits }
+                Mr4R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 4;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 5 - Interrupt Mask on line 5"]
             #[inline ( always )]
             pub fn mr5(&self) -> Mr5R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 5;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr5R { bits }
+                Mr5R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 5;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 6 - Interrupt Mask on line 6"]
             #[inline ( always )]
             pub fn mr6(&self) -> Mr6R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 6;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr6R { bits }
+                Mr6R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 6;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 7 - Interrupt Mask on line 7"]
             #[inline ( always )]
             pub fn mr7(&self) -> Mr7R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 7;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr7R { bits }
+                Mr7R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 7;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 8 - Interrupt Mask on line 8"]
             #[inline ( always )]
             pub fn mr8(&self) -> Mr8R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 8;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr8R { bits }
+                Mr8R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 8;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 9 - Interrupt Mask on line 9"]
             #[inline ( always )]
             pub fn mr9(&self) -> Mr9R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 9;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr9R { bits }
+                Mr9R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 9;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 10 - Interrupt Mask on line 10"]
             #[inline ( always )]
             pub fn mr10(&self) -> Mr10R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 10;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr10R { bits }
+                Mr10R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 10;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 11 - Interrupt Mask on line 11"]
             #[inline ( always )]
             pub fn mr11(&self) -> Mr11R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr11R { bits }
+                Mr11R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 11;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 12 - Interrupt Mask on line 12"]
             #[inline ( always )]
             pub fn mr12(&self) -> Mr12R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 12;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr12R { bits }
+                Mr12R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 12;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 13 - Interrupt Mask on line 13"]
             #[inline ( always )]
             pub fn mr13(&self) -> Mr13R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 13;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr13R { bits }
+                Mr13R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 13;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 14 - Interrupt Mask on line 14"]
             #[inline ( always )]
             pub fn mr14(&self) -> Mr14R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr14R { bits }
+                Mr14R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 14;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 15 - Interrupt Mask on line 15"]
             #[inline ( always )]
             pub fn mr15(&self) -> Mr15R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 15;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr15R { bits }
+                Mr15R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 15;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 16 - Interrupt Mask on line 16"]
             #[inline ( always )]
             pub fn mr16(&self) -> Mr16R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr16R { bits }
+                Mr16R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 16;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 17 - Interrupt Mask on line 17"]
             #[inline ( always )]
             pub fn mr17(&self) -> Mr17R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr17R { bits }
+                Mr17R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 17;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 18 - Interrupt Mask on line 18"]
             #[inline ( always )]
             pub fn mr18(&self) -> Mr18R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 18;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr18R { bits }
+                Mr18R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 18;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 19 - Interrupt Mask on line 19"]
             #[inline ( always )]
             pub fn mr19(&self) -> Mr19R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 19;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr19R { bits }
+                Mr19R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 19;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 20 - Interrupt Mask on line 20"]
             #[inline ( always )]
             pub fn mr20(&self) -> Mr20R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 20;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr20R { bits }
+                Mr20R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 20;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 21 - Interrupt Mask on line 21"]
             #[inline ( always )]
             pub fn mr21(&self) -> Mr21R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 21;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr21R { bits }
+                Mr21R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 21;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 22 - Interrupt Mask on line 22"]
             #[inline ( always )]
             pub fn mr22(&self) -> Mr22R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 22;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr22R { bits }
+                Mr22R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 22;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 23 - Interrupt Mask on line 23"]
             #[inline ( always )]
             pub fn mr23(&self) -> Mr23R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 23;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr23R { bits }
+                Mr23R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 23;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 24 - Interrupt Mask on line 24"]
             #[inline ( always )]
             pub fn mr24(&self) -> Mr24R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 24;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr24R { bits }
+                Mr24R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 24;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 25 - Interrupt Mask on line 25"]
             #[inline ( always )]
             pub fn mr25(&self) -> Mr25R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 25;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr25R { bits }
+                Mr25R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 25;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 26 - Interrupt Mask on line 26"]
             #[inline ( always )]
             pub fn mr26(&self) -> Mr26R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 26;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr26R { bits }
+                Mr26R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 26;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 27 - Interrupt Mask on line 27"]
             #[inline ( always )]
             pub fn mr27(&self) -> Mr27R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 27;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr27R { bits }
+                Mr27R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 27;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
         }
         impl W {
@@ -38718,312 +40216,114 @@ pub mod exti {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Mr0R {
-            bits: u8,
+        #[doc = "Possible values of the field `MR0`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Mr0R {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Mr0R {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Mr0R::Disabled => 0,
+                    Mr0R::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Mr0R {
+                match bits {
+                    0 => Mr0R::Disabled,
+                    1 => Mr0R::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Mr0R::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Mr0R::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Mr1R {
-            bits: u8,
+        #[doc = "Possible values of the field `MR1`"]
+        pub type Mr1R = Mr0R;
+        #[doc = "Possible values of the field `MR2`"]
+        pub type Mr2R = Mr0R;
+        #[doc = "Possible values of the field `MR3`"]
+        pub type Mr3R = Mr0R;
+        #[doc = "Possible values of the field `MR4`"]
+        pub type Mr4R = Mr0R;
+        #[doc = "Possible values of the field `MR5`"]
+        pub type Mr5R = Mr0R;
+        #[doc = "Possible values of the field `MR6`"]
+        pub type Mr6R = Mr0R;
+        #[doc = "Possible values of the field `MR7`"]
+        pub type Mr7R = Mr0R;
+        #[doc = "Possible values of the field `MR8`"]
+        pub type Mr8R = Mr0R;
+        #[doc = "Possible values of the field `MR9`"]
+        pub type Mr9R = Mr0R;
+        #[doc = "Possible values of the field `MR10`"]
+        pub type Mr10R = Mr0R;
+        #[doc = "Possible values of the field `MR11`"]
+        pub type Mr11R = Mr0R;
+        #[doc = "Possible values of the field `MR12`"]
+        pub type Mr12R = Mr0R;
+        #[doc = "Possible values of the field `MR13`"]
+        pub type Mr13R = Mr0R;
+        #[doc = "Possible values of the field `MR14`"]
+        pub type Mr14R = Mr0R;
+        #[doc = "Possible values of the field `MR15`"]
+        pub type Mr15R = Mr0R;
+        #[doc = "Possible values of the field `MR16`"]
+        pub type Mr16R = Mr0R;
+        #[doc = "Possible values of the field `MR17`"]
+        pub type Mr17R = Mr0R;
+        #[doc = "Possible values of the field `MR18`"]
+        pub type Mr18R = Mr0R;
+        #[doc = "Possible values of the field `MR19`"]
+        pub type Mr19R = Mr0R;
+        #[doc = "Possible values of the field `MR20`"]
+        pub type Mr20R = Mr0R;
+        #[doc = "Possible values of the field `MR21`"]
+        pub type Mr21R = Mr0R;
+        #[doc = "Possible values of the field `MR22`"]
+        pub type Mr22R = Mr0R;
+        #[doc = "Possible values of the field `MR23`"]
+        pub type Mr23R = Mr0R;
+        #[doc = "Possible values of the field `MR24`"]
+        pub type Mr24R = Mr0R;
+        #[doc = "Possible values of the field `MR25`"]
+        pub type Mr25R = Mr0R;
+        #[doc = "Possible values of the field `MR26`"]
+        pub type Mr26R = Mr0R;
+        #[doc = "Possible values of the field `MR27`"]
+        pub type Mr27R = Mr0R;
+        #[doc = "Values that can be written to the field `MR0`"]
+        pub enum Mr0W {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
-        impl Mr1R {
-            #[doc = r" Value of the field as raw bits"]
+        impl Mr0W {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
             #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr2R {
-            bits: u8,
-        }
-        impl Mr2R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr3R {
-            bits: u8,
-        }
-        impl Mr3R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr4R {
-            bits: u8,
-        }
-        impl Mr4R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr5R {
-            bits: u8,
-        }
-        impl Mr5R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr6R {
-            bits: u8,
-        }
-        impl Mr6R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr7R {
-            bits: u8,
-        }
-        impl Mr7R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr8R {
-            bits: u8,
-        }
-        impl Mr8R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr9R {
-            bits: u8,
-        }
-        impl Mr9R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr10R {
-            bits: u8,
-        }
-        impl Mr10R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr11R {
-            bits: u8,
-        }
-        impl Mr11R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr12R {
-            bits: u8,
-        }
-        impl Mr12R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr13R {
-            bits: u8,
-        }
-        impl Mr13R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr14R {
-            bits: u8,
-        }
-        impl Mr14R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr15R {
-            bits: u8,
-        }
-        impl Mr15R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr16R {
-            bits: u8,
-        }
-        impl Mr16R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr17R {
-            bits: u8,
-        }
-        impl Mr17R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr18R {
-            bits: u8,
-        }
-        impl Mr18R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr19R {
-            bits: u8,
-        }
-        impl Mr19R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr20R {
-            bits: u8,
-        }
-        impl Mr20R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr21R {
-            bits: u8,
-        }
-        impl Mr21R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr22R {
-            bits: u8,
-        }
-        impl Mr22R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr23R {
-            bits: u8,
-        }
-        impl Mr23R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr24R {
-            bits: u8,
-        }
-        impl Mr24R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr25R {
-            bits: u8,
-        }
-        impl Mr25R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr26R {
-            bits: u8,
-        }
-        impl Mr26R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Mr27R {
-            bits: u8,
-        }
-        impl Mr27R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Mr0W::Disabled => 0,
+                    Mr0W::Enabled => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -39031,9 +40331,26 @@ pub mod exti {
             w: &'a mut W,
         }
         impl<'a> _Mr0W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr0W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39041,14 +40358,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR1`"]
+        pub type Mr1W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr1W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr1W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr1W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39056,14 +40392,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR2`"]
+        pub type Mr2W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr2W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr2W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr2W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 2;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39071,14 +40426,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR3`"]
+        pub type Mr3W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr3W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr3W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr3W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 3;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39086,14 +40460,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR4`"]
+        pub type Mr4W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr4W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr4W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr4W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 4;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39101,14 +40494,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR5`"]
+        pub type Mr5W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr5W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr5W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr5W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 5;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39116,14 +40528,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR6`"]
+        pub type Mr6W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr6W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr6W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr6W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 6;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39131,14 +40562,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR7`"]
+        pub type Mr7W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr7W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr7W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr7W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 7;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39146,14 +40596,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR8`"]
+        pub type Mr8W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr8W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr8W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr8W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 8;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39161,14 +40630,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR9`"]
+        pub type Mr9W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr9W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr9W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr9W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 9;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39176,14 +40664,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR10`"]
+        pub type Mr10W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr10W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr10W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr10W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 10;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39191,14 +40698,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR11`"]
+        pub type Mr11W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr11W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr11W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr11W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39206,14 +40732,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR12`"]
+        pub type Mr12W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr12W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr12W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr12W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 12;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39221,14 +40766,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR13`"]
+        pub type Mr13W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr13W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr13W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr13W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 13;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39236,14 +40800,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR14`"]
+        pub type Mr14W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr14W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr14W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr14W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39251,14 +40834,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR15`"]
+        pub type Mr15W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr15W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr15W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr15W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 15;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39266,14 +40868,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR16`"]
+        pub type Mr16W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr16W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr16W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr16W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39281,14 +40902,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR17`"]
+        pub type Mr17W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr17W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr17W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr17W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39296,14 +40936,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR18`"]
+        pub type Mr18W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr18W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr18W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr18W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 18;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39311,14 +40970,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR19`"]
+        pub type Mr19W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr19W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr19W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr19W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 19;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39326,14 +41004,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR20`"]
+        pub type Mr20W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr20W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr20W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr20W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 20;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39341,14 +41038,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR21`"]
+        pub type Mr21W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr21W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr21W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr21W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 21;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39356,14 +41072,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR22`"]
+        pub type Mr22W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr22W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr22W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr22W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 22;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39371,14 +41106,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR23`"]
+        pub type Mr23W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr23W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr23W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr23W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 23;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39386,14 +41140,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR24`"]
+        pub type Mr24W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr24W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr24W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr24W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 24;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39401,14 +41174,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR25`"]
+        pub type Mr25W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr25W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr25W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr25W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 25;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39416,14 +41208,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR26`"]
+        pub type Mr26W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr26W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr26W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr26W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 26;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39431,14 +41242,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `MR27`"]
+        pub type Mr27W = Mr0W;
         #[doc = r" Proxy"]
         pub struct _Mr27W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Mr27W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Mr27W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Mr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Mr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 27;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -39455,282 +41285,254 @@ pub mod exti {
             #[doc = "Bit 0 - Event Mask on line 0"]
             #[inline ( always )]
             pub fn mr0(&self) -> Mr0R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr0R { bits }
+                Mr0R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 0;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 1 - Event Mask on line 1"]
             #[inline ( always )]
             pub fn mr1(&self) -> Mr1R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr1R { bits }
+                Mr1R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 1;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 2 - Event Mask on line 2"]
             #[inline ( always )]
             pub fn mr2(&self) -> Mr2R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 2;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr2R { bits }
+                Mr2R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 2;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 3 - Event Mask on line 3"]
             #[inline ( always )]
             pub fn mr3(&self) -> Mr3R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 3;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr3R { bits }
+                Mr3R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 3;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 4 - Event Mask on line 4"]
             #[inline ( always )]
             pub fn mr4(&self) -> Mr4R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 4;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr4R { bits }
+                Mr4R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 4;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 5 - Event Mask on line 5"]
             #[inline ( always )]
             pub fn mr5(&self) -> Mr5R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 5;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr5R { bits }
+                Mr5R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 5;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 6 - Event Mask on line 6"]
             #[inline ( always )]
             pub fn mr6(&self) -> Mr6R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 6;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr6R { bits }
+                Mr6R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 6;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 7 - Event Mask on line 7"]
             #[inline ( always )]
             pub fn mr7(&self) -> Mr7R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 7;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr7R { bits }
+                Mr7R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 7;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 8 - Event Mask on line 8"]
             #[inline ( always )]
             pub fn mr8(&self) -> Mr8R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 8;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr8R { bits }
+                Mr8R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 8;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 9 - Event Mask on line 9"]
             #[inline ( always )]
             pub fn mr9(&self) -> Mr9R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 9;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr9R { bits }
+                Mr9R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 9;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 10 - Event Mask on line 10"]
             #[inline ( always )]
             pub fn mr10(&self) -> Mr10R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 10;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr10R { bits }
+                Mr10R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 10;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 11 - Event Mask on line 11"]
             #[inline ( always )]
             pub fn mr11(&self) -> Mr11R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr11R { bits }
+                Mr11R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 11;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 12 - Event Mask on line 12"]
             #[inline ( always )]
             pub fn mr12(&self) -> Mr12R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 12;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr12R { bits }
+                Mr12R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 12;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 13 - Event Mask on line 13"]
             #[inline ( always )]
             pub fn mr13(&self) -> Mr13R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 13;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr13R { bits }
+                Mr13R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 13;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 14 - Event Mask on line 14"]
             #[inline ( always )]
             pub fn mr14(&self) -> Mr14R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr14R { bits }
+                Mr14R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 14;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 15 - Event Mask on line 15"]
             #[inline ( always )]
             pub fn mr15(&self) -> Mr15R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 15;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr15R { bits }
+                Mr15R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 15;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 16 - Event Mask on line 16"]
             #[inline ( always )]
             pub fn mr16(&self) -> Mr16R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr16R { bits }
+                Mr16R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 16;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 17 - Event Mask on line 17"]
             #[inline ( always )]
             pub fn mr17(&self) -> Mr17R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr17R { bits }
+                Mr17R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 17;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 18 - Event Mask on line 18"]
             #[inline ( always )]
             pub fn mr18(&self) -> Mr18R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 18;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr18R { bits }
+                Mr18R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 18;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 19 - Event Mask on line 19"]
             #[inline ( always )]
             pub fn mr19(&self) -> Mr19R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 19;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr19R { bits }
+                Mr19R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 19;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 20 - Event Mask on line 20"]
             #[inline ( always )]
             pub fn mr20(&self) -> Mr20R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 20;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr20R { bits }
+                Mr20R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 20;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 21 - Event Mask on line 21"]
             #[inline ( always )]
             pub fn mr21(&self) -> Mr21R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 21;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr21R { bits }
+                Mr21R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 21;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 22 - Event Mask on line 22"]
             #[inline ( always )]
             pub fn mr22(&self) -> Mr22R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 22;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr22R { bits }
+                Mr22R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 22;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 23 - Event Mask on line 23"]
             #[inline ( always )]
             pub fn mr23(&self) -> Mr23R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 23;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr23R { bits }
+                Mr23R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 23;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 24 - Event Mask on line 24"]
             #[inline ( always )]
             pub fn mr24(&self) -> Mr24R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 24;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr24R { bits }
+                Mr24R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 24;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 25 - Event Mask on line 25"]
             #[inline ( always )]
             pub fn mr25(&self) -> Mr25R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 25;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr25R { bits }
+                Mr25R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 25;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 26 - Event Mask on line 26"]
             #[inline ( always )]
             pub fn mr26(&self) -> Mr26R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 26;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr26R { bits }
+                Mr26R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 26;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 27 - Event Mask on line 27"]
             #[inline ( always )]
             pub fn mr27(&self) -> Mr27R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 27;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Mr27R { bits }
+                Mr27R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 27;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
         }
         impl W {
@@ -39928,213 +41730,96 @@ pub mod exti {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tr0R {
-            bits: u8,
+        #[doc = "Possible values of the field `TR0`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tr0R {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Tr0R {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tr0R::Disabled => 0,
+                    Tr0R::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tr0R {
+                match bits {
+                    0 => Tr0R::Disabled,
+                    1 => Tr0R::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Tr0R::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Tr0R::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tr1R {
-            bits: u8,
+        #[doc = "Possible values of the field `TR1`"]
+        pub type Tr1R = Tr0R;
+        #[doc = "Possible values of the field `TR2`"]
+        pub type Tr2R = Tr0R;
+        #[doc = "Possible values of the field `TR3`"]
+        pub type Tr3R = Tr0R;
+        #[doc = "Possible values of the field `TR4`"]
+        pub type Tr4R = Tr0R;
+        #[doc = "Possible values of the field `TR5`"]
+        pub type Tr5R = Tr0R;
+        #[doc = "Possible values of the field `TR6`"]
+        pub type Tr6R = Tr0R;
+        #[doc = "Possible values of the field `TR7`"]
+        pub type Tr7R = Tr0R;
+        #[doc = "Possible values of the field `TR8`"]
+        pub type Tr8R = Tr0R;
+        #[doc = "Possible values of the field `TR9`"]
+        pub type Tr9R = Tr0R;
+        #[doc = "Possible values of the field `TR10`"]
+        pub type Tr10R = Tr0R;
+        #[doc = "Possible values of the field `TR11`"]
+        pub type Tr11R = Tr0R;
+        #[doc = "Possible values of the field `TR12`"]
+        pub type Tr12R = Tr0R;
+        #[doc = "Possible values of the field `TR13`"]
+        pub type Tr13R = Tr0R;
+        #[doc = "Possible values of the field `TR14`"]
+        pub type Tr14R = Tr0R;
+        #[doc = "Possible values of the field `TR15`"]
+        pub type Tr15R = Tr0R;
+        #[doc = "Possible values of the field `TR16`"]
+        pub type Tr16R = Tr0R;
+        #[doc = "Possible values of the field `TR17`"]
+        pub type Tr17R = Tr0R;
+        #[doc = "Possible values of the field `TR19`"]
+        pub type Tr19R = Tr0R;
+        #[doc = "Values that can be written to the field `TR0`"]
+        pub enum Tr0W {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
-        impl Tr1R {
-            #[doc = r" Value of the field as raw bits"]
+        impl Tr0W {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
             #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr2R {
-            bits: u8,
-        }
-        impl Tr2R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr3R {
-            bits: u8,
-        }
-        impl Tr3R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr4R {
-            bits: u8,
-        }
-        impl Tr4R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr5R {
-            bits: u8,
-        }
-        impl Tr5R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr6R {
-            bits: u8,
-        }
-        impl Tr6R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr7R {
-            bits: u8,
-        }
-        impl Tr7R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr8R {
-            bits: u8,
-        }
-        impl Tr8R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr9R {
-            bits: u8,
-        }
-        impl Tr9R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr10R {
-            bits: u8,
-        }
-        impl Tr10R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr11R {
-            bits: u8,
-        }
-        impl Tr11R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr12R {
-            bits: u8,
-        }
-        impl Tr12R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr13R {
-            bits: u8,
-        }
-        impl Tr13R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr14R {
-            bits: u8,
-        }
-        impl Tr14R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr15R {
-            bits: u8,
-        }
-        impl Tr15R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr16R {
-            bits: u8,
-        }
-        impl Tr16R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr17R {
-            bits: u8,
-        }
-        impl Tr17R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr19R {
-            bits: u8,
-        }
-        impl Tr19R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tr0W::Disabled => 0,
+                    Tr0W::Enabled => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -40142,9 +41827,26 @@ pub mod exti {
             w: &'a mut W,
         }
         impl<'a> _Tr0W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr0W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40152,14 +41854,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR1`"]
+        pub type Tr1W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr1W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr1W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr1W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40167,14 +41888,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR2`"]
+        pub type Tr2W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr2W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr2W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr2W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 2;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40182,14 +41922,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR3`"]
+        pub type Tr3W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr3W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr3W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr3W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 3;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40197,14 +41956,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR4`"]
+        pub type Tr4W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr4W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr4W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr4W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 4;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40212,14 +41990,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR5`"]
+        pub type Tr5W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr5W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr5W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr5W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 5;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40227,14 +42024,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR6`"]
+        pub type Tr6W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr6W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr6W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr6W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 6;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40242,14 +42058,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR7`"]
+        pub type Tr7W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr7W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr7W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr7W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 7;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40257,14 +42092,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR8`"]
+        pub type Tr8W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr8W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr8W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr8W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 8;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40272,14 +42126,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR9`"]
+        pub type Tr9W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr9W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr9W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr9W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 9;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40287,14 +42160,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR10`"]
+        pub type Tr10W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr10W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr10W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr10W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 10;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40302,14 +42194,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR11`"]
+        pub type Tr11W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr11W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr11W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr11W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40317,14 +42228,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR12`"]
+        pub type Tr12W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr12W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr12W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr12W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 12;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40332,14 +42262,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR13`"]
+        pub type Tr13W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr13W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr13W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr13W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 13;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40347,14 +42296,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR14`"]
+        pub type Tr14W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr14W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr14W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr14W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40362,14 +42330,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR15`"]
+        pub type Tr15W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr15W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr15W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr15W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 15;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40377,14 +42364,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR16`"]
+        pub type Tr16W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr16W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr16W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr16W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40392,14 +42398,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR17`"]
+        pub type Tr17W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr17W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr17W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr17W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40407,14 +42432,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR19`"]
+        pub type Tr19W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr19W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr19W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr19W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 19;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40431,192 +42475,173 @@ pub mod exti {
             #[doc = "Bit 0 - Rising trigger event configuration of line 0"]
             #[inline ( always )]
             pub fn tr0(&self) -> Tr0R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr0R { bits }
+                Tr0R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 0;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 1 - Rising trigger event configuration of line 1"]
             #[inline ( always )]
             pub fn tr1(&self) -> Tr1R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr1R { bits }
+                Tr1R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 1;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 2 - Rising trigger event configuration of line 2"]
             #[inline ( always )]
             pub fn tr2(&self) -> Tr2R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 2;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr2R { bits }
+                Tr2R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 2;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 3 - Rising trigger event configuration of line 3"]
             #[inline ( always )]
             pub fn tr3(&self) -> Tr3R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 3;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr3R { bits }
+                Tr3R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 3;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 4 - Rising trigger event configuration of line 4"]
             #[inline ( always )]
             pub fn tr4(&self) -> Tr4R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 4;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr4R { bits }
+                Tr4R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 4;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 5 - Rising trigger event configuration of line 5"]
             #[inline ( always )]
             pub fn tr5(&self) -> Tr5R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 5;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr5R { bits }
+                Tr5R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 5;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 6 - Rising trigger event configuration of line 6"]
             #[inline ( always )]
             pub fn tr6(&self) -> Tr6R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 6;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr6R { bits }
+                Tr6R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 6;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 7 - Rising trigger event configuration of line 7"]
             #[inline ( always )]
             pub fn tr7(&self) -> Tr7R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 7;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr7R { bits }
+                Tr7R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 7;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 8 - Rising trigger event configuration of line 8"]
             #[inline ( always )]
             pub fn tr8(&self) -> Tr8R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 8;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr8R { bits }
+                Tr8R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 8;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 9 - Rising trigger event configuration of line 9"]
             #[inline ( always )]
             pub fn tr9(&self) -> Tr9R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 9;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr9R { bits }
+                Tr9R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 9;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 10 - Rising trigger event configuration of line 10"]
             #[inline ( always )]
             pub fn tr10(&self) -> Tr10R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 10;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr10R { bits }
+                Tr10R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 10;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 11 - Rising trigger event configuration of line 11"]
             #[inline ( always )]
             pub fn tr11(&self) -> Tr11R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr11R { bits }
+                Tr11R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 11;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 12 - Rising trigger event configuration of line 12"]
             #[inline ( always )]
             pub fn tr12(&self) -> Tr12R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 12;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr12R { bits }
+                Tr12R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 12;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 13 - Rising trigger event configuration of line 13"]
             #[inline ( always )]
             pub fn tr13(&self) -> Tr13R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 13;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr13R { bits }
+                Tr13R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 13;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 14 - Rising trigger event configuration of line 14"]
             #[inline ( always )]
             pub fn tr14(&self) -> Tr14R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr14R { bits }
+                Tr14R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 14;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 15 - Rising trigger event configuration of line 15"]
             #[inline ( always )]
             pub fn tr15(&self) -> Tr15R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 15;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr15R { bits }
+                Tr15R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 15;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 16 - Rising trigger event configuration of line 16"]
             #[inline ( always )]
             pub fn tr16(&self) -> Tr16R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr16R { bits }
+                Tr16R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 16;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 17 - Rising trigger event configuration of line 17"]
             #[inline ( always )]
             pub fn tr17(&self) -> Tr17R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr17R { bits }
+                Tr17R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 17;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 19 - Rising trigger event configuration of line 19"]
             #[inline ( always )]
             pub fn tr19(&self) -> Tr19R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 19;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr19R { bits }
+                Tr19R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 19;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
         }
         impl W {
@@ -40769,213 +42794,96 @@ pub mod exti {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tr0R {
-            bits: u8,
+        #[doc = "Possible values of the field `TR0`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tr0R {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Tr0R {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tr0R::Disabled => 0,
+                    Tr0R::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tr0R {
+                match bits {
+                    0 => Tr0R::Disabled,
+                    1 => Tr0R::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Tr0R::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Tr0R::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tr1R {
-            bits: u8,
+        #[doc = "Possible values of the field `TR1`"]
+        pub type Tr1R = Tr0R;
+        #[doc = "Possible values of the field `TR2`"]
+        pub type Tr2R = Tr0R;
+        #[doc = "Possible values of the field `TR3`"]
+        pub type Tr3R = Tr0R;
+        #[doc = "Possible values of the field `TR4`"]
+        pub type Tr4R = Tr0R;
+        #[doc = "Possible values of the field `TR5`"]
+        pub type Tr5R = Tr0R;
+        #[doc = "Possible values of the field `TR6`"]
+        pub type Tr6R = Tr0R;
+        #[doc = "Possible values of the field `TR7`"]
+        pub type Tr7R = Tr0R;
+        #[doc = "Possible values of the field `TR8`"]
+        pub type Tr8R = Tr0R;
+        #[doc = "Possible values of the field `TR9`"]
+        pub type Tr9R = Tr0R;
+        #[doc = "Possible values of the field `TR10`"]
+        pub type Tr10R = Tr0R;
+        #[doc = "Possible values of the field `TR11`"]
+        pub type Tr11R = Tr0R;
+        #[doc = "Possible values of the field `TR12`"]
+        pub type Tr12R = Tr0R;
+        #[doc = "Possible values of the field `TR13`"]
+        pub type Tr13R = Tr0R;
+        #[doc = "Possible values of the field `TR14`"]
+        pub type Tr14R = Tr0R;
+        #[doc = "Possible values of the field `TR15`"]
+        pub type Tr15R = Tr0R;
+        #[doc = "Possible values of the field `TR16`"]
+        pub type Tr16R = Tr0R;
+        #[doc = "Possible values of the field `TR17`"]
+        pub type Tr17R = Tr0R;
+        #[doc = "Possible values of the field `TR19`"]
+        pub type Tr19R = Tr0R;
+        #[doc = "Values that can be written to the field `TR0`"]
+        pub enum Tr0W {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
-        impl Tr1R {
-            #[doc = r" Value of the field as raw bits"]
+        impl Tr0W {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
             #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr2R {
-            bits: u8,
-        }
-        impl Tr2R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr3R {
-            bits: u8,
-        }
-        impl Tr3R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr4R {
-            bits: u8,
-        }
-        impl Tr4R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr5R {
-            bits: u8,
-        }
-        impl Tr5R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr6R {
-            bits: u8,
-        }
-        impl Tr6R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr7R {
-            bits: u8,
-        }
-        impl Tr7R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr8R {
-            bits: u8,
-        }
-        impl Tr8R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr9R {
-            bits: u8,
-        }
-        impl Tr9R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr10R {
-            bits: u8,
-        }
-        impl Tr10R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr11R {
-            bits: u8,
-        }
-        impl Tr11R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr12R {
-            bits: u8,
-        }
-        impl Tr12R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr13R {
-            bits: u8,
-        }
-        impl Tr13R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr14R {
-            bits: u8,
-        }
-        impl Tr14R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr15R {
-            bits: u8,
-        }
-        impl Tr15R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr16R {
-            bits: u8,
-        }
-        impl Tr16R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr17R {
-            bits: u8,
-        }
-        impl Tr17R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Tr19R {
-            bits: u8,
-        }
-        impl Tr19R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tr0W::Disabled => 0,
+                    Tr0W::Enabled => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -40983,9 +42891,26 @@ pub mod exti {
             w: &'a mut W,
         }
         impl<'a> _Tr0W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr0W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40993,14 +42918,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR1`"]
+        pub type Tr1W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr1W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr1W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr1W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41008,14 +42952,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR2`"]
+        pub type Tr2W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr2W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr2W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr2W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 2;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41023,14 +42986,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR3`"]
+        pub type Tr3W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr3W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr3W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr3W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 3;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41038,14 +43020,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR4`"]
+        pub type Tr4W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr4W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr4W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr4W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 4;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41053,14 +43054,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR5`"]
+        pub type Tr5W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr5W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr5W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr5W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 5;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41068,14 +43088,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR6`"]
+        pub type Tr6W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr6W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr6W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr6W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 6;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41083,14 +43122,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR7`"]
+        pub type Tr7W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr7W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr7W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr7W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 7;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41098,14 +43156,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR8`"]
+        pub type Tr8W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr8W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr8W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr8W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 8;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41113,14 +43190,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR9`"]
+        pub type Tr9W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr9W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr9W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr9W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 9;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41128,14 +43224,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR10`"]
+        pub type Tr10W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr10W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr10W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr10W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 10;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41143,14 +43258,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR11`"]
+        pub type Tr11W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr11W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr11W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr11W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41158,14 +43292,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR12`"]
+        pub type Tr12W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr12W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr12W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr12W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 12;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41173,14 +43326,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR13`"]
+        pub type Tr13W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr13W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr13W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr13W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 13;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41188,14 +43360,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR14`"]
+        pub type Tr14W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr14W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr14W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr14W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41203,14 +43394,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR15`"]
+        pub type Tr15W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr15W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr15W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr15W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 15;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41218,14 +43428,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR16`"]
+        pub type Tr16W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr16W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr16W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr16W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41233,14 +43462,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR17`"]
+        pub type Tr17W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr17W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr17W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr17W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41248,14 +43496,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TR19`"]
+        pub type Tr19W = Tr0W;
         #[doc = r" Proxy"]
         pub struct _Tr19W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tr19W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tr19W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tr0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tr0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 19;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41272,192 +43539,173 @@ pub mod exti {
             #[doc = "Bit 0 - Falling trigger event configuration of line 0"]
             #[inline ( always )]
             pub fn tr0(&self) -> Tr0R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr0R { bits }
+                Tr0R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 0;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 1 - Falling trigger event configuration of line 1"]
             #[inline ( always )]
             pub fn tr1(&self) -> Tr1R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr1R { bits }
+                Tr1R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 1;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 2 - Falling trigger event configuration of line 2"]
             #[inline ( always )]
             pub fn tr2(&self) -> Tr2R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 2;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr2R { bits }
+                Tr2R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 2;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 3 - Falling trigger event configuration of line 3"]
             #[inline ( always )]
             pub fn tr3(&self) -> Tr3R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 3;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr3R { bits }
+                Tr3R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 3;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 4 - Falling trigger event configuration of line 4"]
             #[inline ( always )]
             pub fn tr4(&self) -> Tr4R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 4;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr4R { bits }
+                Tr4R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 4;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 5 - Falling trigger event configuration of line 5"]
             #[inline ( always )]
             pub fn tr5(&self) -> Tr5R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 5;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr5R { bits }
+                Tr5R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 5;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 6 - Falling trigger event configuration of line 6"]
             #[inline ( always )]
             pub fn tr6(&self) -> Tr6R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 6;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr6R { bits }
+                Tr6R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 6;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 7 - Falling trigger event configuration of line 7"]
             #[inline ( always )]
             pub fn tr7(&self) -> Tr7R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 7;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr7R { bits }
+                Tr7R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 7;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 8 - Falling trigger event configuration of line 8"]
             #[inline ( always )]
             pub fn tr8(&self) -> Tr8R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 8;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr8R { bits }
+                Tr8R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 8;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 9 - Falling trigger event configuration of line 9"]
             #[inline ( always )]
             pub fn tr9(&self) -> Tr9R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 9;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr9R { bits }
+                Tr9R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 9;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 10 - Falling trigger event configuration of line 10"]
             #[inline ( always )]
             pub fn tr10(&self) -> Tr10R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 10;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr10R { bits }
+                Tr10R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 10;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 11 - Falling trigger event configuration of line 11"]
             #[inline ( always )]
             pub fn tr11(&self) -> Tr11R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr11R { bits }
+                Tr11R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 11;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 12 - Falling trigger event configuration of line 12"]
             #[inline ( always )]
             pub fn tr12(&self) -> Tr12R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 12;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr12R { bits }
+                Tr12R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 12;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 13 - Falling trigger event configuration of line 13"]
             #[inline ( always )]
             pub fn tr13(&self) -> Tr13R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 13;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr13R { bits }
+                Tr13R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 13;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 14 - Falling trigger event configuration of line 14"]
             #[inline ( always )]
             pub fn tr14(&self) -> Tr14R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr14R { bits }
+                Tr14R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 14;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 15 - Falling trigger event configuration of line 15"]
             #[inline ( always )]
             pub fn tr15(&self) -> Tr15R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 15;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr15R { bits }
+                Tr15R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 15;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 16 - Falling trigger event configuration of line 16"]
             #[inline ( always )]
             pub fn tr16(&self) -> Tr16R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr16R { bits }
+                Tr16R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 16;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 17 - Falling trigger event configuration of line 17"]
             #[inline ( always )]
             pub fn tr17(&self) -> Tr17R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr17R { bits }
+                Tr17R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 17;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 19 - Falling trigger event configuration of line 19"]
             #[inline ( always )]
             pub fn tr19(&self) -> Tr19R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 19;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tr19R { bits }
+                Tr19R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 19;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
         }
         impl W {
@@ -41610,213 +43858,96 @@ pub mod exti {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Swier0R {
-            bits: u8,
+        #[doc = "Possible values of the field `SWIER0`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Swier0R {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Swier0R {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Swier0R::Disabled => 0,
+                    Swier0R::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Swier0R {
+                match bits {
+                    0 => Swier0R::Disabled,
+                    1 => Swier0R::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Swier0R::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Swier0R::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Swier1R {
-            bits: u8,
+        #[doc = "Possible values of the field `SWIER1`"]
+        pub type Swier1R = Swier0R;
+        #[doc = "Possible values of the field `SWIER2`"]
+        pub type Swier2R = Swier0R;
+        #[doc = "Possible values of the field `SWIER3`"]
+        pub type Swier3R = Swier0R;
+        #[doc = "Possible values of the field `SWIER4`"]
+        pub type Swier4R = Swier0R;
+        #[doc = "Possible values of the field `SWIER5`"]
+        pub type Swier5R = Swier0R;
+        #[doc = "Possible values of the field `SWIER6`"]
+        pub type Swier6R = Swier0R;
+        #[doc = "Possible values of the field `SWIER7`"]
+        pub type Swier7R = Swier0R;
+        #[doc = "Possible values of the field `SWIER8`"]
+        pub type Swier8R = Swier0R;
+        #[doc = "Possible values of the field `SWIER9`"]
+        pub type Swier9R = Swier0R;
+        #[doc = "Possible values of the field `SWIER10`"]
+        pub type Swier10R = Swier0R;
+        #[doc = "Possible values of the field `SWIER11`"]
+        pub type Swier11R = Swier0R;
+        #[doc = "Possible values of the field `SWIER12`"]
+        pub type Swier12R = Swier0R;
+        #[doc = "Possible values of the field `SWIER13`"]
+        pub type Swier13R = Swier0R;
+        #[doc = "Possible values of the field `SWIER14`"]
+        pub type Swier14R = Swier0R;
+        #[doc = "Possible values of the field `SWIER15`"]
+        pub type Swier15R = Swier0R;
+        #[doc = "Possible values of the field `SWIER16`"]
+        pub type Swier16R = Swier0R;
+        #[doc = "Possible values of the field `SWIER17`"]
+        pub type Swier17R = Swier0R;
+        #[doc = "Possible values of the field `SWIER19`"]
+        pub type Swier19R = Swier0R;
+        #[doc = "Values that can be written to the field `SWIER0`"]
+        pub enum Swier0W {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
-        impl Swier1R {
-            #[doc = r" Value of the field as raw bits"]
+        impl Swier0W {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
             #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier2R {
-            bits: u8,
-        }
-        impl Swier2R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier3R {
-            bits: u8,
-        }
-        impl Swier3R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier4R {
-            bits: u8,
-        }
-        impl Swier4R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier5R {
-            bits: u8,
-        }
-        impl Swier5R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier6R {
-            bits: u8,
-        }
-        impl Swier6R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier7R {
-            bits: u8,
-        }
-        impl Swier7R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier8R {
-            bits: u8,
-        }
-        impl Swier8R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier9R {
-            bits: u8,
-        }
-        impl Swier9R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier10R {
-            bits: u8,
-        }
-        impl Swier10R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier11R {
-            bits: u8,
-        }
-        impl Swier11R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier12R {
-            bits: u8,
-        }
-        impl Swier12R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier13R {
-            bits: u8,
-        }
-        impl Swier13R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier14R {
-            bits: u8,
-        }
-        impl Swier14R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier15R {
-            bits: u8,
-        }
-        impl Swier15R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier16R {
-            bits: u8,
-        }
-        impl Swier16R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier17R {
-            bits: u8,
-        }
-        impl Swier17R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Swier19R {
-            bits: u8,
-        }
-        impl Swier19R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Swier0W::Disabled => 0,
+                    Swier0W::Enabled => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -41824,9 +43955,26 @@ pub mod exti {
             w: &'a mut W,
         }
         impl<'a> _Swier0W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier0W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41834,14 +43982,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER1`"]
+        pub type Swier1W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier1W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier1W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier1W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41849,14 +44016,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER2`"]
+        pub type Swier2W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier2W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier2W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier2W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 2;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41864,14 +44050,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER3`"]
+        pub type Swier3W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier3W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier3W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier3W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 3;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41879,14 +44084,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER4`"]
+        pub type Swier4W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier4W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier4W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier4W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 4;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41894,14 +44118,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER5`"]
+        pub type Swier5W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier5W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier5W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier5W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 5;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41909,14 +44152,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER6`"]
+        pub type Swier6W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier6W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier6W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier6W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 6;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41924,14 +44186,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER7`"]
+        pub type Swier7W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier7W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier7W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier7W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 7;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41939,14 +44220,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER8`"]
+        pub type Swier8W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier8W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier8W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier8W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 8;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41954,14 +44254,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER9`"]
+        pub type Swier9W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier9W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier9W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier9W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 9;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41969,14 +44288,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER10`"]
+        pub type Swier10W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier10W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier10W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier10W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 10;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41984,14 +44322,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER11`"]
+        pub type Swier11W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier11W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier11W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier11W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -41999,14 +44356,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER12`"]
+        pub type Swier12W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier12W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier12W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier12W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 12;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42014,14 +44390,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER13`"]
+        pub type Swier13W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier13W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier13W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier13W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 13;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42029,14 +44424,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER14`"]
+        pub type Swier14W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier14W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier14W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier14W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42044,14 +44458,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER15`"]
+        pub type Swier15W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier15W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier15W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier15W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 15;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42059,14 +44492,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER16`"]
+        pub type Swier16W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier16W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier16W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier16W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42074,14 +44526,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER17`"]
+        pub type Swier17W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier17W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier17W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier17W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42089,14 +44560,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SWIER19`"]
+        pub type Swier19W = Swier0W;
         #[doc = r" Proxy"]
         pub struct _Swier19W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Swier19W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Swier19W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Swier0W::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Swier0W::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 19;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42113,192 +44603,173 @@ pub mod exti {
             #[doc = "Bit 0 - Software Interrupt on line 0"]
             #[inline ( always )]
             pub fn swier0(&self) -> Swier0R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier0R { bits }
+                Swier0R::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 0;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 1 - Software Interrupt on line 1"]
             #[inline ( always )]
             pub fn swier1(&self) -> Swier1R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier1R { bits }
+                Swier1R::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 1;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 2 - Software Interrupt on line 2"]
             #[inline ( always )]
             pub fn swier2(&self) -> Swier2R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 2;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier2R { bits }
+                Swier2R::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 2;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 3 - Software Interrupt on line 3"]
             #[inline ( always )]
             pub fn swier3(&self) -> Swier3R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 3;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier3R { bits }
+                Swier3R::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 3;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 4 - Software Interrupt on line 4"]
             #[inline ( always )]
             pub fn swier4(&self) -> Swier4R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 4;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier4R { bits }
+                Swier4R::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 4;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 5 - Software Interrupt on line 5"]
             #[inline ( always )]
             pub fn swier5(&self) -> Swier5R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 5;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier5R { bits }
+                Swier5R::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 5;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 6 - Software Interrupt on line 6"]
             #[inline ( always )]
             pub fn swier6(&self) -> Swier6R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 6;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier6R { bits }
+                Swier6R::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 6;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 7 - Software Interrupt on line 7"]
             #[inline ( always )]
             pub fn swier7(&self) -> Swier7R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 7;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier7R { bits }
+                Swier7R::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 7;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 8 - Software Interrupt on line 8"]
             #[inline ( always )]
             pub fn swier8(&self) -> Swier8R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 8;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier8R { bits }
+                Swier8R::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 8;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 9 - Software Interrupt on line 9"]
             #[inline ( always )]
             pub fn swier9(&self) -> Swier9R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 9;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier9R { bits }
+                Swier9R::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 9;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 10 - Software Interrupt on line 10"]
             #[inline ( always )]
             pub fn swier10(&self) -> Swier10R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 10;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier10R { bits }
+                Swier10R::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 10;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 11 - Software Interrupt on line 11"]
             #[inline ( always )]
             pub fn swier11(&self) -> Swier11R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier11R { bits }
+                Swier11R::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 11;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 12 - Software Interrupt on line 12"]
             #[inline ( always )]
             pub fn swier12(&self) -> Swier12R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 12;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier12R { bits }
+                Swier12R::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 12;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 13 - Software Interrupt on line 13"]
             #[inline ( always )]
             pub fn swier13(&self) -> Swier13R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 13;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier13R { bits }
+                Swier13R::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 13;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 14 - Software Interrupt on line 14"]
             #[inline ( always )]
             pub fn swier14(&self) -> Swier14R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier14R { bits }
+                Swier14R::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 14;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 15 - Software Interrupt on line 15"]
             #[inline ( always )]
             pub fn swier15(&self) -> Swier15R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 15;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier15R { bits }
+                Swier15R::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 15;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 16 - Software Interrupt on line 16"]
             #[inline ( always )]
             pub fn swier16(&self) -> Swier16R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier16R { bits }
+                Swier16R::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 16;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 17 - Software Interrupt on line 17"]
             #[inline ( always )]
             pub fn swier17(&self) -> Swier17R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier17R { bits }
+                Swier17R::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 17;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 19 - Software Interrupt on line 19"]
             #[inline ( always )]
             pub fn swier19(&self) -> Swier19R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 19;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Swier19R { bits }
+                Swier19R::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 19;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
         }
         impl W {
@@ -42451,213 +44922,96 @@ pub mod exti {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Pr0R {
-            bits: u8,
+        #[doc = "Possible values of the field `PR0`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Pr0R {
+            #[doc = "No interrupt is pending."]
+            NotPending,
+            #[doc = "An interrupt is pending."]
+            Pending,
         }
         impl Pr0R {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Pr0R::NotPending => 0,
+                    Pr0R::Pending => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Pr0R {
+                match bits {
+                    0 => Pr0R::NotPending,
+                    1 => Pr0R::Pending,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NotPending`"]
+            #[inline ( always )]
+            pub fn is_not_pending(&self) -> bool {
+                *self == Pr0R::NotPending
+            }
+            #[doc = "Checks if the value of the field is `Pending`"]
+            #[inline ( always )]
+            pub fn is_pending(&self) -> bool {
+                *self == Pr0R::Pending
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Pr1R {
-            bits: u8,
+        #[doc = "Possible values of the field `PR1`"]
+        pub type Pr1R = Pr0R;
+        #[doc = "Possible values of the field `PR2`"]
+        pub type Pr2R = Pr0R;
+        #[doc = "Possible values of the field `PR3`"]
+        pub type Pr3R = Pr0R;
+        #[doc = "Possible values of the field `PR4`"]
+        pub type Pr4R = Pr0R;
+        #[doc = "Possible values of the field `PR5`"]
+        pub type Pr5R = Pr0R;
+        #[doc = "Possible values of the field `PR6`"]
+        pub type Pr6R = Pr0R;
+        #[doc = "Possible values of the field `PR7`"]
+        pub type Pr7R = Pr0R;
+        #[doc = "Possible values of the field `PR8`"]
+        pub type Pr8R = Pr0R;
+        #[doc = "Possible values of the field `PR9`"]
+        pub type Pr9R = Pr0R;
+        #[doc = "Possible values of the field `PR10`"]
+        pub type Pr10R = Pr0R;
+        #[doc = "Possible values of the field `PR11`"]
+        pub type Pr11R = Pr0R;
+        #[doc = "Possible values of the field `PR12`"]
+        pub type Pr12R = Pr0R;
+        #[doc = "Possible values of the field `PR13`"]
+        pub type Pr13R = Pr0R;
+        #[doc = "Possible values of the field `PR14`"]
+        pub type Pr14R = Pr0R;
+        #[doc = "Possible values of the field `PR15`"]
+        pub type Pr15R = Pr0R;
+        #[doc = "Possible values of the field `PR16`"]
+        pub type Pr16R = Pr0R;
+        #[doc = "Possible values of the field `PR17`"]
+        pub type Pr17R = Pr0R;
+        #[doc = "Possible values of the field `PR19`"]
+        pub type Pr19R = Pr0R;
+        #[doc = "Values that can be written to the field `PR0`"]
+        pub enum Pr0W {
+            #[doc = "No interrupt is pending."]
+            NotPending,
+            #[doc = "An interrupt is pending."]
+            Pending,
         }
-        impl Pr1R {
-            #[doc = r" Value of the field as raw bits"]
+        impl Pr0W {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
             #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr2R {
-            bits: u8,
-        }
-        impl Pr2R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr3R {
-            bits: u8,
-        }
-        impl Pr3R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr4R {
-            bits: u8,
-        }
-        impl Pr4R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr5R {
-            bits: u8,
-        }
-        impl Pr5R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr6R {
-            bits: u8,
-        }
-        impl Pr6R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr7R {
-            bits: u8,
-        }
-        impl Pr7R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr8R {
-            bits: u8,
-        }
-        impl Pr8R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr9R {
-            bits: u8,
-        }
-        impl Pr9R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr10R {
-            bits: u8,
-        }
-        impl Pr10R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr11R {
-            bits: u8,
-        }
-        impl Pr11R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr12R {
-            bits: u8,
-        }
-        impl Pr12R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr13R {
-            bits: u8,
-        }
-        impl Pr13R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr14R {
-            bits: u8,
-        }
-        impl Pr14R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr15R {
-            bits: u8,
-        }
-        impl Pr15R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr16R {
-            bits: u8,
-        }
-        impl Pr16R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr17R {
-            bits: u8,
-        }
-        impl Pr17R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
-            }
-        }
-        #[doc = r" Value of the field"]
-        pub struct Pr19R {
-            bits: u8,
-        }
-        impl Pr19R {
-            #[doc = r" Value of the field as raw bits"]
-            #[inline ( always )]
-            pub fn bits(&self) -> u8 {
-                self.bits
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Pr0W::NotPending => 0,
+                    Pr0W::Pending => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -42665,9 +45019,26 @@ pub mod exti {
             w: &'a mut W,
         }
         impl<'a> _Pr0W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr0W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42675,14 +45046,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR1`"]
+        pub type Pr1W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr1W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr1W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr1W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42690,14 +45080,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR2`"]
+        pub type Pr2W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr2W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr2W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr2W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 2;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42705,14 +45114,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR3`"]
+        pub type Pr3W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr3W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr3W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr3W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 3;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42720,14 +45148,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR4`"]
+        pub type Pr4W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr4W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr4W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr4W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 4;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42735,14 +45182,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR5`"]
+        pub type Pr5W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr5W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr5W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr5W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 5;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42750,14 +45216,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR6`"]
+        pub type Pr6W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr6W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr6W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr6W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 6;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42765,14 +45250,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR7`"]
+        pub type Pr7W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr7W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr7W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr7W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 7;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42780,14 +45284,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR8`"]
+        pub type Pr8W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr8W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr8W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr8W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 8;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42795,14 +45318,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR9`"]
+        pub type Pr9W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr9W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr9W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr9W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 9;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42810,14 +45352,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR10`"]
+        pub type Pr10W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr10W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr10W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr10W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 10;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42825,14 +45386,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR11`"]
+        pub type Pr11W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr11W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr11W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr11W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42840,14 +45420,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR12`"]
+        pub type Pr12W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr12W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr12W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr12W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 12;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42855,14 +45454,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR13`"]
+        pub type Pr13W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr13W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr13W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr13W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 13;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42870,14 +45488,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR14`"]
+        pub type Pr14W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr14W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr14W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr14W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42885,14 +45522,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR15`"]
+        pub type Pr15W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr15W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr15W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr15W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 15;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42900,14 +45556,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR16`"]
+        pub type Pr16W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr16W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr16W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr16W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42915,14 +45590,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR17`"]
+        pub type Pr17W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr17W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr17W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr17W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42930,14 +45624,33 @@ pub mod exti {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PR19`"]
+        pub type Pr19W = Pr0W;
         #[doc = r" Proxy"]
         pub struct _Pr19W<'a> {
             w: &'a mut W,
         }
         impl<'a> _Pr19W<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Pr19W) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No interrupt is pending."]
+            #[inline ( always )]
+            pub fn not_pending(self) -> &'a mut W {
+                self.variant(Pr0W::NotPending)
+            }
+            #[doc = "An interrupt is pending."]
+            #[inline ( always )]
+            pub fn pending(self) -> &'a mut W {
+                self.variant(Pr0W::Pending)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 19;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -42954,192 +45667,173 @@ pub mod exti {
             #[doc = "Bit 0 - Pending bit 0"]
             #[inline ( always )]
             pub fn pr0(&self) -> Pr0R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr0R { bits }
+                Pr0R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 0;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 1 - Pending bit 1"]
             #[inline ( always )]
             pub fn pr1(&self) -> Pr1R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr1R { bits }
+                Pr1R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 1;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 2 - Pending bit 2"]
             #[inline ( always )]
             pub fn pr2(&self) -> Pr2R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 2;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr2R { bits }
+                Pr2R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 2;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 3 - Pending bit 3"]
             #[inline ( always )]
             pub fn pr3(&self) -> Pr3R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 3;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr3R { bits }
+                Pr3R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 3;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 4 - Pending bit 4"]
             #[inline ( always )]
             pub fn pr4(&self) -> Pr4R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 4;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr4R { bits }
+                Pr4R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 4;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 5 - Pending bit 5"]
             #[inline ( always )]
             pub fn pr5(&self) -> Pr5R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 5;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr5R { bits }
+                Pr5R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 5;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 6 - Pending bit 6"]
             #[inline ( always )]
             pub fn pr6(&self) -> Pr6R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 6;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr6R { bits }
+                Pr6R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 6;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 7 - Pending bit 7"]
             #[inline ( always )]
             pub fn pr7(&self) -> Pr7R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 7;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr7R { bits }
+                Pr7R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 7;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 8 - Pending bit 8"]
             #[inline ( always )]
             pub fn pr8(&self) -> Pr8R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 8;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr8R { bits }
+                Pr8R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 8;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 9 - Pending bit 9"]
             #[inline ( always )]
             pub fn pr9(&self) -> Pr9R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 9;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr9R { bits }
+                Pr9R::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 9;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
             #[doc = "Bit 10 - Pending bit 10"]
             #[inline ( always )]
             pub fn pr10(&self) -> Pr10R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 10;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr10R { bits }
+                Pr10R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 10;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 11 - Pending bit 11"]
             #[inline ( always )]
             pub fn pr11(&self) -> Pr11R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr11R { bits }
+                Pr11R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 11;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 12 - Pending bit 12"]
             #[inline ( always )]
             pub fn pr12(&self) -> Pr12R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 12;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr12R { bits }
+                Pr12R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 12;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 13 - Pending bit 13"]
             #[inline ( always )]
             pub fn pr13(&self) -> Pr13R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 13;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr13R { bits }
+                Pr13R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 13;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 14 - Pending bit 14"]
             #[inline ( always )]
             pub fn pr14(&self) -> Pr14R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr14R { bits }
+                Pr14R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 14;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 15 - Pending bit 15"]
             #[inline ( always )]
             pub fn pr15(&self) -> Pr15R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 15;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr15R { bits }
+                Pr15R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 15;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 16 - Pending bit 16"]
             #[inline ( always )]
             pub fn pr16(&self) -> Pr16R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr16R { bits }
+                Pr16R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 16;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 17 - Pending bit 17"]
             #[inline ( always )]
             pub fn pr17(&self) -> Pr17R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr17R { bits }
+                Pr17R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 17;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 19 - Pending bit 19"]
             #[inline ( always )]
             pub fn pr19(&self) -> Pr19R {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 19;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Pr19R { bits }
+                Pr19R::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 19;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
         }
         impl W {
@@ -52943,26 +55637,80 @@ pub mod rcc {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct HsionR {
-            bits: u8,
+        #[doc = "Possible values of the field `HSION`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum HsionR {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
         }
         impl HsionR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    HsionR::Off => 0,
+                    HsionR::On => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> HsionR {
+                match bits {
+                    0 => HsionR::Off,
+                    1 => HsionR::On,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Off`"]
+            #[inline ( always )]
+            pub fn is_off(&self) -> bool {
+                *self == HsionR::Off
+            }
+            #[doc = "Checks if the value of the field is `On`"]
+            #[inline ( always )]
+            pub fn is_on(&self) -> bool {
+                *self == HsionR::On
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct HsirdyR {
-            bits: u8,
+        #[doc = "Possible values of the field `HSIRDY`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum HsirdyR {
+            #[doc = "Not ready."]
+            NotReady,
+            #[doc = "ready."]
+            Ready,
         }
         impl HsirdyR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    HsirdyR::NotReady => 0,
+                    HsirdyR::Ready => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> HsirdyR {
+                match bits {
+                    0 => HsirdyR::NotReady,
+                    1 => HsirdyR::Ready,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NotReady`"]
+            #[inline ( always )]
+            pub fn is_not_ready(&self) -> bool {
+                *self == HsirdyR::NotReady
+            }
+            #[doc = "Checks if the value of the field is `Ready`"]
+            #[inline ( always )]
+            pub fn is_ready(&self) -> bool {
+                *self == HsirdyR::Ready
             }
         }
         #[doc = r" Value of the field"]
@@ -52987,70 +55735,250 @@ pub mod rcc {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct HseonR {
-            bits: u8,
+        #[doc = "Possible values of the field `HSEON`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum HseonR {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
         }
         impl HseonR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    HseonR::Off => 0,
+                    HseonR::On => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> HseonR {
+                match bits {
+                    0 => HseonR::Off,
+                    1 => HseonR::On,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Off`"]
+            #[inline ( always )]
+            pub fn is_off(&self) -> bool {
+                *self == HseonR::Off
+            }
+            #[doc = "Checks if the value of the field is `On`"]
+            #[inline ( always )]
+            pub fn is_on(&self) -> bool {
+                *self == HseonR::On
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct HserdyR {
-            bits: u8,
+        #[doc = "Possible values of the field `HSERDY`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum HserdyR {
+            #[doc = "Not ready."]
+            NotReady,
+            #[doc = "ready."]
+            Ready,
         }
         impl HserdyR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    HserdyR::NotReady => 0,
+                    HserdyR::Ready => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> HserdyR {
+                match bits {
+                    0 => HserdyR::NotReady,
+                    1 => HserdyR::Ready,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NotReady`"]
+            #[inline ( always )]
+            pub fn is_not_ready(&self) -> bool {
+                *self == HserdyR::NotReady
+            }
+            #[doc = "Checks if the value of the field is `Ready`"]
+            #[inline ( always )]
+            pub fn is_ready(&self) -> bool {
+                *self == HserdyR::Ready
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct HsebypR {
-            bits: u8,
+        #[doc = "Possible values of the field `HSEBYP`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum HsebypR {
+            #[doc = "Not bypassed."]
+            NotBypassed,
+            #[doc = "Bypassed."]
+            Bypassed,
         }
         impl HsebypR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    HsebypR::NotBypassed => 0,
+                    HsebypR::Bypassed => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> HsebypR {
+                match bits {
+                    0 => HsebypR::NotBypassed,
+                    1 => HsebypR::Bypassed,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NotBypassed`"]
+            #[inline ( always )]
+            pub fn is_not_bypassed(&self) -> bool {
+                *self == HsebypR::NotBypassed
+            }
+            #[doc = "Checks if the value of the field is `Bypassed`"]
+            #[inline ( always )]
+            pub fn is_bypassed(&self) -> bool {
+                *self == HsebypR::Bypassed
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CssonR {
-            bits: u8,
+        #[doc = "Possible values of the field `CSSON`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CssonR {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
         }
         impl CssonR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CssonR::Off => 0,
+                    CssonR::On => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CssonR {
+                match bits {
+                    0 => CssonR::Off,
+                    1 => CssonR::On,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Off`"]
+            #[inline ( always )]
+            pub fn is_off(&self) -> bool {
+                *self == CssonR::Off
+            }
+            #[doc = "Checks if the value of the field is `On`"]
+            #[inline ( always )]
+            pub fn is_on(&self) -> bool {
+                *self == CssonR::On
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct PllonR {
-            bits: u8,
+        #[doc = "Possible values of the field `PLLON`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum PllonR {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
         }
         impl PllonR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    PllonR::Off => 0,
+                    PllonR::On => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> PllonR {
+                match bits {
+                    0 => PllonR::Off,
+                    1 => PllonR::On,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Off`"]
+            #[inline ( always )]
+            pub fn is_off(&self) -> bool {
+                *self == PllonR::Off
+            }
+            #[doc = "Checks if the value of the field is `On`"]
+            #[inline ( always )]
+            pub fn is_on(&self) -> bool {
+                *self == PllonR::On
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct PllrdyR {
-            bits: u8,
+        #[doc = "Possible values of the field `PLLRDY`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum PllrdyR {
+            #[doc = "Not ready."]
+            NotReady,
+            #[doc = "ready."]
+            Ready,
         }
         impl PllrdyR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    PllrdyR::NotReady => 0,
+                    PllrdyR::Ready => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> PllrdyR {
+                match bits {
+                    0 => PllrdyR::NotReady,
+                    1 => PllrdyR::Ready,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NotReady`"]
+            #[inline ( always )]
+            pub fn is_not_ready(&self) -> bool {
+                *self == PllrdyR::NotReady
+            }
+            #[doc = "Checks if the value of the field is `Ready`"]
+            #[inline ( always )]
+            pub fn is_ready(&self) -> bool {
+                *self == PllrdyR::Ready
+            }
+        }
+        #[doc = "Values that can be written to the field `HSION`"]
+        pub enum HsionW {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
+        }
+        impl HsionW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    HsionW::Off => 0,
+                    HsionW::On => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -53058,9 +55986,26 @@ pub mod rcc {
             w: &'a mut W,
         }
         impl<'a> _HsionW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: HsionW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Off."]
+            #[inline ( always )]
+            pub fn off(self) -> &'a mut W {
+                self.variant(HsionW::Off)
+            }
+            #[doc = "On."]
+            #[inline ( always )]
+            pub fn on(self) -> &'a mut W {
+                self.variant(HsionW::On)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -53083,14 +56028,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `HSEON`"]
+        pub enum HseonW {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
+        }
+        impl HseonW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    HseonW::Off => 0,
+                    HseonW::On => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _HseonW<'a> {
             w: &'a mut W,
         }
         impl<'a> _HseonW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: HseonW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Off."]
+            #[inline ( always )]
+            pub fn off(self) -> &'a mut W {
+                self.variant(HseonW::Off)
+            }
+            #[doc = "On."]
+            #[inline ( always )]
+            pub fn on(self) -> &'a mut W {
+                self.variant(HseonW::On)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -53098,14 +56078,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `HSEBYP`"]
+        pub enum HsebypW {
+            #[doc = "Not bypassed."]
+            NotBypassed,
+            #[doc = "Bypassed."]
+            Bypassed,
+        }
+        impl HsebypW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    HsebypW::NotBypassed => 0,
+                    HsebypW::Bypassed => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _HsebypW<'a> {
             w: &'a mut W,
         }
         impl<'a> _HsebypW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: HsebypW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Not bypassed."]
+            #[inline ( always )]
+            pub fn not_bypassed(self) -> &'a mut W {
+                self.variant(HsebypW::NotBypassed)
+            }
+            #[doc = "Bypassed."]
+            #[inline ( always )]
+            pub fn bypassed(self) -> &'a mut W {
+                self.variant(HsebypW::Bypassed)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 18;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -53113,14 +56128,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CSSON`"]
+        pub enum CssonW {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
+        }
+        impl CssonW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CssonW::Off => 0,
+                    CssonW::On => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CssonW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CssonW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CssonW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Off."]
+            #[inline ( always )]
+            pub fn off(self) -> &'a mut W {
+                self.variant(CssonW::Off)
+            }
+            #[doc = "On."]
+            #[inline ( always )]
+            pub fn on(self) -> &'a mut W {
+                self.variant(CssonW::On)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 19;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -53128,14 +56178,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PLLON`"]
+        pub enum PllonW {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
+        }
+        impl PllonW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    PllonW::Off => 0,
+                    PllonW::On => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _PllonW<'a> {
             w: &'a mut W,
         }
         impl<'a> _PllonW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: PllonW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Off."]
+            #[inline ( always )]
+            pub fn off(self) -> &'a mut W {
+                self.variant(PllonW::Off)
+            }
+            #[doc = "On."]
+            #[inline ( always )]
+            pub fn on(self) -> &'a mut W {
+                self.variant(PllonW::On)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 24;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -53152,22 +56237,20 @@ pub mod rcc {
             #[doc = "Bit 0 - Internal High Speed clock enable"]
             #[inline ( always )]
             pub fn hsion(&self) -> HsionR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                HsionR { bits }
+                HsionR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 0;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 1 - Internal High Speed clock ready flag"]
             #[inline ( always )]
             pub fn hsirdy(&self) -> HsirdyR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                HsirdyR { bits }
+                HsirdyR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 1;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bits 3:7 - Internal High Speed clock trimming"]
             #[inline ( always )]
@@ -53192,62 +56275,56 @@ pub mod rcc {
             #[doc = "Bit 16 - External High Speed clock enable"]
             #[inline ( always )]
             pub fn hseon(&self) -> HseonR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                HseonR { bits }
+                HseonR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 16;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 17 - External High Speed clock ready flag"]
             #[inline ( always )]
             pub fn hserdy(&self) -> HserdyR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                HserdyR { bits }
+                HserdyR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 17;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 18 - External High Speed clock Bypass"]
             #[inline ( always )]
             pub fn hsebyp(&self) -> HsebypR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 18;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                HsebypR { bits }
+                HsebypR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 18;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 19 - Clock Security System enable"]
             #[inline ( always )]
             pub fn csson(&self) -> CssonR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 19;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CssonR { bits }
+                CssonR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 19;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 24 - PLL enable"]
             #[inline ( always )]
             pub fn pllon(&self) -> PllonR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 24;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                PllonR { bits }
+                PllonR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 24;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 25 - PLL clock ready flag"]
             #[inline ( always )]
             pub fn pllrdy(&self) -> PllrdyR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 25;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                PllrdyR { bits }
+                PllrdyR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 25;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
         }
         impl W {
@@ -54341,103 +57418,364 @@ pub mod rcc {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct SyscfgrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `SYSCFGRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum SyscfgrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl SyscfgrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    SyscfgrstR::NoEffect => 0,
+                    SyscfgrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> SyscfgrstR {
+                match bits {
+                    0 => SyscfgrstR::NoEffect,
+                    1 => SyscfgrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == SyscfgrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == SyscfgrstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct AdcrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `ADCRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum AdcrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl AdcrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    AdcrstR::NoEffect => 0,
+                    AdcrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> AdcrstR {
+                match bits {
+                    0 => AdcrstR::NoEffect,
+                    1 => AdcrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == AdcrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == AdcrstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim1rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM1RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim1rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Tim1rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim1rstR::NoEffect => 0,
+                    Tim1rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim1rstR {
+                match bits {
+                    0 => Tim1rstR::NoEffect,
+                    1 => Tim1rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Tim1rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Tim1rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Spi1rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `SPI1RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Spi1rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Spi1rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Spi1rstR::NoEffect => 0,
+                    Spi1rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Spi1rstR {
+                match bits {
+                    0 => Spi1rstR::NoEffect,
+                    1 => Spi1rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Spi1rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Spi1rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Usart1rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `USART1RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Usart1rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Usart1rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Usart1rstR::NoEffect => 0,
+                    Usart1rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Usart1rstR {
+                match bits {
+                    0 => Usart1rstR::NoEffect,
+                    1 => Usart1rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Usart1rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Usart1rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim15rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM15RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim15rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Tim15rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim15rstR::NoEffect => 0,
+                    Tim15rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim15rstR {
+                match bits {
+                    0 => Tim15rstR::NoEffect,
+                    1 => Tim15rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Tim15rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Tim15rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim16rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM16RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim16rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Tim16rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim16rstR::NoEffect => 0,
+                    Tim16rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim16rstR {
+                match bits {
+                    0 => Tim16rstR::NoEffect,
+                    1 => Tim16rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Tim16rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Tim16rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim17rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM17RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim17rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Tim17rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim17rstR::NoEffect => 0,
+                    Tim17rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim17rstR {
+                match bits {
+                    0 => Tim17rstR::NoEffect,
+                    1 => Tim17rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Tim17rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Tim17rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct DbgmcurstR {
-            bits: u8,
+        #[doc = "Possible values of the field `DBGMCURST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum DbgmcurstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl DbgmcurstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    DbgmcurstR::NoEffect => 0,
+                    DbgmcurstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> DbgmcurstR {
+                match bits {
+                    0 => DbgmcurstR::NoEffect,
+                    1 => DbgmcurstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == DbgmcurstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == DbgmcurstR::Reset
+            }
+        }
+        #[doc = "Values that can be written to the field `SYSCFGRST`"]
+        pub enum SyscfgrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl SyscfgrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    SyscfgrstW::NoEffect => 0,
+                    SyscfgrstW::Reset => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -54445,9 +57783,26 @@ pub mod rcc {
             w: &'a mut W,
         }
         impl<'a> _SyscfgrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: SyscfgrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(SyscfgrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(SyscfgrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54455,14 +57810,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `ADCRST`"]
+        pub enum AdcrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl AdcrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    AdcrstW::NoEffect => 0,
+                    AdcrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _AdcrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _AdcrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: AdcrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(AdcrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(AdcrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 9;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54470,14 +57860,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM1RST`"]
+        pub enum Tim1rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Tim1rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim1rstW::NoEffect => 0,
+                    Tim1rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim1rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim1rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim1rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Tim1rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Tim1rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54485,14 +57910,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SPI1RST`"]
+        pub enum Spi1rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Spi1rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Spi1rstW::NoEffect => 0,
+                    Spi1rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Spi1rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Spi1rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Spi1rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Spi1rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Spi1rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 12;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54500,14 +57960,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `USART1RST`"]
+        pub enum Usart1rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Usart1rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Usart1rstW::NoEffect => 0,
+                    Usart1rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Usart1rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Usart1rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Usart1rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Usart1rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Usart1rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54515,14 +58010,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM15RST`"]
+        pub enum Tim15rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Tim15rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim15rstW::NoEffect => 0,
+                    Tim15rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim15rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim15rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim15rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Tim15rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Tim15rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54530,14 +58060,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM16RST`"]
+        pub enum Tim16rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Tim16rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim16rstW::NoEffect => 0,
+                    Tim16rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim16rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim16rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim16rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Tim16rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Tim16rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54545,14 +58110,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM17RST`"]
+        pub enum Tim17rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Tim17rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim17rstW::NoEffect => 0,
+                    Tim17rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim17rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim17rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim17rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Tim17rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Tim17rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 18;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54560,14 +58160,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `DBGMCURST`"]
+        pub enum DbgmcurstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl DbgmcurstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    DbgmcurstW::NoEffect => 0,
+                    DbgmcurstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _DbgmcurstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _DbgmcurstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: DbgmcurstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(DbgmcurstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(DbgmcurstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 22;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54584,92 +58219,86 @@ pub mod rcc {
             #[doc = "Bit 0 - SYSCFG and COMP reset"]
             #[inline ( always )]
             pub fn syscfgrst(&self) -> SyscfgrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                SyscfgrstR { bits }
+                SyscfgrstR::_from({
+                                      const MASK: u8 = 1;
+                                      const OFFSET: u8 = 0;
+                                      ((self.bits >> OFFSET) & MASK as u32) as
+                                      u8
+                                  })
             }
             #[doc = "Bit 9 - ADC interface reset"]
             #[inline ( always )]
             pub fn adcrst(&self) -> AdcrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 9;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                AdcrstR { bits }
+                AdcrstR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 9;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 11 - TIM1 timer reset"]
             #[inline ( always )]
             pub fn tim1rst(&self) -> Tim1rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim1rstR { bits }
+                Tim1rstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 11;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 12 - SPI 1 reset"]
             #[inline ( always )]
             pub fn spi1rst(&self) -> Spi1rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 12;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Spi1rstR { bits }
+                Spi1rstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 12;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 14 - USART1 reset"]
             #[inline ( always )]
             pub fn usart1rst(&self) -> Usart1rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Usart1rstR { bits }
+                Usart1rstR::_from({
+                                      const MASK: u8 = 1;
+                                      const OFFSET: u8 = 14;
+                                      ((self.bits >> OFFSET) & MASK as u32) as
+                                      u8
+                                  })
             }
             #[doc = "Bit 16 - TIM15 timer reset"]
             #[inline ( always )]
             pub fn tim15rst(&self) -> Tim15rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim15rstR { bits }
+                Tim15rstR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 16;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
             #[doc = "Bit 17 - TIM16 timer reset"]
             #[inline ( always )]
             pub fn tim16rst(&self) -> Tim16rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim16rstR { bits }
+                Tim16rstR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 17;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
             #[doc = "Bit 18 - TIM17 timer reset"]
             #[inline ( always )]
             pub fn tim17rst(&self) -> Tim17rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 18;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim17rstR { bits }
+                Tim17rstR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 18;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
             #[doc = "Bit 22 - Debug MCU reset"]
             #[inline ( always )]
             pub fn dbgmcurst(&self) -> DbgmcurstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 22;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                DbgmcurstR { bits }
+                DbgmcurstR::_from({
+                                      const MASK: u8 = 1;
+                                      const OFFSET: u8 = 22;
+                                      ((self.bits >> OFFSET) & MASK as u32) as
+                                      u8
+                                  })
             }
         }
         impl W {
@@ -54772,136 +58401,478 @@ pub mod rcc {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim2rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM2RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim2rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Tim2rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim2rstR::NoEffect => 0,
+                    Tim2rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim2rstR {
+                match bits {
+                    0 => Tim2rstR::NoEffect,
+                    1 => Tim2rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Tim2rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Tim2rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim3rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM3RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim3rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Tim3rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim3rstR::NoEffect => 0,
+                    Tim3rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim3rstR {
+                match bits {
+                    0 => Tim3rstR::NoEffect,
+                    1 => Tim3rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Tim3rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Tim3rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim6rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM6RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim6rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Tim6rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim6rstR::NoEffect => 0,
+                    Tim6rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim6rstR {
+                match bits {
+                    0 => Tim6rstR::NoEffect,
+                    1 => Tim6rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Tim6rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Tim6rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim14rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM14RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim14rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Tim14rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim14rstR::NoEffect => 0,
+                    Tim14rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim14rstR {
+                match bits {
+                    0 => Tim14rstR::NoEffect,
+                    1 => Tim14rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Tim14rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Tim14rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct WwdgrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `WWDGRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum WwdgrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl WwdgrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    WwdgrstR::NoEffect => 0,
+                    WwdgrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> WwdgrstR {
+                match bits {
+                    0 => WwdgrstR::NoEffect,
+                    1 => WwdgrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == WwdgrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == WwdgrstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Spi2rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `SPI2RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Spi2rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Spi2rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Spi2rstR::NoEffect => 0,
+                    Spi2rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Spi2rstR {
+                match bits {
+                    0 => Spi2rstR::NoEffect,
+                    1 => Spi2rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Spi2rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Spi2rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Usart2rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `USART2RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Usart2rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl Usart2rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Usart2rstR::NoEffect => 0,
+                    Usart2rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Usart2rstR {
+                match bits {
+                    0 => Usart2rstR::NoEffect,
+                    1 => Usart2rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == Usart2rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == Usart2rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct I2c1rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `I2C1RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum I2c1rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl I2c1rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    I2c1rstR::NoEffect => 0,
+                    I2c1rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> I2c1rstR {
+                match bits {
+                    0 => I2c1rstR::NoEffect,
+                    1 => I2c1rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == I2c1rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == I2c1rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct I2c2rstR {
-            bits: u8,
+        #[doc = "Possible values of the field `I2C2RST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum I2c2rstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl I2c2rstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    I2c2rstR::NoEffect => 0,
+                    I2c2rstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> I2c2rstR {
+                match bits {
+                    0 => I2c2rstR::NoEffect,
+                    1 => I2c2rstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == I2c2rstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == I2c2rstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct PwrrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `PWRRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum PwrrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl PwrrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    PwrrstR::NoEffect => 0,
+                    PwrrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> PwrrstR {
+                match bits {
+                    0 => PwrrstR::NoEffect,
+                    1 => PwrrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == PwrrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == PwrrstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct DacrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `DACRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum DacrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl DacrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    DacrstR::NoEffect => 0,
+                    DacrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> DacrstR {
+                match bits {
+                    0 => DacrstR::NoEffect,
+                    1 => DacrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == DacrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == DacrstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CecrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `CECRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CecrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl CecrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CecrstR::NoEffect => 0,
+                    CecrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CecrstR {
+                match bits {
+                    0 => CecrstR::NoEffect,
+                    1 => CecrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == CecrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == CecrstR::Reset
+            }
+        }
+        #[doc = "Values that can be written to the field `TIM2RST`"]
+        pub enum Tim2rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Tim2rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim2rstW::NoEffect => 0,
+                    Tim2rstW::Reset => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -54909,9 +58880,26 @@ pub mod rcc {
             w: &'a mut W,
         }
         impl<'a> _Tim2rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim2rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Tim2rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Tim2rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54919,14 +58907,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM3RST`"]
+        pub enum Tim3rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Tim3rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim3rstW::NoEffect => 0,
+                    Tim3rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim3rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim3rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim3rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Tim3rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Tim3rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54934,14 +58957,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM6RST`"]
+        pub enum Tim6rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Tim6rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim6rstW::NoEffect => 0,
+                    Tim6rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim6rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim6rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim6rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Tim6rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Tim6rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 4;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54949,14 +59007,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM14RST`"]
+        pub enum Tim14rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Tim14rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim14rstW::NoEffect => 0,
+                    Tim14rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim14rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim14rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim14rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Tim14rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Tim14rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 8;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54964,14 +59057,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `WWDGRST`"]
+        pub enum WwdgrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl WwdgrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    WwdgrstW::NoEffect => 0,
+                    WwdgrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _WwdgrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _WwdgrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: WwdgrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(WwdgrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(WwdgrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54979,14 +59107,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SPI2RST`"]
+        pub enum Spi2rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Spi2rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Spi2rstW::NoEffect => 0,
+                    Spi2rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Spi2rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Spi2rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Spi2rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Spi2rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Spi2rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -54994,14 +59157,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `USART2RST`"]
+        pub enum Usart2rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl Usart2rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Usart2rstW::NoEffect => 0,
+                    Usart2rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Usart2rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Usart2rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Usart2rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(Usart2rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(Usart2rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55009,14 +59207,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `I2C1RST`"]
+        pub enum I2c1rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl I2c1rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    I2c1rstW::NoEffect => 0,
+                    I2c1rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _I2c1rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _I2c1rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: I2c1rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(I2c1rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(I2c1rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 21;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55024,14 +59257,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `I2C2RST`"]
+        pub enum I2c2rstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl I2c2rstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    I2c2rstW::NoEffect => 0,
+                    I2c2rstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _I2c2rstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _I2c2rstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: I2c2rstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(I2c2rstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(I2c2rstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 22;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55039,14 +59307,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PWRRST`"]
+        pub enum PwrrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl PwrrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    PwrrstW::NoEffect => 0,
+                    PwrrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _PwrrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _PwrrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: PwrrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(PwrrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(PwrrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 28;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55054,14 +59357,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `DACRST`"]
+        pub enum DacrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl DacrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    DacrstW::NoEffect => 0,
+                    DacrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _DacrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _DacrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: DacrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(DacrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(DacrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 29;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55069,14 +59407,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CECRST`"]
+        pub enum CecrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl CecrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CecrstW::NoEffect => 0,
+                    CecrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CecrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CecrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CecrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(CecrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(CecrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 30;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55093,122 +59466,111 @@ pub mod rcc {
             #[doc = "Bit 0 - Timer 2 reset"]
             #[inline ( always )]
             pub fn tim2rst(&self) -> Tim2rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim2rstR { bits }
+                Tim2rstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 0;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 1 - Timer 3 reset"]
             #[inline ( always )]
             pub fn tim3rst(&self) -> Tim3rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim3rstR { bits }
+                Tim3rstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 1;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 4 - Timer 6 reset"]
             #[inline ( always )]
             pub fn tim6rst(&self) -> Tim6rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 4;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim6rstR { bits }
+                Tim6rstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 4;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 8 - Timer 14 reset"]
             #[inline ( always )]
             pub fn tim14rst(&self) -> Tim14rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 8;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim14rstR { bits }
+                Tim14rstR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 8;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
             #[doc = "Bit 11 - Window watchdog reset"]
             #[inline ( always )]
             pub fn wwdgrst(&self) -> WwdgrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                WwdgrstR { bits }
+                WwdgrstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 11;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 14 - SPI2 reset"]
             #[inline ( always )]
             pub fn spi2rst(&self) -> Spi2rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Spi2rstR { bits }
+                Spi2rstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 14;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 17 - USART 2 reset"]
             #[inline ( always )]
             pub fn usart2rst(&self) -> Usart2rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Usart2rstR { bits }
+                Usart2rstR::_from({
+                                      const MASK: u8 = 1;
+                                      const OFFSET: u8 = 17;
+                                      ((self.bits >> OFFSET) & MASK as u32) as
+                                      u8
+                                  })
             }
             #[doc = "Bit 21 - I2C1 reset"]
             #[inline ( always )]
             pub fn i2c1rst(&self) -> I2c1rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 21;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                I2c1rstR { bits }
+                I2c1rstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 21;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 22 - I2C2 reset"]
             #[inline ( always )]
             pub fn i2c2rst(&self) -> I2c2rstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 22;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                I2c2rstR { bits }
+                I2c2rstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 22;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 28 - Power interface reset"]
             #[inline ( always )]
             pub fn pwrrst(&self) -> PwrrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 28;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                PwrrstR { bits }
+                PwrrstR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 28;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 29 - DAC interface reset"]
             #[inline ( always )]
             pub fn dacrst(&self) -> DacrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 29;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                DacrstR { bits }
+                DacrstR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 29;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 30 - HDMI CEC reset"]
             #[inline ( always )]
             pub fn cecrst(&self) -> CecrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 30;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CecrstR { bits }
+                CecrstR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 30;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
         }
         impl W {
@@ -55326,114 +59688,402 @@ pub mod rcc {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct DmaenR {
-            bits: u8,
+        #[doc = "Possible values of the field `DMAEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum DmaenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl DmaenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    DmaenR::Disabled => 0,
+                    DmaenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> DmaenR {
+                match bits {
+                    0 => DmaenR::Disabled,
+                    1 => DmaenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == DmaenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == DmaenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct SramenR {
-            bits: u8,
+        #[doc = "Possible values of the field `SRAMEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum SramenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl SramenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    SramenR::Disabled => 0,
+                    SramenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> SramenR {
+                match bits {
+                    0 => SramenR::Disabled,
+                    1 => SramenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == SramenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == SramenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct FlitfenR {
-            bits: u8,
+        #[doc = "Possible values of the field `FLITFEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum FlitfenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl FlitfenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    FlitfenR::Disabled => 0,
+                    FlitfenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> FlitfenR {
+                match bits {
+                    0 => FlitfenR::Disabled,
+                    1 => FlitfenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == FlitfenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == FlitfenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CrcenR {
-            bits: u8,
+        #[doc = "Possible values of the field `CRCEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CrcenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl CrcenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CrcenR::Disabled => 0,
+                    CrcenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CrcenR {
+                match bits {
+                    0 => CrcenR::Disabled,
+                    1 => CrcenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == CrcenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == CrcenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IopaenR {
-            bits: u8,
+        #[doc = "Possible values of the field `IOPAEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IopaenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl IopaenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IopaenR::Disabled => 0,
+                    IopaenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IopaenR {
+                match bits {
+                    0 => IopaenR::Disabled,
+                    1 => IopaenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == IopaenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == IopaenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IopbenR {
-            bits: u8,
+        #[doc = "Possible values of the field `IOPBEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IopbenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl IopbenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IopbenR::Disabled => 0,
+                    IopbenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IopbenR {
+                match bits {
+                    0 => IopbenR::Disabled,
+                    1 => IopbenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == IopbenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == IopbenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IopcenR {
-            bits: u8,
+        #[doc = "Possible values of the field `IOPCEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IopcenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl IopcenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IopcenR::Disabled => 0,
+                    IopcenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IopcenR {
+                match bits {
+                    0 => IopcenR::Disabled,
+                    1 => IopcenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == IopcenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == IopcenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IopdenR {
-            bits: u8,
+        #[doc = "Possible values of the field `IOPDEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IopdenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl IopdenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IopdenR::Disabled => 0,
+                    IopdenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IopdenR {
+                match bits {
+                    0 => IopdenR::Disabled,
+                    1 => IopdenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == IopdenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == IopdenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IopfenR {
-            bits: u8,
+        #[doc = "Possible values of the field `IOPFEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IopfenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl IopfenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IopfenR::Disabled => 0,
+                    IopfenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IopfenR {
+                match bits {
+                    0 => IopfenR::Disabled,
+                    1 => IopfenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == IopfenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == IopfenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct TscenR {
-            bits: u8,
+        #[doc = "Possible values of the field `TSCEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum TscenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl TscenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    TscenR::Disabled => 0,
+                    TscenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> TscenR {
+                match bits {
+                    0 => TscenR::Disabled,
+                    1 => TscenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == TscenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == TscenR::Enabled
+            }
+        }
+        #[doc = "Values that can be written to the field `DMAEN`"]
+        pub enum DmaenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl DmaenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    DmaenW::Disabled => 0,
+                    DmaenW::Enabled => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -55441,9 +60091,26 @@ pub mod rcc {
             w: &'a mut W,
         }
         impl<'a> _DmaenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: DmaenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(DmaenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(DmaenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55451,14 +60118,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SRAMEN`"]
+        pub enum SramenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl SramenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    SramenW::Disabled => 0,
+                    SramenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _SramenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _SramenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: SramenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(SramenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(SramenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 2;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55466,14 +60168,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `FLITFEN`"]
+        pub enum FlitfenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl FlitfenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    FlitfenW::Disabled => 0,
+                    FlitfenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _FlitfenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _FlitfenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: FlitfenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(FlitfenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(FlitfenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 4;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55481,14 +60218,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CRCEN`"]
+        pub enum CrcenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl CrcenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CrcenW::Disabled => 0,
+                    CrcenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CrcenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CrcenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CrcenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(CrcenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(CrcenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 6;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55496,14 +60268,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `IOPAEN`"]
+        pub enum IopaenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl IopaenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IopaenW::Disabled => 0,
+                    IopaenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _IopaenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _IopaenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IopaenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(IopaenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(IopaenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55511,14 +60318,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `IOPBEN`"]
+        pub enum IopbenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl IopbenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IopbenW::Disabled => 0,
+                    IopbenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _IopbenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _IopbenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IopbenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(IopbenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(IopbenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 18;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55526,14 +60368,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `IOPCEN`"]
+        pub enum IopcenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl IopcenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IopcenW::Disabled => 0,
+                    IopcenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _IopcenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _IopcenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IopcenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(IopcenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(IopcenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 19;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55541,14 +60418,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `IOPDEN`"]
+        pub enum IopdenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl IopdenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IopdenW::Disabled => 0,
+                    IopdenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _IopdenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _IopdenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IopdenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(IopdenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(IopdenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 20;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55556,14 +60468,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `IOPFEN`"]
+        pub enum IopfenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl IopfenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IopfenW::Disabled => 0,
+                    IopfenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _IopfenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _IopfenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IopfenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(IopfenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(IopfenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 22;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55571,14 +60518,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TSCEN`"]
+        pub enum TscenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl TscenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    TscenW::Disabled => 0,
+                    TscenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _TscenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _TscenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: TscenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(TscenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(TscenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 24;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55595,102 +60577,92 @@ pub mod rcc {
             #[doc = "Bit 0 - DMA1 clock enable"]
             #[inline ( always )]
             pub fn dmaen(&self) -> DmaenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                DmaenR { bits }
+                DmaenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 0;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 2 - SRAM interface clock enable"]
             #[inline ( always )]
             pub fn sramen(&self) -> SramenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 2;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                SramenR { bits }
+                SramenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 2;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 4 - FLITF clock enable"]
             #[inline ( always )]
             pub fn flitfen(&self) -> FlitfenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 4;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                FlitfenR { bits }
+                FlitfenR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 4;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 6 - CRC clock enable"]
             #[inline ( always )]
             pub fn crcen(&self) -> CrcenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 6;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CrcenR { bits }
+                CrcenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 6;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 17 - I/O port A clock enable"]
             #[inline ( always )]
             pub fn iopaen(&self) -> IopaenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IopaenR { bits }
+                IopaenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 17;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 18 - I/O port B clock enable"]
             #[inline ( always )]
             pub fn iopben(&self) -> IopbenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 18;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IopbenR { bits }
+                IopbenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 18;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 19 - I/O port C clock enable"]
             #[inline ( always )]
             pub fn iopcen(&self) -> IopcenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 19;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IopcenR { bits }
+                IopcenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 19;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 20 - I/O port D clock enable"]
             #[inline ( always )]
             pub fn iopden(&self) -> IopdenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 20;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IopdenR { bits }
+                IopdenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 20;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 22 - I/O port F clock enable"]
             #[inline ( always )]
             pub fn iopfen(&self) -> IopfenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 22;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IopfenR { bits }
+                IopfenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 22;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 24 - Touch sensing controller clock enable"]
             #[inline ( always )]
             pub fn tscen(&self) -> TscenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 24;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                TscenR { bits }
+                TscenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 24;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
         }
         impl W {
@@ -55798,103 +60770,364 @@ pub mod rcc {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct SyscfgenR {
-            bits: u8,
+        #[doc = "Possible values of the field `SYSCFGEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum SyscfgenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl SyscfgenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    SyscfgenR::Disabled => 0,
+                    SyscfgenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> SyscfgenR {
+                match bits {
+                    0 => SyscfgenR::Disabled,
+                    1 => SyscfgenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == SyscfgenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == SyscfgenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct AdcenR {
-            bits: u8,
+        #[doc = "Possible values of the field `ADCEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum AdcenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl AdcenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    AdcenR::Disabled => 0,
+                    AdcenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> AdcenR {
+                match bits {
+                    0 => AdcenR::Disabled,
+                    1 => AdcenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == AdcenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == AdcenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim1enR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM1EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim1enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Tim1enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim1enR::Disabled => 0,
+                    Tim1enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim1enR {
+                match bits {
+                    0 => Tim1enR::Disabled,
+                    1 => Tim1enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Tim1enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Tim1enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Spi1enR {
-            bits: u8,
+        #[doc = "Possible values of the field `SPI1EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Spi1enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Spi1enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Spi1enR::Disabled => 0,
+                    Spi1enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Spi1enR {
+                match bits {
+                    0 => Spi1enR::Disabled,
+                    1 => Spi1enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Spi1enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Spi1enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Usart1enR {
-            bits: u8,
+        #[doc = "Possible values of the field `USART1EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Usart1enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Usart1enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Usart1enR::Disabled => 0,
+                    Usart1enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Usart1enR {
+                match bits {
+                    0 => Usart1enR::Disabled,
+                    1 => Usart1enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Usart1enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Usart1enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim15enR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM15EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim15enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Tim15enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim15enR::Disabled => 0,
+                    Tim15enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim15enR {
+                match bits {
+                    0 => Tim15enR::Disabled,
+                    1 => Tim15enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Tim15enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Tim15enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim16enR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM16EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim16enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Tim16enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim16enR::Disabled => 0,
+                    Tim16enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim16enR {
+                match bits {
+                    0 => Tim16enR::Disabled,
+                    1 => Tim16enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Tim16enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Tim16enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim17enR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM17EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim17enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Tim17enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim17enR::Disabled => 0,
+                    Tim17enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim17enR {
+                match bits {
+                    0 => Tim17enR::Disabled,
+                    1 => Tim17enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Tim17enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Tim17enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct DbgmcuenR {
-            bits: u8,
+        #[doc = "Possible values of the field `DBGMCUEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum DbgmcuenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl DbgmcuenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    DbgmcuenR::Disabled => 0,
+                    DbgmcuenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> DbgmcuenR {
+                match bits {
+                    0 => DbgmcuenR::Disabled,
+                    1 => DbgmcuenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == DbgmcuenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == DbgmcuenR::Enabled
+            }
+        }
+        #[doc = "Values that can be written to the field `SYSCFGEN`"]
+        pub enum SyscfgenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl SyscfgenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    SyscfgenW::Disabled => 0,
+                    SyscfgenW::Enabled => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -55902,9 +61135,26 @@ pub mod rcc {
             w: &'a mut W,
         }
         impl<'a> _SyscfgenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: SyscfgenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(SyscfgenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(SyscfgenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55912,14 +61162,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `ADCEN`"]
+        pub enum AdcenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl AdcenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    AdcenW::Disabled => 0,
+                    AdcenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _AdcenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _AdcenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: AdcenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(AdcenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(AdcenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 9;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55927,14 +61212,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM1EN`"]
+        pub enum Tim1enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Tim1enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim1enW::Disabled => 0,
+                    Tim1enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim1enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim1enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim1enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tim1enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tim1enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55942,14 +61262,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SPI1EN`"]
+        pub enum Spi1enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Spi1enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Spi1enW::Disabled => 0,
+                    Spi1enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Spi1enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Spi1enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Spi1enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Spi1enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Spi1enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 12;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55957,14 +61312,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `USART1EN`"]
+        pub enum Usart1enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Usart1enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Usart1enW::Disabled => 0,
+                    Usart1enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Usart1enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Usart1enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Usart1enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Usart1enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Usart1enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55972,14 +61362,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM15EN`"]
+        pub enum Tim15enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Tim15enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim15enW::Disabled => 0,
+                    Tim15enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim15enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim15enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim15enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tim15enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tim15enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55987,14 +61412,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM16EN`"]
+        pub enum Tim16enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Tim16enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim16enW::Disabled => 0,
+                    Tim16enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim16enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim16enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim16enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tim16enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tim16enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56002,14 +61462,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM17EN`"]
+        pub enum Tim17enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Tim17enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim17enW::Disabled => 0,
+                    Tim17enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim17enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim17enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim17enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tim17enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tim17enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 18;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56017,14 +61512,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `DBGMCUEN`"]
+        pub enum DbgmcuenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl DbgmcuenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    DbgmcuenW::Disabled => 0,
+                    DbgmcuenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _DbgmcuenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _DbgmcuenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: DbgmcuenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(DbgmcuenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(DbgmcuenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 22;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56041,92 +61571,83 @@ pub mod rcc {
             #[doc = "Bit 0 - SYSCFG clock enable"]
             #[inline ( always )]
             pub fn syscfgen(&self) -> SyscfgenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                SyscfgenR { bits }
+                SyscfgenR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 0;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
             #[doc = "Bit 9 - ADC 1 interface clock enable"]
             #[inline ( always )]
             pub fn adcen(&self) -> AdcenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 9;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                AdcenR { bits }
+                AdcenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 9;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 11 - TIM1 Timer clock enable"]
             #[inline ( always )]
             pub fn tim1en(&self) -> Tim1enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim1enR { bits }
+                Tim1enR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 11;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 12 - SPI 1 clock enable"]
             #[inline ( always )]
             pub fn spi1en(&self) -> Spi1enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 12;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Spi1enR { bits }
+                Spi1enR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 12;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 14 - USART1 clock enable"]
             #[inline ( always )]
             pub fn usart1en(&self) -> Usart1enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Usart1enR { bits }
+                Usart1enR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 14;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
             #[doc = "Bit 16 - TIM15 timer clock enable"]
             #[inline ( always )]
             pub fn tim15en(&self) -> Tim15enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim15enR { bits }
+                Tim15enR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 16;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 17 - TIM16 timer clock enable"]
             #[inline ( always )]
             pub fn tim16en(&self) -> Tim16enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim16enR { bits }
+                Tim16enR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 17;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 18 - TIM17 timer clock enable"]
             #[inline ( always )]
             pub fn tim17en(&self) -> Tim17enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 18;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim17enR { bits }
+                Tim17enR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 18;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 22 - MCU debug module clock enable"]
             #[inline ( always )]
             pub fn dbgmcuen(&self) -> DbgmcuenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 22;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                DbgmcuenR { bits }
+                DbgmcuenR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 22;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
         }
         impl W {
@@ -56229,136 +61750,478 @@ pub mod rcc {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim2enR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM2EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim2enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Tim2enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim2enR::Disabled => 0,
+                    Tim2enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim2enR {
+                match bits {
+                    0 => Tim2enR::Disabled,
+                    1 => Tim2enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Tim2enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Tim2enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim3enR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM3EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim3enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Tim3enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim3enR::Disabled => 0,
+                    Tim3enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim3enR {
+                match bits {
+                    0 => Tim3enR::Disabled,
+                    1 => Tim3enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Tim3enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Tim3enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim6enR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM6EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim6enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Tim6enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim6enR::Disabled => 0,
+                    Tim6enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim6enR {
+                match bits {
+                    0 => Tim6enR::Disabled,
+                    1 => Tim6enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Tim6enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Tim6enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Tim14enR {
-            bits: u8,
+        #[doc = "Possible values of the field `TIM14EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Tim14enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Tim14enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Tim14enR::Disabled => 0,
+                    Tim14enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Tim14enR {
+                match bits {
+                    0 => Tim14enR::Disabled,
+                    1 => Tim14enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Tim14enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Tim14enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct WwdgenR {
-            bits: u8,
+        #[doc = "Possible values of the field `WWDGEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum WwdgenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl WwdgenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    WwdgenR::Disabled => 0,
+                    WwdgenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> WwdgenR {
+                match bits {
+                    0 => WwdgenR::Disabled,
+                    1 => WwdgenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == WwdgenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == WwdgenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Spi2enR {
-            bits: u8,
+        #[doc = "Possible values of the field `SPI2EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Spi2enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Spi2enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Spi2enR::Disabled => 0,
+                    Spi2enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Spi2enR {
+                match bits {
+                    0 => Spi2enR::Disabled,
+                    1 => Spi2enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Spi2enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Spi2enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Usart2enR {
-            bits: u8,
+        #[doc = "Possible values of the field `USART2EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Usart2enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Usart2enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Usart2enR::Disabled => 0,
+                    Usart2enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Usart2enR {
+                match bits {
+                    0 => Usart2enR::Disabled,
+                    1 => Usart2enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Usart2enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Usart2enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct I2c1enR {
-            bits: u8,
+        #[doc = "Possible values of the field `I2C1EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum I2c1enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl I2c1enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    I2c1enR::Disabled => 0,
+                    I2c1enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> I2c1enR {
+                match bits {
+                    0 => I2c1enR::Disabled,
+                    1 => I2c1enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == I2c1enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == I2c1enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct I2c2enR {
-            bits: u8,
+        #[doc = "Possible values of the field `I2C2EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum I2c2enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl I2c2enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    I2c2enR::Disabled => 0,
+                    I2c2enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> I2c2enR {
+                match bits {
+                    0 => I2c2enR::Disabled,
+                    1 => I2c2enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == I2c2enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == I2c2enR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct PwrenR {
-            bits: u8,
+        #[doc = "Possible values of the field `PWREN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum PwrenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl PwrenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    PwrenR::Disabled => 0,
+                    PwrenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> PwrenR {
+                match bits {
+                    0 => PwrenR::Disabled,
+                    1 => PwrenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == PwrenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == PwrenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct DacenR {
-            bits: u8,
+        #[doc = "Possible values of the field `DACEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum DacenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl DacenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    DacenR::Disabled => 0,
+                    DacenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> DacenR {
+                match bits {
+                    0 => DacenR::Disabled,
+                    1 => DacenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == DacenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == DacenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CecenR {
-            bits: u8,
+        #[doc = "Possible values of the field `CECEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CecenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl CecenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CecenR::Disabled => 0,
+                    CecenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CecenR {
+                match bits {
+                    0 => CecenR::Disabled,
+                    1 => CecenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == CecenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == CecenR::Enabled
+            }
+        }
+        #[doc = "Values that can be written to the field `TIM2EN`"]
+        pub enum Tim2enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Tim2enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim2enW::Disabled => 0,
+                    Tim2enW::Enabled => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -56366,9 +62229,26 @@ pub mod rcc {
             w: &'a mut W,
         }
         impl<'a> _Tim2enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim2enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tim2enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tim2enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56376,14 +62256,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM3EN`"]
+        pub enum Tim3enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Tim3enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim3enW::Disabled => 0,
+                    Tim3enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim3enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim3enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim3enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tim3enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tim3enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56391,14 +62306,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM6EN`"]
+        pub enum Tim6enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Tim6enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim6enW::Disabled => 0,
+                    Tim6enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim6enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim6enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim6enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tim6enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tim6enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 4;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56406,14 +62356,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TIM14EN`"]
+        pub enum Tim14enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Tim14enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Tim14enW::Disabled => 0,
+                    Tim14enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Tim14enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Tim14enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Tim14enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Tim14enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Tim14enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 8;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56421,14 +62406,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `WWDGEN`"]
+        pub enum WwdgenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl WwdgenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    WwdgenW::Disabled => 0,
+                    WwdgenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _WwdgenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _WwdgenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: WwdgenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(WwdgenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(WwdgenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56436,14 +62456,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SPI2EN`"]
+        pub enum Spi2enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Spi2enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Spi2enW::Disabled => 0,
+                    Spi2enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Spi2enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Spi2enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Spi2enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Spi2enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Spi2enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56451,14 +62506,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `USART2EN`"]
+        pub enum Usart2enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Usart2enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Usart2enW::Disabled => 0,
+                    Usart2enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Usart2enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Usart2enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Usart2enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Usart2enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Usart2enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56466,14 +62556,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `I2C1EN`"]
+        pub enum I2c1enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl I2c1enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    I2c1enW::Disabled => 0,
+                    I2c1enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _I2c1enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _I2c1enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: I2c1enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(I2c1enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(I2c1enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 21;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56481,14 +62606,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `I2C2EN`"]
+        pub enum I2c2enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl I2c2enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    I2c2enW::Disabled => 0,
+                    I2c2enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _I2c2enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _I2c2enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: I2c2enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(I2c2enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(I2c2enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 22;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56496,14 +62656,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PWREN`"]
+        pub enum PwrenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl PwrenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    PwrenW::Disabled => 0,
+                    PwrenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _PwrenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _PwrenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: PwrenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(PwrenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(PwrenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 28;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56511,14 +62706,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `DACEN`"]
+        pub enum DacenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl DacenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    DacenW::Disabled => 0,
+                    DacenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _DacenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _DacenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: DacenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(DacenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(DacenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 29;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56526,14 +62756,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CECEN`"]
+        pub enum CecenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl CecenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CecenW::Disabled => 0,
+                    CecenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CecenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CecenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CecenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(CecenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(CecenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 30;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56550,122 +62815,110 @@ pub mod rcc {
             #[doc = "Bit 0 - Timer 2 clock enable"]
             #[inline ( always )]
             pub fn tim2en(&self) -> Tim2enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim2enR { bits }
+                Tim2enR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 0;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 1 - Timer 3 clock enable"]
             #[inline ( always )]
             pub fn tim3en(&self) -> Tim3enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim3enR { bits }
+                Tim3enR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 1;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 4 - Timer 6 clock enable"]
             #[inline ( always )]
             pub fn tim6en(&self) -> Tim6enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 4;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim6enR { bits }
+                Tim6enR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 4;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 8 - Timer 14 clock enable"]
             #[inline ( always )]
             pub fn tim14en(&self) -> Tim14enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 8;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Tim14enR { bits }
+                Tim14enR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 8;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 11 - Window watchdog clock enable"]
             #[inline ( always )]
             pub fn wwdgen(&self) -> WwdgenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                WwdgenR { bits }
+                WwdgenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 11;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 14 - SPI 2 clock enable"]
             #[inline ( always )]
             pub fn spi2en(&self) -> Spi2enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Spi2enR { bits }
+                Spi2enR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 14;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 17 - USART 2 clock enable"]
             #[inline ( always )]
             pub fn usart2en(&self) -> Usart2enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Usart2enR { bits }
+                Usart2enR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 17;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
             #[doc = "Bit 21 - I2C 1 clock enable"]
             #[inline ( always )]
             pub fn i2c1en(&self) -> I2c1enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 21;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                I2c1enR { bits }
+                I2c1enR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 21;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 22 - I2C 2 clock enable"]
             #[inline ( always )]
             pub fn i2c2en(&self) -> I2c2enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 22;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                I2c2enR { bits }
+                I2c2enR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 22;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 28 - Power interface clock enable"]
             #[inline ( always )]
             pub fn pwren(&self) -> PwrenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 28;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                PwrenR { bits }
+                PwrenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 28;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 29 - DAC interface clock enable"]
             #[inline ( always )]
             pub fn dacen(&self) -> DacenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 29;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                DacenR { bits }
+                DacenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 29;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 30 - HDMI CEC interface clock enable"]
             #[inline ( always )]
             pub fn cecen(&self) -> CecenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 30;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CecenR { bits }
+                CecenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 30;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
         }
         impl W {
@@ -56783,37 +63036,118 @@ pub mod rcc {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct LseonR {
-            bits: u8,
+        #[doc = "Possible values of the field `LSEON`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum LseonR {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
         }
         impl LseonR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    LseonR::Off => 0,
+                    LseonR::On => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> LseonR {
+                match bits {
+                    0 => LseonR::Off,
+                    1 => LseonR::On,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Off`"]
+            #[inline ( always )]
+            pub fn is_off(&self) -> bool {
+                *self == LseonR::Off
+            }
+            #[doc = "Checks if the value of the field is `On`"]
+            #[inline ( always )]
+            pub fn is_on(&self) -> bool {
+                *self == LseonR::On
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct LserdyR {
-            bits: u8,
+        #[doc = "Possible values of the field `LSERDY`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum LserdyR {
+            #[doc = "Not ready."]
+            NotReady,
+            #[doc = "ready."]
+            Ready,
         }
         impl LserdyR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    LserdyR::NotReady => 0,
+                    LserdyR::Ready => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> LserdyR {
+                match bits {
+                    0 => LserdyR::NotReady,
+                    1 => LserdyR::Ready,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NotReady`"]
+            #[inline ( always )]
+            pub fn is_not_ready(&self) -> bool {
+                *self == LserdyR::NotReady
+            }
+            #[doc = "Checks if the value of the field is `Ready`"]
+            #[inline ( always )]
+            pub fn is_ready(&self) -> bool {
+                *self == LserdyR::Ready
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct LsebypR {
-            bits: u8,
+        #[doc = "Possible values of the field `LSEBYP`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum LsebypR {
+            #[doc = "Not bypassed."]
+            NotBypassed,
+            #[doc = "Bypassed."]
+            Bypassed,
         }
         impl LsebypR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    LsebypR::NotBypassed => 0,
+                    LsebypR::Bypassed => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> LsebypR {
+                match bits {
+                    0 => LsebypR::NotBypassed,
+                    1 => LsebypR::Bypassed,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NotBypassed`"]
+            #[inline ( always )]
+            pub fn is_not_bypassed(&self) -> bool {
+                *self == LsebypR::NotBypassed
+            }
+            #[doc = "Checks if the value of the field is `Bypassed`"]
+            #[inline ( always )]
+            pub fn is_bypassed(&self) -> bool {
+                *self == LsebypR::Bypassed
             }
         }
         #[doc = r" Value of the field"]
@@ -56838,26 +63172,98 @@ pub mod rcc {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct RtcenR {
-            bits: u8,
+        #[doc = "Possible values of the field `RTCEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum RtcenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl RtcenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    RtcenR::Disabled => 0,
+                    RtcenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> RtcenR {
+                match bits {
+                    0 => RtcenR::Disabled,
+                    1 => RtcenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == RtcenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == RtcenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct BdrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `BDRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum BdrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl BdrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    BdrstR::NoEffect => 0,
+                    BdrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> BdrstR {
+                match bits {
+                    0 => BdrstR::NoEffect,
+                    1 => BdrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == BdrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == BdrstR::Reset
+            }
+        }
+        #[doc = "Values that can be written to the field `LSEON`"]
+        pub enum LseonW {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
+        }
+        impl LseonW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    LseonW::Off => 0,
+                    LseonW::On => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -56865,9 +63271,26 @@ pub mod rcc {
             w: &'a mut W,
         }
         impl<'a> _LseonW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: LseonW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Off."]
+            #[inline ( always )]
+            pub fn off(self) -> &'a mut W {
+                self.variant(LseonW::Off)
+            }
+            #[doc = "On."]
+            #[inline ( always )]
+            pub fn on(self) -> &'a mut W {
+                self.variant(LseonW::On)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56875,14 +63298,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `LSEBYP`"]
+        pub enum LsebypW {
+            #[doc = "Not bypassed."]
+            NotBypassed,
+            #[doc = "Bypassed."]
+            Bypassed,
+        }
+        impl LsebypW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    LsebypW::NotBypassed => 0,
+                    LsebypW::Bypassed => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _LsebypW<'a> {
             w: &'a mut W,
         }
         impl<'a> _LsebypW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: LsebypW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Not bypassed."]
+            #[inline ( always )]
+            pub fn not_bypassed(self) -> &'a mut W {
+                self.variant(LsebypW::NotBypassed)
+            }
+            #[doc = "Bypassed."]
+            #[inline ( always )]
+            pub fn bypassed(self) -> &'a mut W {
+                self.variant(LsebypW::Bypassed)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 2;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56920,14 +63378,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `RTCEN`"]
+        pub enum RtcenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl RtcenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    RtcenW::Disabled => 0,
+                    RtcenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _RtcenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _RtcenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: RtcenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(RtcenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(RtcenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 15;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56935,14 +63428,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `BDRST`"]
+        pub enum BdrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl BdrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    BdrstW::NoEffect => 0,
+                    BdrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _BdrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _BdrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: BdrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(BdrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(BdrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -56959,32 +63487,29 @@ pub mod rcc {
             #[doc = "Bit 0 - External Low Speed oscillator enable"]
             #[inline ( always )]
             pub fn lseon(&self) -> LseonR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                LseonR { bits }
+                LseonR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 0;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 1 - External Low Speed oscillator ready"]
             #[inline ( always )]
             pub fn lserdy(&self) -> LserdyR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                LserdyR { bits }
+                LserdyR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 1;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 2 - External Low Speed oscillator bypass"]
             #[inline ( always )]
             pub fn lsebyp(&self) -> LsebypR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 2;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                LsebypR { bits }
+                LsebypR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 2;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bits 3:4 - LSE oscillator drive capability"]
             #[inline ( always )]
@@ -57009,22 +63534,20 @@ pub mod rcc {
             #[doc = "Bit 15 - RTC clock enable"]
             #[inline ( always )]
             pub fn rtcen(&self) -> RtcenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 15;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                RtcenR { bits }
+                RtcenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 15;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 16 - Backup domain software reset"]
             #[inline ( always )]
             pub fn bdrst(&self) -> BdrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                BdrstR { bits }
+                BdrstR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 16;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
         }
         impl W {
@@ -57112,26 +63635,80 @@ pub mod rcc {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct LsionR {
-            bits: u8,
+        #[doc = "Possible values of the field `LSION`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum LsionR {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
         }
         impl LsionR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    LsionR::Off => 0,
+                    LsionR::On => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> LsionR {
+                match bits {
+                    0 => LsionR::Off,
+                    1 => LsionR::On,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Off`"]
+            #[inline ( always )]
+            pub fn is_off(&self) -> bool {
+                *self == LsionR::Off
+            }
+            #[doc = "Checks if the value of the field is `On`"]
+            #[inline ( always )]
+            pub fn is_on(&self) -> bool {
+                *self == LsionR::On
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct LsirdyR {
-            bits: u8,
+        #[doc = "Possible values of the field `LSIRDY`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum LsirdyR {
+            #[doc = "Not ready."]
+            NotReady,
+            #[doc = "ready."]
+            Ready,
         }
         impl LsirdyR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    LsirdyR::NotReady => 0,
+                    LsirdyR::Ready => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> LsirdyR {
+                match bits {
+                    0 => LsirdyR::NotReady,
+                    1 => LsirdyR::Ready,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NotReady`"]
+            #[inline ( always )]
+            pub fn is_not_ready(&self) -> bool {
+                *self == LsirdyR::NotReady
+            }
+            #[doc = "Checks if the value of the field is `Ready`"]
+            #[inline ( always )]
+            pub fn is_ready(&self) -> bool {
+                *self == LsirdyR::Ready
             }
         }
         #[doc = r" Value of the field"]
@@ -57145,81 +63722,288 @@ pub mod rcc {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct OblrstfR {
-            bits: u8,
+        #[doc = "Possible values of the field `OBLRSTF`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum OblrstfR {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
         }
         impl OblrstfR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    OblrstfR::NoReset => 0,
+                    OblrstfR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> OblrstfR {
+                match bits {
+                    0 => OblrstfR::NoReset,
+                    1 => OblrstfR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoReset`"]
+            #[inline ( always )]
+            pub fn is_no_reset(&self) -> bool {
+                *self == OblrstfR::NoReset
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == OblrstfR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct PinrstfR {
-            bits: u8,
+        #[doc = "Possible values of the field `PINRSTF`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum PinrstfR {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
         }
         impl PinrstfR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    PinrstfR::NoReset => 0,
+                    PinrstfR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> PinrstfR {
+                match bits {
+                    0 => PinrstfR::NoReset,
+                    1 => PinrstfR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoReset`"]
+            #[inline ( always )]
+            pub fn is_no_reset(&self) -> bool {
+                *self == PinrstfR::NoReset
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == PinrstfR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct PorrstfR {
-            bits: u8,
+        #[doc = "Possible values of the field `PORRSTF`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum PorrstfR {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
         }
         impl PorrstfR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    PorrstfR::NoReset => 0,
+                    PorrstfR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> PorrstfR {
+                match bits {
+                    0 => PorrstfR::NoReset,
+                    1 => PorrstfR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoReset`"]
+            #[inline ( always )]
+            pub fn is_no_reset(&self) -> bool {
+                *self == PorrstfR::NoReset
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == PorrstfR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct SftrstfR {
-            bits: u8,
+        #[doc = "Possible values of the field `SFTRSTF`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum SftrstfR {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
         }
         impl SftrstfR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    SftrstfR::NoReset => 0,
+                    SftrstfR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> SftrstfR {
+                match bits {
+                    0 => SftrstfR::NoReset,
+                    1 => SftrstfR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoReset`"]
+            #[inline ( always )]
+            pub fn is_no_reset(&self) -> bool {
+                *self == SftrstfR::NoReset
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == SftrstfR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IwdgrstfR {
-            bits: u8,
+        #[doc = "Possible values of the field `IWDGRSTF`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IwdgrstfR {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
         }
         impl IwdgrstfR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IwdgrstfR::NoReset => 0,
+                    IwdgrstfR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IwdgrstfR {
+                match bits {
+                    0 => IwdgrstfR::NoReset,
+                    1 => IwdgrstfR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoReset`"]
+            #[inline ( always )]
+            pub fn is_no_reset(&self) -> bool {
+                *self == IwdgrstfR::NoReset
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == IwdgrstfR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct WwdgrstfR {
-            bits: u8,
+        #[doc = "Possible values of the field `WWDGRSTF`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum WwdgrstfR {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
         }
         impl WwdgrstfR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    WwdgrstfR::NoReset => 0,
+                    WwdgrstfR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> WwdgrstfR {
+                match bits {
+                    0 => WwdgrstfR::NoReset,
+                    1 => WwdgrstfR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoReset`"]
+            #[inline ( always )]
+            pub fn is_no_reset(&self) -> bool {
+                *self == WwdgrstfR::NoReset
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == WwdgrstfR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct LpwrrstfR {
-            bits: u8,
+        #[doc = "Possible values of the field `LPWRRSTF`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum LpwrrstfR {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
         }
         impl LpwrrstfR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    LpwrrstfR::NoReset => 0,
+                    LpwrrstfR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> LpwrrstfR {
+                match bits {
+                    0 => LpwrrstfR::NoReset,
+                    1 => LpwrrstfR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoReset`"]
+            #[inline ( always )]
+            pub fn is_no_reset(&self) -> bool {
+                *self == LpwrrstfR::NoReset
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == LpwrrstfR::Reset
+            }
+        }
+        #[doc = "Values that can be written to the field `LSION`"]
+        pub enum LsionW {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
+        }
+        impl LsionW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    LsionW::Off => 0,
+                    LsionW::On => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -57227,9 +64011,26 @@ pub mod rcc {
             w: &'a mut W,
         }
         impl<'a> _LsionW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: LsionW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Off."]
+            #[inline ( always )]
+            pub fn off(self) -> &'a mut W {
+                self.variant(LsionW::Off)
+            }
+            #[doc = "On."]
+            #[inline ( always )]
+            pub fn on(self) -> &'a mut W {
+                self.variant(LsionW::On)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57252,14 +64053,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `OBLRSTF`"]
+        pub enum OblrstfW {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
+        }
+        impl OblrstfW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    OblrstfW::NoReset => 0,
+                    OblrstfW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _OblrstfW<'a> {
             w: &'a mut W,
         }
         impl<'a> _OblrstfW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: OblrstfW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No reset flag."]
+            #[inline ( always )]
+            pub fn no_reset(self) -> &'a mut W {
+                self.variant(OblrstfW::NoReset)
+            }
+            #[doc = "Reset flag."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(OblrstfW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 25;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57267,14 +64103,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PINRSTF`"]
+        pub enum PinrstfW {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
+        }
+        impl PinrstfW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    PinrstfW::NoReset => 0,
+                    PinrstfW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _PinrstfW<'a> {
             w: &'a mut W,
         }
         impl<'a> _PinrstfW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: PinrstfW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No reset flag."]
+            #[inline ( always )]
+            pub fn no_reset(self) -> &'a mut W {
+                self.variant(PinrstfW::NoReset)
+            }
+            #[doc = "Reset flag."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(PinrstfW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 26;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57282,14 +64153,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `PORRSTF`"]
+        pub enum PorrstfW {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
+        }
+        impl PorrstfW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    PorrstfW::NoReset => 0,
+                    PorrstfW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _PorrstfW<'a> {
             w: &'a mut W,
         }
         impl<'a> _PorrstfW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: PorrstfW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No reset flag."]
+            #[inline ( always )]
+            pub fn no_reset(self) -> &'a mut W {
+                self.variant(PorrstfW::NoReset)
+            }
+            #[doc = "Reset flag."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(PorrstfW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 27;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57297,14 +64203,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SFTRSTF`"]
+        pub enum SftrstfW {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
+        }
+        impl SftrstfW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    SftrstfW::NoReset => 0,
+                    SftrstfW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _SftrstfW<'a> {
             w: &'a mut W,
         }
         impl<'a> _SftrstfW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: SftrstfW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No reset flag."]
+            #[inline ( always )]
+            pub fn no_reset(self) -> &'a mut W {
+                self.variant(SftrstfW::NoReset)
+            }
+            #[doc = "Reset flag."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(SftrstfW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 28;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57312,14 +64253,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `IWDGRSTF`"]
+        pub enum IwdgrstfW {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
+        }
+        impl IwdgrstfW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IwdgrstfW::NoReset => 0,
+                    IwdgrstfW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _IwdgrstfW<'a> {
             w: &'a mut W,
         }
         impl<'a> _IwdgrstfW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IwdgrstfW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No reset flag."]
+            #[inline ( always )]
+            pub fn no_reset(self) -> &'a mut W {
+                self.variant(IwdgrstfW::NoReset)
+            }
+            #[doc = "Reset flag."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(IwdgrstfW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 29;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57327,14 +64303,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `WWDGRSTF`"]
+        pub enum WwdgrstfW {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
+        }
+        impl WwdgrstfW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    WwdgrstfW::NoReset => 0,
+                    WwdgrstfW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _WwdgrstfW<'a> {
             w: &'a mut W,
         }
         impl<'a> _WwdgrstfW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: WwdgrstfW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No reset flag."]
+            #[inline ( always )]
+            pub fn no_reset(self) -> &'a mut W {
+                self.variant(WwdgrstfW::NoReset)
+            }
+            #[doc = "Reset flag."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(WwdgrstfW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 30;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57342,14 +64353,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `LPWRRSTF`"]
+        pub enum LpwrrstfW {
+            #[doc = "No reset flag."]
+            NoReset,
+            #[doc = "Reset flag."]
+            Reset,
+        }
+        impl LpwrrstfW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    LpwrrstfW::NoReset => 0,
+                    LpwrrstfW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _LpwrrstfW<'a> {
             w: &'a mut W,
         }
         impl<'a> _LpwrrstfW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: LpwrrstfW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No reset flag."]
+            #[inline ( always )]
+            pub fn no_reset(self) -> &'a mut W {
+                self.variant(LpwrrstfW::NoReset)
+            }
+            #[doc = "Reset flag."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(LpwrrstfW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 31;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57366,22 +64412,20 @@ pub mod rcc {
             #[doc = "Bit 0 - Internal low speed oscillator enable"]
             #[inline ( always )]
             pub fn lsion(&self) -> LsionR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                LsionR { bits }
+                LsionR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 0;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 1 - Internal low speed oscillator ready"]
             #[inline ( always )]
             pub fn lsirdy(&self) -> LsirdyR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                LsirdyR { bits }
+                LsirdyR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 1;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 24 - Remove reset flag"]
             #[inline ( always )]
@@ -57396,72 +64440,65 @@ pub mod rcc {
             #[doc = "Bit 25 - Option byte loader reset flag"]
             #[inline ( always )]
             pub fn oblrstf(&self) -> OblrstfR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 25;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                OblrstfR { bits }
+                OblrstfR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 25;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 26 - PIN reset flag"]
             #[inline ( always )]
             pub fn pinrstf(&self) -> PinrstfR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 26;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                PinrstfR { bits }
+                PinrstfR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 26;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 27 - POR/PDR reset flag"]
             #[inline ( always )]
             pub fn porrstf(&self) -> PorrstfR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 27;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                PorrstfR { bits }
+                PorrstfR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 27;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 28 - Software reset flag"]
             #[inline ( always )]
             pub fn sftrstf(&self) -> SftrstfR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 28;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                SftrstfR { bits }
+                SftrstfR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 28;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 29 - Independent watchdog reset flag"]
             #[inline ( always )]
             pub fn iwdgrstf(&self) -> IwdgrstfR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 29;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IwdgrstfR { bits }
+                IwdgrstfR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 29;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
             #[doc = "Bit 30 - Window watchdog reset flag"]
             #[inline ( always )]
             pub fn wwdgrstf(&self) -> WwdgrstfR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 30;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                WwdgrstfR { bits }
+                WwdgrstfR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 30;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
             #[doc = "Bit 31 - Low-power reset flag"]
             #[inline ( always )]
             pub fn lpwrrstf(&self) -> LpwrrstfR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 31;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                LpwrrstfR { bits }
+                LpwrrstfR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 31;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
         }
         impl W {
@@ -57564,70 +64601,250 @@ pub mod rcc {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IoparstR {
-            bits: u8,
+        #[doc = "Possible values of the field `IOPARST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IoparstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl IoparstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IoparstR::NoEffect => 0,
+                    IoparstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IoparstR {
+                match bits {
+                    0 => IoparstR::NoEffect,
+                    1 => IoparstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == IoparstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == IoparstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IopbrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `IOPBRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IopbrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl IopbrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IopbrstR::NoEffect => 0,
+                    IopbrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IopbrstR {
+                match bits {
+                    0 => IopbrstR::NoEffect,
+                    1 => IopbrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == IopbrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == IopbrstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IopcrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `IOPCRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IopcrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl IopcrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IopcrstR::NoEffect => 0,
+                    IopcrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IopcrstR {
+                match bits {
+                    0 => IopcrstR::NoEffect,
+                    1 => IopcrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == IopcrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == IopcrstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IopdrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `IOPDRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IopdrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl IopdrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IopdrstR::NoEffect => 0,
+                    IopdrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IopdrstR {
+                match bits {
+                    0 => IopdrstR::NoEffect,
+                    1 => IopdrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == IopdrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == IopdrstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IopfrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `IOPFRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IopfrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl IopfrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IopfrstR::NoEffect => 0,
+                    IopfrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IopfrstR {
+                match bits {
+                    0 => IopfrstR::NoEffect,
+                    1 => IopfrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == IopfrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == IopfrstR::Reset
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct TscrstR {
-            bits: u8,
+        #[doc = "Possible values of the field `TSCRST`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum TscrstR {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
         }
         impl TscrstR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    TscrstR::NoEffect => 0,
+                    TscrstR::Reset => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> TscrstR {
+                match bits {
+                    0 => TscrstR::NoEffect,
+                    1 => TscrstR::Reset,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NoEffect`"]
+            #[inline ( always )]
+            pub fn is_no_effect(&self) -> bool {
+                *self == TscrstR::NoEffect
+            }
+            #[doc = "Checks if the value of the field is `Reset`"]
+            #[inline ( always )]
+            pub fn is_reset(&self) -> bool {
+                *self == TscrstR::Reset
+            }
+        }
+        #[doc = "Values that can be written to the field `IOPARST`"]
+        pub enum IoparstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl IoparstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IoparstW::NoEffect => 0,
+                    IoparstW::Reset => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -57635,9 +64852,26 @@ pub mod rcc {
             w: &'a mut W,
         }
         impl<'a> _IoparstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IoparstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(IoparstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(IoparstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 17;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57645,14 +64879,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `IOPBRST`"]
+        pub enum IopbrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl IopbrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IopbrstW::NoEffect => 0,
+                    IopbrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _IopbrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _IopbrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IopbrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(IopbrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(IopbrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 18;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57660,14 +64929,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `IOPCRST`"]
+        pub enum IopcrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl IopcrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IopcrstW::NoEffect => 0,
+                    IopcrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _IopcrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _IopcrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IopcrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(IopcrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(IopcrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 19;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57675,14 +64979,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `IOPDRST`"]
+        pub enum IopdrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl IopdrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IopdrstW::NoEffect => 0,
+                    IopdrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _IopdrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _IopdrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IopdrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(IopdrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(IopdrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 20;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57690,14 +65029,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `IOPFRST`"]
+        pub enum IopfrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl IopfrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IopfrstW::NoEffect => 0,
+                    IopfrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _IopfrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _IopfrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IopfrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(IopfrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(IopfrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 22;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57705,14 +65079,49 @@ pub mod rcc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TSCRST`"]
+        pub enum TscrstW {
+            #[doc = "No effect."]
+            NoEffect,
+            #[doc = "Carry out the reset action."]
+            Reset,
+        }
+        impl TscrstW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    TscrstW::NoEffect => 0,
+                    TscrstW::Reset => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _TscrstW<'a> {
             w: &'a mut W,
         }
         impl<'a> _TscrstW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: TscrstW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "No effect."]
+            #[inline ( always )]
+            pub fn no_effect(self) -> &'a mut W {
+                self.variant(TscrstW::NoEffect)
+            }
+            #[doc = "Carry out the reset action."]
+            #[inline ( always )]
+            pub fn reset(self) -> &'a mut W {
+                self.variant(TscrstW::Reset)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 24;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -57729,62 +65138,56 @@ pub mod rcc {
             #[doc = "Bit 17 - I/O port A reset"]
             #[inline ( always )]
             pub fn ioparst(&self) -> IoparstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 17;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IoparstR { bits }
+                IoparstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 17;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 18 - I/O port B reset"]
             #[inline ( always )]
             pub fn iopbrst(&self) -> IopbrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 18;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IopbrstR { bits }
+                IopbrstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 18;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 19 - I/O port C reset"]
             #[inline ( always )]
             pub fn iopcrst(&self) -> IopcrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 19;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IopcrstR { bits }
+                IopcrstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 19;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 20 - I/O port D reset"]
             #[inline ( always )]
             pub fn iopdrst(&self) -> IopdrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 20;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IopdrstR { bits }
+                IopdrstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 20;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 22 - I/O port F reset"]
             #[inline ( always )]
             pub fn iopfrst(&self) -> IopfrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 22;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IopfrstR { bits }
+                IopfrstR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 22;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 24 - Touch sensing controller reset"]
             #[inline ( always )]
             pub fn tscrst(&self) -> TscrstR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 24;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                TscrstR { bits }
+                TscrstR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 24;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
         }
         impl W {
@@ -58201,26 +65604,80 @@ pub mod rcc {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Hsi14onR {
-            bits: u8,
+        #[doc = "Possible values of the field `HSI14ON`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Hsi14onR {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
         }
         impl Hsi14onR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Hsi14onR::Off => 0,
+                    Hsi14onR::On => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Hsi14onR {
+                match bits {
+                    0 => Hsi14onR::Off,
+                    1 => Hsi14onR::On,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Off`"]
+            #[inline ( always )]
+            pub fn is_off(&self) -> bool {
+                *self == Hsi14onR::Off
+            }
+            #[doc = "Checks if the value of the field is `On`"]
+            #[inline ( always )]
+            pub fn is_on(&self) -> bool {
+                *self == Hsi14onR::On
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Hsi14rdyR {
-            bits: u8,
+        #[doc = "Possible values of the field `HSI14RDY`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Hsi14rdyR {
+            #[doc = "Not ready."]
+            NotReady,
+            #[doc = "ready."]
+            Ready,
         }
         impl Hsi14rdyR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Hsi14rdyR::NotReady => 0,
+                    Hsi14rdyR::Ready => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Hsi14rdyR {
+                match bits {
+                    0 => Hsi14rdyR::NotReady,
+                    1 => Hsi14rdyR::Ready,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NotReady`"]
+            #[inline ( always )]
+            pub fn is_not_ready(&self) -> bool {
+                *self == Hsi14rdyR::NotReady
+            }
+            #[doc = "Checks if the value of the field is `Ready`"]
+            #[inline ( always )]
+            pub fn is_ready(&self) -> bool {
+                *self == Hsi14rdyR::Ready
             }
         }
         #[doc = r" Value of the field"]
@@ -58256,14 +65713,49 @@ pub mod rcc {
                 self.bits
             }
         }
+        #[doc = "Values that can be written to the field `HSI14ON`"]
+        pub enum Hsi14onW {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
+        }
+        impl Hsi14onW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Hsi14onW::Off => 0,
+                    Hsi14onW::On => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Hsi14onW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Hsi14onW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Hsi14onW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Off."]
+            #[inline ( always )]
+            pub fn off(self) -> &'a mut W {
+                self.variant(Hsi14onW::Off)
+            }
+            #[doc = "On."]
+            #[inline ( always )]
+            pub fn on(self) -> &'a mut W {
+                self.variant(Hsi14onW::On)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -58310,22 +65802,20 @@ pub mod rcc {
             #[doc = "Bit 0 - HSI14 clock enable"]
             #[inline ( always )]
             pub fn hsi14on(&self) -> Hsi14onR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Hsi14onR { bits }
+                Hsi14onR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 0;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 1 - HR14 clock ready flag"]
             #[inline ( always )]
             pub fn hsi14rdy(&self) -> Hsi14rdyR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Hsi14rdyR { bits }
+                Hsi14rdyR::_from({
+                                     const MASK: u8 = 1;
+                                     const OFFSET: u8 = 1;
+                                     ((self.bits >> OFFSET) & MASK as u32) as u8
+                                 })
             }
             #[doc = "Bit 2 - HSI14 clock request from ADC disable"]
             #[inline ( always )]
@@ -60162,15 +67652,42 @@ pub mod adc {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct AdrdyR {
-            bits: u8,
+        #[doc = "Possible values of the field `ADRDY`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum AdrdyR {
+            #[doc = "Not ready."]
+            NotReady,
+            #[doc = "ready."]
+            Ready,
         }
         impl AdrdyR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    AdrdyR::NotReady => 0,
+                    AdrdyR::Ready => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> AdrdyR {
+                match bits {
+                    0 => AdrdyR::NotReady,
+                    1 => AdrdyR::Ready,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `NotReady`"]
+            #[inline ( always )]
+            pub fn is_not_ready(&self) -> bool {
+                *self == AdrdyR::NotReady
+            }
+            #[doc = "Checks if the value of the field is `Ready`"]
+            #[inline ( always )]
+            pub fn is_ready(&self) -> bool {
+                *self == AdrdyR::Ready
             }
         }
         #[doc = r" Proxy"]
@@ -60248,14 +67765,49 @@ pub mod adc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `ADRDY`"]
+        pub enum AdrdyW {
+            #[doc = "Not ready."]
+            NotReady,
+            #[doc = "ready."]
+            Ready,
+        }
+        impl AdrdyW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    AdrdyW::NotReady => 0,
+                    AdrdyW::Ready => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _AdrdyW<'a> {
             w: &'a mut W,
         }
         impl<'a> _AdrdyW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: AdrdyW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Not ready."]
+            #[inline ( always )]
+            pub fn not_ready(self) -> &'a mut W {
+                self.variant(AdrdyW::NotReady)
+            }
+            #[doc = "ready."]
+            #[inline ( always )]
+            pub fn ready(self) -> &'a mut W {
+                self.variant(AdrdyW::Ready)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -60322,12 +67874,11 @@ pub mod adc {
             #[doc = "Bit 0 - ADC ready"]
             #[inline ( always )]
             pub fn adrdy(&self) -> AdrdyR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                AdrdyR { bits }
+                AdrdyR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 0;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
         }
         impl W {
@@ -60767,15 +68318,42 @@ pub mod adc {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct AdenR {
-            bits: u8,
+        #[doc = "Possible values of the field `ADEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum AdenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl AdenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    AdenR::Disabled => 0,
+                    AdenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> AdenR {
+                match bits {
+                    0 => AdenR::Disabled,
+                    1 => AdenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == AdenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == AdenR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -60838,14 +68416,49 @@ pub mod adc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `ADEN`"]
+        pub enum AdenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl AdenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    AdenW::Disabled => 0,
+                    AdenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _AdenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _AdenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: AdenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(AdenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(AdenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -60902,12 +68515,11 @@ pub mod adc {
             #[doc = "Bit 0 - ADC enable command"]
             #[inline ( always )]
             pub fn aden(&self) -> AdenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                AdenR { bits }
+                AdenR::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 0;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
         }
         impl W {
@@ -61001,15 +68613,42 @@ pub mod adc {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct AwdenR {
-            bits: u8,
+        #[doc = "Possible values of the field `AWDEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum AwdenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl AwdenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    AwdenR::Disabled => 0,
+                    AwdenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> AwdenR {
+                match bits {
+                    0 => AwdenR::Disabled,
+                    1 => AwdenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == AwdenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == AwdenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -61023,15 +68662,42 @@ pub mod adc {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct DiscenR {
-            bits: u8,
+        #[doc = "Possible values of the field `DISCEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum DiscenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl DiscenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    DiscenR::Disabled => 0,
+                    DiscenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> DiscenR {
+                match bits {
+                    0 => DiscenR::Disabled,
+                    1 => DiscenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == DiscenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == DiscenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -61144,15 +68810,42 @@ pub mod adc {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct DmaenR {
-            bits: u8,
+        #[doc = "Possible values of the field `DMAEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum DmaenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl DmaenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    DmaenR::Disabled => 0,
+                    DmaenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> DmaenR {
+                match bits {
+                    0 => DmaenR::Disabled,
+                    1 => DmaenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == DmaenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == DmaenR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -61170,14 +68863,49 @@ pub mod adc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `AWDEN`"]
+        pub enum AwdenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl AwdenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    AwdenW::Disabled => 0,
+                    AwdenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _AwdenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _AwdenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: AwdenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(AwdenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(AwdenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 23;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -61200,14 +68928,49 @@ pub mod adc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `DISCEN`"]
+        pub enum DiscenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl DiscenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    DiscenW::Disabled => 0,
+                    DiscenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _DiscenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _DiscenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: DiscenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(DiscenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(DiscenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -61365,14 +69128,49 @@ pub mod adc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `DMAEN`"]
+        pub enum DmaenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl DmaenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    DmaenW::Disabled => 0,
+                    DmaenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _DmaenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _DmaenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: DmaenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(DmaenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(DmaenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -61399,12 +69197,11 @@ pub mod adc {
             #[doc = "Bit 23 - Analog watchdog enable"]
             #[inline ( always )]
             pub fn awden(&self) -> AwdenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 23;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                AwdenR { bits }
+                AwdenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 23;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 22 - Enable the watchdog on a single channel or on all channels"]
             #[inline ( always )]
@@ -61419,12 +69216,11 @@ pub mod adc {
             #[doc = "Bit 16 - Discontinuous mode"]
             #[inline ( always )]
             pub fn discen(&self) -> DiscenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                DiscenR { bits }
+                DiscenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 16;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 15 - Auto-off mode"]
             #[inline ( always )]
@@ -61529,12 +69325,11 @@ pub mod adc {
             #[doc = "Bit 0 - Direct memory access enable"]
             #[inline ( always )]
             pub fn dmaen(&self) -> DmaenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                DmaenR { bits }
+                DmaenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 0;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
         }
         impl W {
@@ -62945,37 +70740,136 @@ pub mod adc {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct VbatenR {
-            bits: u8,
+        #[doc = "Possible values of the field `VBATEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum VbatenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl VbatenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    VbatenR::Disabled => 0,
+                    VbatenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> VbatenR {
+                match bits {
+                    0 => VbatenR::Disabled,
+                    1 => VbatenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == VbatenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == VbatenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct TsenR {
-            bits: u8,
+        #[doc = "Possible values of the field `TSEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum TsenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl TsenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    TsenR::Disabled => 0,
+                    TsenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> TsenR {
+                match bits {
+                    0 => TsenR::Disabled,
+                    1 => TsenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == TsenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == TsenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct VrefenR {
-            bits: u8,
+        #[doc = "Possible values of the field `VREFEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum VrefenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl VrefenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    VrefenR::Disabled => 0,
+                    VrefenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> VrefenR {
+                match bits {
+                    0 => VrefenR::Disabled,
+                    1 => VrefenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == VrefenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == VrefenR::Enabled
+            }
+        }
+        #[doc = "Values that can be written to the field `VBATEN`"]
+        pub enum VbatenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl VbatenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    VbatenW::Disabled => 0,
+                    VbatenW::Enabled => 1,
+                }
             }
         }
         #[doc = r" Proxy"]
@@ -62983,9 +70877,26 @@ pub mod adc {
             w: &'a mut W,
         }
         impl<'a> _VbatenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: VbatenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(VbatenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(VbatenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 24;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -62993,14 +70904,49 @@ pub mod adc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `TSEN`"]
+        pub enum TsenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl TsenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    TsenW::Disabled => 0,
+                    TsenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _TsenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _TsenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: TsenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(TsenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(TsenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 23;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -63008,14 +70954,49 @@ pub mod adc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `VREFEN`"]
+        pub enum VrefenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl VrefenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    VrefenW::Disabled => 0,
+                    VrefenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _VrefenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _VrefenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: VrefenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(VrefenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(VrefenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 22;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -63032,32 +71013,29 @@ pub mod adc {
             #[doc = "Bit 24 - VBAT enable"]
             #[inline ( always )]
             pub fn vbaten(&self) -> VbatenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 24;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                VbatenR { bits }
+                VbatenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 24;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 23 - Temperature sensor enable"]
             #[inline ( always )]
             pub fn tsen(&self) -> TsenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 23;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                TsenR { bits }
+                TsenR::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 23;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 22 - Temperature sensor and VREFINT enable"]
             #[inline ( always )]
             pub fn vrefen(&self) -> VrefenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 22;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                VrefenR { bits }
+                VrefenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 22;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
         }
         impl W {
@@ -64076,15 +72054,42 @@ pub mod usart1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct RtoenR {
-            bits: u8,
+        #[doc = "Possible values of the field `RTOEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum RtoenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl RtoenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    RtoenR::Disabled => 0,
+                    RtoenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> RtoenR {
+                match bits {
+                    0 => RtoenR::Disabled,
+                    1 => RtoenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == RtoenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == RtoenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -64098,15 +72103,42 @@ pub mod usart1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct AbrenR {
-            bits: u8,
+        #[doc = "Possible values of the field `ABREN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum AbrenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl AbrenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    AbrenR::Disabled => 0,
+                    AbrenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> AbrenR {
+                match bits {
+                    0 => AbrenR::Disabled,
+                    1 => AbrenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == AbrenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == AbrenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -64164,15 +72196,42 @@ pub mod usart1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct LinenR {
-            bits: u8,
+        #[doc = "Possible values of the field `LINEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum LinenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl LinenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    LinenR::Disabled => 0,
+                    LinenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> LinenR {
+                match bits {
+                    0 => LinenR::Disabled,
+                    1 => LinenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == LinenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == LinenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -64186,15 +72245,42 @@ pub mod usart1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct ClkenR {
-            bits: u8,
+        #[doc = "Possible values of the field `CLKEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum ClkenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl ClkenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    ClkenR::Disabled => 0,
+                    ClkenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> ClkenR {
+                match bits {
+                    0 => ClkenR::Disabled,
+                    1 => ClkenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == ClkenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == ClkenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -64293,14 +72379,49 @@ pub mod usart1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `RTOEN`"]
+        pub enum RtoenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl RtoenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    RtoenW::Disabled => 0,
+                    RtoenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _RtoenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _RtoenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: RtoenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(RtoenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(RtoenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 23;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -64323,14 +72444,49 @@ pub mod usart1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `ABREN`"]
+        pub enum AbrenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl AbrenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    AbrenW::Disabled => 0,
+                    AbrenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _AbrenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _AbrenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: AbrenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(AbrenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(AbrenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 20;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -64413,14 +72569,49 @@ pub mod usart1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `LINEN`"]
+        pub enum LinenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl LinenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    LinenW::Disabled => 0,
+                    LinenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _LinenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _LinenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: LinenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(LinenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(LinenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 14;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -64443,14 +72634,49 @@ pub mod usart1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CLKEN`"]
+        pub enum ClkenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl ClkenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    ClkenW::Disabled => 0,
+                    ClkenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _ClkenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _ClkenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: ClkenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(ClkenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(ClkenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -64577,12 +72803,11 @@ pub mod usart1 {
             #[doc = "Bit 23 - Receiver timeout enable"]
             #[inline ( always )]
             pub fn rtoen(&self) -> RtoenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 23;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                RtoenR { bits }
+                RtoenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 23;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bits 21:22 - Auto baud rate mode"]
             #[inline ( always )]
@@ -64597,12 +72822,11 @@ pub mod usart1 {
             #[doc = "Bit 20 - Auto baud rate enable"]
             #[inline ( always )]
             pub fn abren(&self) -> AbrenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 20;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                AbrenR { bits }
+                AbrenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 20;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 19 - Most significant bit first"]
             #[inline ( always )]
@@ -64657,12 +72881,11 @@ pub mod usart1 {
             #[doc = "Bit 14 - LIN mode enable"]
             #[inline ( always )]
             pub fn linen(&self) -> LinenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 14;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                LinenR { bits }
+                LinenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 14;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bits 12:13 - STOP bits"]
             #[inline ( always )]
@@ -64677,12 +72900,11 @@ pub mod usart1 {
             #[doc = "Bit 11 - Clock enable"]
             #[inline ( always )]
             pub fn clken(&self) -> ClkenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                ClkenR { bits }
+                ClkenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 11;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
             #[doc = "Bit 10 - Clock polarity"]
             #[inline ( always )]
@@ -65038,15 +73260,42 @@ pub mod usart1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct ScenR {
-            bits: u8,
+        #[doc = "Possible values of the field `SCEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum ScenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl ScenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    ScenR::Disabled => 0,
+                    ScenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> ScenR {
+                match bits {
+                    0 => ScenR::Disabled,
+                    1 => ScenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == ScenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == ScenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -65082,15 +73331,42 @@ pub mod usart1 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct IrenR {
-            bits: u8,
+        #[doc = "Possible values of the field `IREN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum IrenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl IrenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    IrenR::Disabled => 0,
+                    IrenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> IrenR {
+                match bits {
+                    0 => IrenR::Disabled,
+                    1 => IrenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == IrenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == IrenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -65299,14 +73575,49 @@ pub mod usart1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `SCEN`"]
+        pub enum ScenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl ScenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    ScenW::Disabled => 0,
+                    ScenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _ScenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _ScenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: ScenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(ScenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(ScenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 5;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -65359,14 +73670,49 @@ pub mod usart1 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `IREN`"]
+        pub enum IrenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl IrenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    IrenW::Disabled => 0,
+                    IrenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _IrenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _IrenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: IrenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(IrenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(IrenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -65528,12 +73874,11 @@ pub mod usart1 {
             #[doc = "Bit 5 - Smartcard mode enable"]
             #[inline ( always )]
             pub fn scen(&self) -> ScenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 5;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                ScenR { bits }
+                ScenR::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 5;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 4 - Smartcard NACK enable"]
             #[inline ( always )]
@@ -65568,12 +73913,11 @@ pub mod usart1 {
             #[doc = "Bit 1 - IrDA mode enable"]
             #[inline ( always )]
             pub fn iren(&self) -> IrenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 1;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                IrenR { bits }
+                IrenR::_from({
+                                 const MASK: u8 = 1;
+                                 const OFFSET: u8 = 1;
+                                 ((self.bits >> OFFSET) & MASK as u32) as u8
+                             })
             }
             #[doc = "Bit 0 - Error interrupt enable"]
             #[inline ( always )]
@@ -67659,15 +76003,42 @@ pub mod comp {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Comp1enR {
-            bits: u8,
+        #[doc = "Possible values of the field `COMP1EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Comp1enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Comp1enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Comp1enR::Disabled => 0,
+                    Comp1enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Comp1enR {
+                match bits {
+                    0 => Comp1enR::Disabled,
+                    1 => Comp1enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Comp1enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Comp1enR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -67758,15 +76129,42 @@ pub mod comp {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct Comp2enR {
-            bits: u8,
+        #[doc = "Possible values of the field `COMP2EN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum Comp2enR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl Comp2enR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    Comp2enR::Disabled => 0,
+                    Comp2enR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> Comp2enR {
+                match bits {
+                    0 => Comp2enR::Disabled,
+                    1 => Comp2enR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == Comp2enR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == Comp2enR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -67791,15 +76189,42 @@ pub mod comp {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct WndwenR {
-            bits: u8,
+        #[doc = "Possible values of the field `WNDWEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum WndwenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl WndwenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    WndwenR::Disabled => 0,
+                    WndwenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> WndwenR {
+                match bits {
+                    0 => WndwenR::Disabled,
+                    1 => WndwenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == WndwenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == WndwenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -67857,14 +76282,49 @@ pub mod comp {
                 self.bits
             }
         }
+        #[doc = "Values that can be written to the field `COMP1EN`"]
+        pub enum Comp1enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Comp1enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Comp1enW::Disabled => 0,
+                    Comp1enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Comp1enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Comp1enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Comp1enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Comp1enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Comp1enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -67977,14 +76437,49 @@ pub mod comp {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `COMP2EN`"]
+        pub enum Comp2enW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl Comp2enW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    Comp2enW::Disabled => 0,
+                    Comp2enW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _Comp2enW<'a> {
             w: &'a mut W,
         }
         impl<'a> _Comp2enW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: Comp2enW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(Comp2enW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(Comp2enW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 16;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -68022,14 +76517,49 @@ pub mod comp {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `WNDWEN`"]
+        pub enum WndwenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl WndwenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    WndwenW::Disabled => 0,
+                    WndwenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _WndwenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _WndwenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: WndwenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(WndwenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(WndwenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 23;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -68106,12 +76636,11 @@ pub mod comp {
             #[doc = "Bit 0 - Comparator 1 enable"]
             #[inline ( always )]
             pub fn comp1en(&self) -> Comp1enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Comp1enR { bits }
+                Comp1enR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 0;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 1 - COMP1_INP_DAC"]
             #[inline ( always )]
@@ -68196,12 +76725,11 @@ pub mod comp {
             #[doc = "Bit 16 - Comparator 2 enable"]
             #[inline ( always )]
             pub fn comp2en(&self) -> Comp2enR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 16;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                Comp2enR { bits }
+                Comp2enR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 16;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bits 18:19 - Comparator 2 mode"]
             #[inline ( always )]
@@ -68226,12 +76754,11 @@ pub mod comp {
             #[doc = "Bit 23 - Window mode enable"]
             #[inline ( always )]
             pub fn wndwen(&self) -> WndwenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 23;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                WndwenR { bits }
+                WndwenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 23;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bits 24:26 - Comparator 2 output selection"]
             #[inline ( always )]
@@ -69191,15 +77718,42 @@ pub mod rtc {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct RefckonR {
-            bits: u8,
+        #[doc = "Possible values of the field `REFCKON`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum RefckonR {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
         }
         impl RefckonR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    RefckonR::Off => 0,
+                    RefckonR::On => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> RefckonR {
+                match bits {
+                    0 => RefckonR::Off,
+                    1 => RefckonR::On,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Off`"]
+            #[inline ( always )]
+            pub fn is_off(&self) -> bool {
+                *self == RefckonR::Off
+            }
+            #[doc = "Checks if the value of the field is `On`"]
+            #[inline ( always )]
+            pub fn is_on(&self) -> bool {
+                *self == RefckonR::On
             }
         }
         #[doc = r" Value of the field"]
@@ -69338,14 +77892,49 @@ pub mod rtc {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `REFCKON`"]
+        pub enum RefckonW {
+            #[doc = "Off."]
+            Off,
+            #[doc = "On."]
+            On,
+        }
+        impl RefckonW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    RefckonW::Off => 0,
+                    RefckonW::On => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _RefckonW<'a> {
             w: &'a mut W,
         }
         impl<'a> _RefckonW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: RefckonW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Off."]
+            #[inline ( always )]
+            pub fn off(self) -> &'a mut W {
+                self.variant(RefckonW::Off)
+            }
+            #[doc = "On."]
+            #[inline ( always )]
+            pub fn on(self) -> &'a mut W {
+                self.variant(RefckonW::On)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 4;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -69567,12 +78156,11 @@ pub mod rtc {
             #[doc = "Bit 4 - RTC_REFIN reference clock detection enable (50 or 60 Hz)"]
             #[inline ( always )]
             pub fn refckon(&self) -> RefckonR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 4;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                RefckonR { bits }
+                RefckonR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 4;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 5 - Bypass the shadow registers"]
             #[inline ( always )]
@@ -73307,15 +81895,42 @@ pub mod tim15 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CenR {
-            bits: u8,
+        #[doc = "Possible values of the field `CEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl CenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CenR::Disabled => 0,
+                    CenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CenR {
+                match bits {
+                    0 => CenR::Disabled,
+                    1 => CenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == CenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == CenR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -73393,14 +82008,49 @@ pub mod tim15 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CEN`"]
+        pub enum CenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl CenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CenW::Disabled => 0,
+                    CenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(CenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(CenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -73467,12 +82117,11 @@ pub mod tim15 {
             #[doc = "Bit 0 - Counter enable"]
             #[inline ( always )]
             pub fn cen(&self) -> CenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CenR { bits }
+                CenR::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 0;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
         }
         impl W {
@@ -77521,15 +86170,42 @@ pub mod tim16 {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CenR {
-            bits: u8,
+        #[doc = "Possible values of the field `CEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl CenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CenR::Disabled => 0,
+                    CenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CenR {
+                match bits {
+                    0 => CenR::Disabled,
+                    1 => CenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == CenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == CenR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -77607,14 +86283,49 @@ pub mod tim16 {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CEN`"]
+        pub enum CenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl CenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CenW::Disabled => 0,
+                    CenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(CenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(CenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -77681,12 +86392,11 @@ pub mod tim16 {
             #[doc = "Bit 0 - Counter enable"]
             #[inline ( always )]
             pub fn cen(&self) -> CenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CenR { bits }
+                CenR::_from({
+                                const MASK: u8 = 1;
+                                const OFFSET: u8 = 0;
+                                ((self.bits >> OFFSET) & MASK as u32) as u8
+                            })
             }
         }
         impl W {
@@ -86827,15 +95537,42 @@ pub mod cec {
                 self.bits
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct CecenR {
-            bits: u8,
+        #[doc = "Possible values of the field `CECEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum CecenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl CecenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    CecenR::Disabled => 0,
+                    CecenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> CecenR {
+                match bits {
+                    0 => CecenR::Disabled,
+                    1 => CecenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == CecenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == CecenR::Enabled
             }
         }
         #[doc = r" Proxy"]
@@ -86868,14 +95605,49 @@ pub mod cec {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `CECEN`"]
+        pub enum CecenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl CecenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    CecenW::Disabled => 0,
+                    CecenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _CecenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _CecenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: CecenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(CecenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(CecenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -86912,12 +95684,11 @@ pub mod cec {
             #[doc = "Bit 0 - CEC Enable"]
             #[inline ( always )]
             pub fn cecen(&self) -> CecenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 0;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                CecenR { bits }
+                CecenR::_from({
+                                  const MASK: u8 = 1;
+                                  const OFFSET: u8 = 0;
+                                  ((self.bits >> OFFSET) & MASK as u32) as u8
+                              })
             }
         }
         impl W {
@@ -86990,26 +95761,80 @@ pub mod cec {
                 self.register.set(w.bits);
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct LbpegenR {
-            bits: u8,
+        #[doc = "Possible values of the field `LBPEGEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum LbpegenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl LbpegenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    LbpegenR::Disabled => 0,
+                    LbpegenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> LbpegenR {
+                match bits {
+                    0 => LbpegenR::Disabled,
+                    1 => LbpegenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == LbpegenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == LbpegenR::Enabled
             }
         }
-        #[doc = r" Value of the field"]
-        pub struct BregenR {
-            bits: u8,
+        #[doc = "Possible values of the field `BREGEN`"]
+        #[derive ( Clone , Copy , Debug , PartialEq )]
+        pub enum BregenR {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
         }
         impl BregenR {
             #[doc = r" Value of the field as raw bits"]
             #[inline ( always )]
             pub fn bits(&self) -> u8 {
-                self.bits
+                match *self {
+                    BregenR::Disabled => 0,
+                    BregenR::Enabled => 1,
+                }
+            }
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _from(bits: u8) -> BregenR {
+                match bits {
+                    0 => BregenR::Disabled,
+                    1 => BregenR::Enabled,
+                    _ => unreachable!(),
+                }
+            }
+            #[doc = "Checks if the value of the field is `Disabled`"]
+            #[inline ( always )]
+            pub fn is_disabled(&self) -> bool {
+                *self == BregenR::Disabled
+            }
+            #[doc = "Checks if the value of the field is `Enabled`"]
+            #[inline ( always )]
+            pub fn is_enabled(&self) -> bool {
+                *self == BregenR::Enabled
             }
         }
         #[doc = r" Value of the field"]
@@ -87067,14 +95892,49 @@ pub mod cec {
                 self.bits
             }
         }
+        #[doc = "Values that can be written to the field `LBPEGEN`"]
+        pub enum LbpegenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl LbpegenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    LbpegenW::Disabled => 0,
+                    LbpegenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _LbpegenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _LbpegenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: LbpegenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(LbpegenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(LbpegenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 11;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -87082,14 +95942,49 @@ pub mod cec {
                 self.w
             }
         }
+        #[doc = "Values that can be written to the field `BREGEN`"]
+        pub enum BregenW {
+            #[doc = "Disable the Rising trigger."]
+            Disabled,
+            #[doc = "Enable the Rising trigger."]
+            Enabled,
+        }
+        impl BregenW {
+            #[allow ( missing_docs )]
+            #[doc ( hidden )]
+            #[inline ( always )]
+            pub fn _bits(&self) -> u8 {
+                match *self {
+                    BregenW::Disabled => 0,
+                    BregenW::Enabled => 1,
+                }
+            }
+        }
         #[doc = r" Proxy"]
         pub struct _BregenW<'a> {
             w: &'a mut W,
         }
         impl<'a> _BregenW<'a> {
+            #[doc = r" Writes `variant` to the field"]
+            #[inline ( always )]
+            pub fn variant(self, variant: BregenW) -> &'a mut W {
+                {
+                    self.bits(variant._bits())
+                }
+            }
+            #[doc = "Disable the Rising trigger."]
+            #[inline ( always )]
+            pub fn disabled(self) -> &'a mut W {
+                self.variant(BregenW::Disabled)
+            }
+            #[doc = "Enable the Rising trigger."]
+            #[inline ( always )]
+            pub fn enabled(self) -> &'a mut W {
+                self.variant(BregenW::Enabled)
+            }
             #[doc = r" Writes raw bits to the field"]
             #[inline ( always )]
-            pub unsafe fn bits(self, bits: u8) -> &'a mut W {
+            pub fn bits(self, bits: u8) -> &'a mut W {
                 const MASK: u8 = 1;
                 const OFFSET: u8 = 10;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -87181,22 +96076,20 @@ pub mod cec {
             #[doc = "Bit 11 - Generate Error-Bit on Long Bit Period Error"]
             #[inline ( always )]
             pub fn lbpegen(&self) -> LbpegenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 11;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                LbpegenR { bits }
+                LbpegenR::_from({
+                                    const MASK: u8 = 1;
+                                    const OFFSET: u8 = 11;
+                                    ((self.bits >> OFFSET) & MASK as u32) as u8
+                                })
             }
             #[doc = "Bit 10 - Generate error-bit on bit rising error"]
             #[inline ( always )]
             pub fn bregen(&self) -> BregenR {
-                let bits = {
-                    const MASK: u8 = 1;
-                    const OFFSET: u8 = 10;
-                    ((self.bits >> OFFSET) & MASK as u32) as u8
-                };
-                BregenR { bits }
+                BregenR::_from({
+                                   const MASK: u8 = 1;
+                                   const OFFSET: u8 = 10;
+                                   ((self.bits >> OFFSET) & MASK as u32) as u8
+                               })
             }
             #[doc = "Bit 9 - Rx-stop on bit rising error"]
             #[inline ( always )]

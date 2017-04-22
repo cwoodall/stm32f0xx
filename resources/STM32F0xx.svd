@@ -2883,6 +2883,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CRCEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Hardware CRC calculation
               enable</description>
               <bitOffset>13</bitOffset>
@@ -2967,12 +2980,38 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>RXDMAEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Rx buffer DMA enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TXDMAEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Tx buffer DMA enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -3723,6 +3762,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Software reset</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
@@ -3730,6 +3782,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TXDMAEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>DMA transmission requests
               enable</description>
               <bitOffset>14</bitOffset>
@@ -3738,6 +3803,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>RXDMAEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>DMA reception requests
               enable</description>
               <bitOffset>15</bitOffset>
@@ -3760,6 +3838,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>WUPEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Wakeup from STOP enable</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
@@ -3767,6 +3858,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>GCEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>General call enable</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
@@ -3774,6 +3878,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SMBHEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>SMBus Host address enable</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
@@ -3781,6 +3898,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SMBDEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>SMBus Device Default address
               enable</description>
               <bitOffset>21</bitOffset>
@@ -3789,6 +3919,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ALERTEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>SMBUS alert enable</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
@@ -3796,6 +3939,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PECEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>PEC enable</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
@@ -3936,6 +4092,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OA1EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Own Address 1 enable</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
@@ -3965,6 +4134,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OA2EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Own Address 2 enable</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
@@ -4038,6 +4220,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TIMOUTEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Clock timeout enable</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
@@ -4050,6 +4245,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TEXTEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Extended clock timeout
               enable</description>
               <bitOffset>31</bitOffset>
@@ -4605,6 +4813,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Counter enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -5696,6 +5917,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Counter enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6636,6 +6870,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Counter enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -6963,6 +7210,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Counter enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -7140,168 +7400,208 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MR0</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Interrupt Mask on line 0</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR1</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 1</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR2</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 2</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR3</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 3</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR4</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 4</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR5</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 5</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR6</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 6</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR7</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 7</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR8</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 8</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR9</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 9</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR10</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 10</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR11</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 11</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR12</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 12</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR13</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 13</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR14</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 14</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR15</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 15</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR16</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 16</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR17</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 17</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR18</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 18</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR19</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 19</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR20</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 20</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR21</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 21</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR22</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 22</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR23</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 23</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR24</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 24</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR25</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 25</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR26</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 26</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR27</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Interrupt Mask on line 27</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
@@ -7319,168 +7619,208 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MR0</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Event Mask on line 0</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR1</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 1</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR2</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 2</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR3</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 3</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR4</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 4</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR5</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 5</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR6</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 6</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR7</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 7</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR8</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 8</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR9</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 9</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR10</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 10</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR11</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 11</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR12</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 12</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR13</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 13</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR14</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 14</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR15</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 15</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR16</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 16</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR17</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 17</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR18</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 18</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR19</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 19</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR20</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 20</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR21</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 21</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR22</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 22</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR23</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 23</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR24</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 24</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR25</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 25</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR26</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 26</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MR27</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Event Mask on line 27</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
@@ -7499,6 +7839,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TR0</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Rising trigger event configuration of
               line 0</description>
               <bitOffset>0</bitOffset>
@@ -7506,6 +7859,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR1</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 1</description>
               <bitOffset>1</bitOffset>
@@ -7513,6 +7867,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR2</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 2</description>
               <bitOffset>2</bitOffset>
@@ -7520,6 +7875,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR3</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 3</description>
               <bitOffset>3</bitOffset>
@@ -7527,6 +7883,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR4</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 4</description>
               <bitOffset>4</bitOffset>
@@ -7534,6 +7891,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR5</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 5</description>
               <bitOffset>5</bitOffset>
@@ -7541,6 +7899,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR6</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 6</description>
               <bitOffset>6</bitOffset>
@@ -7548,6 +7907,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR7</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 7</description>
               <bitOffset>7</bitOffset>
@@ -7555,6 +7915,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR8</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 8</description>
               <bitOffset>8</bitOffset>
@@ -7562,6 +7923,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR9</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 9</description>
               <bitOffset>9</bitOffset>
@@ -7569,6 +7931,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR10</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 10</description>
               <bitOffset>10</bitOffset>
@@ -7576,6 +7939,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR11</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 11</description>
               <bitOffset>11</bitOffset>
@@ -7583,6 +7947,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR12</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 12</description>
               <bitOffset>12</bitOffset>
@@ -7590,6 +7955,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR13</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 13</description>
               <bitOffset>13</bitOffset>
@@ -7597,6 +7963,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR14</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 14</description>
               <bitOffset>14</bitOffset>
@@ -7604,6 +7971,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR15</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 15</description>
               <bitOffset>15</bitOffset>
@@ -7611,6 +7979,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR16</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 16</description>
               <bitOffset>16</bitOffset>
@@ -7618,6 +7987,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR17</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 17</description>
               <bitOffset>17</bitOffset>
@@ -7625,6 +7995,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR19</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Rising trigger event configuration of
               line 19</description>
               <bitOffset>19</bitOffset>
@@ -7644,6 +8015,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TR0</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Falling trigger event configuration of
               line 0</description>
               <bitOffset>0</bitOffset>
@@ -7651,6 +8035,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR1</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 1</description>
               <bitOffset>1</bitOffset>
@@ -7658,6 +8043,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR2</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 2</description>
               <bitOffset>2</bitOffset>
@@ -7665,6 +8051,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR3</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 3</description>
               <bitOffset>3</bitOffset>
@@ -7672,6 +8059,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR4</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 4</description>
               <bitOffset>4</bitOffset>
@@ -7679,6 +8067,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR5</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 5</description>
               <bitOffset>5</bitOffset>
@@ -7686,6 +8075,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR6</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 6</description>
               <bitOffset>6</bitOffset>
@@ -7693,6 +8083,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR7</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 7</description>
               <bitOffset>7</bitOffset>
@@ -7700,6 +8091,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR8</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 8</description>
               <bitOffset>8</bitOffset>
@@ -7707,6 +8099,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR9</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 9</description>
               <bitOffset>9</bitOffset>
@@ -7714,6 +8107,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR10</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 10</description>
               <bitOffset>10</bitOffset>
@@ -7721,6 +8115,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR11</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 11</description>
               <bitOffset>11</bitOffset>
@@ -7728,6 +8123,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR12</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 12</description>
               <bitOffset>12</bitOffset>
@@ -7735,6 +8131,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR13</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 13</description>
               <bitOffset>13</bitOffset>
@@ -7742,6 +8139,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR14</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 14</description>
               <bitOffset>14</bitOffset>
@@ -7749,6 +8147,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR15</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 15</description>
               <bitOffset>15</bitOffset>
@@ -7756,6 +8155,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR16</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 16</description>
               <bitOffset>16</bitOffset>
@@ -7763,6 +8163,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR17</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 17</description>
               <bitOffset>17</bitOffset>
@@ -7770,6 +8171,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TR19</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Falling trigger event configuration of
               line 19</description>
               <bitOffset>19</bitOffset>
@@ -7789,6 +8191,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>SWIER0</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Software Interrupt on line
               0</description>
               <bitOffset>0</bitOffset>
@@ -7796,6 +8211,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER1</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               1</description>
               <bitOffset>1</bitOffset>
@@ -7803,6 +8219,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER2</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               2</description>
               <bitOffset>2</bitOffset>
@@ -7810,6 +8227,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER3</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               3</description>
               <bitOffset>3</bitOffset>
@@ -7817,6 +8235,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER4</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               4</description>
               <bitOffset>4</bitOffset>
@@ -7824,6 +8243,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER5</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               5</description>
               <bitOffset>5</bitOffset>
@@ -7831,6 +8251,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER6</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               6</description>
               <bitOffset>6</bitOffset>
@@ -7838,6 +8259,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER7</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               7</description>
               <bitOffset>7</bitOffset>
@@ -7845,6 +8267,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER8</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               8</description>
               <bitOffset>8</bitOffset>
@@ -7852,6 +8275,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER9</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               9</description>
               <bitOffset>9</bitOffset>
@@ -7859,6 +8283,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER10</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               10</description>
               <bitOffset>10</bitOffset>
@@ -7866,6 +8291,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER11</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               11</description>
               <bitOffset>11</bitOffset>
@@ -7873,6 +8299,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER12</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               12</description>
               <bitOffset>12</bitOffset>
@@ -7880,6 +8307,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER13</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               13</description>
               <bitOffset>13</bitOffset>
@@ -7887,6 +8315,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER14</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               14</description>
               <bitOffset>14</bitOffset>
@@ -7894,6 +8323,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER15</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               15</description>
               <bitOffset>15</bitOffset>
@@ -7901,6 +8331,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER16</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               16</description>
               <bitOffset>16</bitOffset>
@@ -7908,6 +8339,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER17</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               17</description>
               <bitOffset>17</bitOffset>
@@ -7915,6 +8347,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SWIER19</name>
+              <enumeratedValues derivedFrom="EnableDisable"></enumeratedValues>
               <description>Software Interrupt on line
               19</description>
               <bitOffset>19</bitOffset>
@@ -7933,114 +8366,145 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>PR0</name>
+              <enumeratedValues>
+                <name>PendingStatus</name>
+                <enumeratedValue>
+                    <name>not_pending</name>
+                    <description>No interrupt is pending.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>pending</name>
+                    <description>An interrupt is pending.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Pending bit 0</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR1</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 1</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR2</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 2</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR3</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 3</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR4</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 4</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR5</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 5</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR6</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 6</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR7</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 7</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR8</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 8</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR9</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 9</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR10</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 10</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR11</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 11</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR12</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 12</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR13</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 13</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR14</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 14</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR15</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 15</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR16</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 16</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR17</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 17</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PR19</name>
+              <enumeratedValues derivedFrom="PendingStatus"></enumeratedValues>
               <description>Pending bit 19</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
@@ -9870,6 +10334,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>HSION</name>
+              <enumeratedValues>
+                <name>OnOffFlag</name>
+                <enumeratedValue>
+                    <name>off</name>
+                    <description>Off.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>on</name>
+                    <description>On.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Internal High Speed clock
               enable</description>
               <bitOffset>0</bitOffset>
@@ -9878,6 +10355,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>HSIRDY</name>
+              <enumeratedValues>
+                <name>ReadyFlag</name>
+                <enumeratedValue>
+                    <name>not_ready</name>
+                    <description>Not ready.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>ready</name>
+                    <description>ready.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Internal High Speed clock ready
               flag</description>
               <bitOffset>1</bitOffset>
@@ -9902,6 +10392,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>HSEON</name>
+              <enumeratedValues>
+                <name>OnOffFlag</name>
+                <enumeratedValue>
+                    <name>off</name>
+                    <description>Off.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>on</name>
+                    <description>On.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>External High Speed clock
               enable</description>
               <bitOffset>16</bitOffset>
@@ -9910,6 +10413,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>HSERDY</name>
+              <enumeratedValues>
+                <name>ReadyFlag</name>
+                <enumeratedValue>
+                    <name>not_ready</name>
+                    <description>Not ready.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>ready</name>
+                    <description>ready.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>External High Speed clock ready
               flag</description>
               <bitOffset>17</bitOffset>
@@ -9918,6 +10434,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>HSEBYP</name>
+              <enumeratedValues>
+                <name>BypassFlag</name>
+                <enumeratedValue>
+                    <name>not_bypassed</name>
+                    <description>Not bypassed.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>bypassed</name>
+                    <description>Bypassed.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>External High Speed clock
               Bypass</description>
               <bitOffset>18</bitOffset>
@@ -9926,6 +10455,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CSSON</name>
+              <enumeratedValues>
+                <name>OnOffFlag</name>
+                <enumeratedValue>
+                    <name>off</name>
+                    <description>Off.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>on</name>
+                    <description>On.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Clock Security System
               enable</description>
               <bitOffset>19</bitOffset>
@@ -9934,6 +10476,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PLLON</name>
+              <enumeratedValues>
+                <name>OnOffFlag</name>
+                <enumeratedValue>
+                    <name>off</name>
+                    <description>Off.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>on</name>
+                    <description>On.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>PLL enable</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
@@ -9941,6 +10496,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PLLRDY</name>
+              <enumeratedValues>
+                <name>ReadyFlag</name>
+                <enumeratedValue>
+                    <name>not_ready</name>
+                    <description>Not ready.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>ready</name>
+                    <description>ready.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>PLL clock ready flag</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
@@ -10191,54 +10759,171 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>SYSCFGRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>SYSCFG and COMP reset</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ADCRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>ADC interface reset</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM1RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>TIM1 timer reset</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SPI1RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>SPI 1 reset</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>USART1RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>USART1 reset</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM15RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>TIM15 timer reset</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM16RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>TIM16 timer reset</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM17RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>TIM17 timer reset</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DBGMCURST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Debug MCU reset</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
@@ -10257,72 +10942,228 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TIM2RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Timer 2 reset</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM3RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Timer 3 reset</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM6RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Timer 6 reset</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM14RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Timer 14 reset</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>WWDGRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Window watchdog reset</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SPI2RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>SPI2 reset</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>USART2RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>USART 2 reset</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>I2C1RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I2C1 reset</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>I2C2RST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I2C2 reset</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PWRRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Power interface reset</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DACRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>DAC interface reset</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CECRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>HDMI CEC reset</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
@@ -10341,12 +11182,38 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>DMAEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>DMA1 clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SRAMEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>SRAM interface clock
               enable</description>
               <bitOffset>2</bitOffset>
@@ -10354,48 +11221,152 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>FLITFEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>FLITF clock enable</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CRCEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>CRC clock enable</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>IOPAEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I/O port A clock enable</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>IOPBEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I/O port B clock enable</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>IOPCEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I/O port C clock enable</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>IOPDEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I/O port D clock enable</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>IOPFEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I/O port F clock enable</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSCEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Touch sensing controller clock
               enable</description>
               <bitOffset>24</bitOffset>
@@ -10415,12 +11386,38 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>SYSCFGEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>SYSCFG clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ADCEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>ADC 1 interface clock
               enable</description>
               <bitOffset>9</bitOffset>
@@ -10428,42 +11425,133 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>TIM1EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>TIM1 Timer clock enable</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SPI1EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>SPI 1 clock enable</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>USART1EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>USART1 clock enable</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM15EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>TIM15 timer clock enable</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM16EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>TIM16 timer clock enable</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM17EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>TIM17 timer clock enable</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DBGMCUEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>MCU debug module clock
               enable</description>
               <bitOffset>22</bitOffset>
@@ -10483,30 +11571,95 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TIM2EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Timer 2 clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM3EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Timer 3 clock enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM6EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Timer 6 clock enable</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TIM14EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Timer 14 clock enable</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>WWDGEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Window watchdog clock
               enable</description>
               <bitOffset>11</bitOffset>
@@ -10514,30 +11667,95 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SPI2EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>SPI 2 clock enable</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>USART2EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>USART 2 clock enable</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>I2C1EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I2C 1 clock enable</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>I2C2EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I2C 2 clock enable</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PWREN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Power interface clock
               enable</description>
               <bitOffset>28</bitOffset>
@@ -10545,12 +11763,38 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DACEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>DAC interface clock enable</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CECEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>HDMI CEC interface clock
               enable</description>
               <bitOffset>30</bitOffset>
@@ -10569,6 +11813,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>LSEON</name>
+              <enumeratedValues>
+                <name>OnOffFlag</name>
+                <enumeratedValue>
+                    <name>off</name>
+                    <description>Off.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>on</name>
+                    <description>On.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>External Low Speed oscillator
               enable</description>
               <bitOffset>0</bitOffset>
@@ -10577,6 +11834,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LSERDY</name>
+              <enumeratedValues>
+                <name>ReadyFlag</name>
+                <enumeratedValue>
+                    <name>not_ready</name>
+                    <description>Not ready.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>ready</name>
+                    <description>ready.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>External Low Speed oscillator
               ready</description>
               <bitOffset>1</bitOffset>
@@ -10585,6 +11855,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LSEBYP</name>
+              <enumeratedValues>
+                <name>BypassFlag</name>
+                <enumeratedValue>
+                    <name>not_bypassed</name>
+                    <description>Not bypassed.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>bypassed</name>
+                    <description>Bypassed.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>External Low Speed oscillator
               bypass</description>
               <bitOffset>2</bitOffset>
@@ -10608,6 +11891,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>RTCEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>RTC clock enable</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
@@ -10615,6 +11911,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BDRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Backup domain software
               reset</description>
               <bitOffset>16</bitOffset>
@@ -10634,6 +11943,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>LSION</name>
+              <enumeratedValues>
+                <name>OnOffFlag</name>
+                <enumeratedValue>
+                    <name>off</name>
+                    <description>Off.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>on</name>
+                    <description>On.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Internal low speed oscillator
               enable</description>
               <bitOffset>0</bitOffset>
@@ -10642,6 +11964,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LSIRDY</name>
+              <enumeratedValues>
+                <name>ReadyFlag</name>
+                <enumeratedValue>
+                    <name>not_ready</name>
+                    <description>Not ready.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>ready</name>
+                    <description>ready.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Internal low speed oscillator
               ready</description>
               <bitOffset>1</bitOffset>
@@ -10657,6 +11992,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>OBLRSTF</name>
+              <enumeratedValues>
+                <name>ResetFlag</name>
+                <enumeratedValue>
+                    <name>no_reset</name>
+                    <description>No reset flag.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Reset flag.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Option byte loader reset
               flag</description>
               <bitOffset>25</bitOffset>
@@ -10665,6 +12013,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PINRSTF</name>
+              <enumeratedValues>
+                <name>ResetFlag</name>
+                <enumeratedValue>
+                    <name>no_reset</name>
+                    <description>No reset flag.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Reset flag.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>PIN reset flag</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
@@ -10672,6 +12033,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PORRSTF</name>
+              <enumeratedValues>
+                <name>ResetFlag</name>
+                <enumeratedValue>
+                    <name>no_reset</name>
+                    <description>No reset flag.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Reset flag.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>POR/PDR reset flag</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
@@ -10679,6 +12053,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SFTRSTF</name>
+              <enumeratedValues>
+                <name>ResetFlag</name>
+                <enumeratedValue>
+                    <name>no_reset</name>
+                    <description>No reset flag.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Reset flag.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Software reset flag</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
@@ -10686,6 +12073,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IWDGRSTF</name>
+              <enumeratedValues>
+                <name>ResetFlag</name>
+                <enumeratedValue>
+                    <name>no_reset</name>
+                    <description>No reset flag.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Reset flag.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Independent watchdog reset
               flag</description>
               <bitOffset>29</bitOffset>
@@ -10694,6 +12094,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>WWDGRSTF</name>
+              <enumeratedValues>
+                <name>ResetFlag</name>
+                <enumeratedValue>
+                    <name>no_reset</name>
+                    <description>No reset flag.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Reset flag.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Window watchdog reset flag</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
@@ -10701,6 +12114,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LPWRRSTF</name>
+              <enumeratedValues>
+                <name>ResetFlag</name>
+                <enumeratedValue>
+                    <name>no_reset</name>
+                    <description>No reset flag.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Reset flag.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Low-power reset flag</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
@@ -10719,36 +12145,114 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>IOPARST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I/O port A reset</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>IOPBRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I/O port B reset</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>IOPCRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I/O port C reset</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>IOPDRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I/O port D reset</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>IOPFRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>I/O port F reset</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSCRST</name>
+              <enumeratedValues>
+                <name>Reset</name>
+                <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>reset</name>
+                    <description>Carry out the reset action.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Touch sensing controller
               reset</description>
               <bitOffset>24</bitOffset>
@@ -10821,6 +12325,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>HSI14ON</name>
+              <enumeratedValues>
+                <name>OnOffFlag</name>
+                <enumeratedValue>
+                    <name>off</name>
+                    <description>Off.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>on</name>
+                    <description>On.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>HSI14 clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -10828,6 +12345,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>HSI14RDY</name>
+              <enumeratedValues>
+                <name>ReadyFlag</name>
+                <enumeratedValue>
+                    <name>not_ready</name>
+                    <description>Not ready.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>ready</name>
+                    <description>ready.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>HR14 clock ready flag</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -11189,6 +12719,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ADRDY</name>
+              <enumeratedValues>
+                <name>ReadyFlag</name>
+                <enumeratedValue>
+                    <name>not_ready</name>
+                    <description>Not ready.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>ready</name>
+                    <description>ready.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>ADC ready</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -11283,6 +12826,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ADEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>ADC enable command</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -11307,6 +12863,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>AWDEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Analog watchdog enable</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
@@ -11320,6 +12889,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DISCEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Discontinuous mode</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
@@ -11390,6 +12972,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>DMAEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Direct memory access
               enable</description>
               <bitOffset>0</bitOffset>
@@ -11615,18 +13210,57 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>VBATEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>VBAT enable</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Temperature sensor enable</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>VREFEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Temperature sensor and VREFINT
               enable</description>
               <bitOffset>22</bitOffset>
@@ -11813,6 +13447,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>RTOEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Receiver timeout enable</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
@@ -11825,6 +13472,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>ABREN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Auto baud rate enable</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
@@ -11863,6 +13523,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>LINEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>LIN mode enable</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
@@ -11875,6 +13548,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CLKEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Clock enable</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
@@ -12013,6 +13699,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>SCEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Smartcard mode enable</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
@@ -12037,6 +13736,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>IREN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>IrDA mode enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -12464,6 +14176,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>COMP1EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Comparator 1 enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -12530,6 +14255,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>COMP2EN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Comparator 2 enable</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
@@ -12552,6 +14290,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>WNDWEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Window mode enable</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
@@ -12738,6 +14489,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>REFCKON</name>
+              <enumeratedValues>
+                <name>OnOffFlag</name>
+                <enumeratedValue>
+                    <name>off</name>
+                    <description>Off.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>on</name>
+                    <description>On.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>RTC_REFIN reference clock detection
               enable (50 or 60 Hz)</description>
               <bitOffset>4</bitOffset>
@@ -13552,6 +15316,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Counter enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -14272,6 +16049,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Counter enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -15894,6 +17684,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>CECEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>CEC Enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -15911,6 +17714,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>LBPEGEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Generate Error-Bit on Long Bit Period
               Error</description>
               <bitOffset>11</bitOffset>
@@ -15918,6 +17734,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>BREGEN</name>
+              <enumeratedValues>
+                <name>EnableDisable</name>
+                <enumeratedValue>
+                    <name>disabled</name>
+                    <description>Disable the Rising trigger.</description>
+                    <value>#0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>enabled</name>
+                    <description>Enable the Rising trigger.</description>
+                    <value>#1</value>
+                </enumeratedValue>
+              </enumeratedValues>
               <description>Generate error-bit on bit rising
               error</description>
               <bitOffset>10</bitOffset>
