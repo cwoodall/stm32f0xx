@@ -3,7 +3,7 @@
 
 ![crates.io badge](https://img.shields.io/crates/v/stm32f0xx.svg)
 
-Generated using [svd2rust] v0.6.1 from [STM32F0xx.svd], which is
+Generated using [svd2rust] v0.7.0 from [STM32F0xx.svd], which has been
 edited to add, writeConstraints and enumerated data types where
 applicable.
 
