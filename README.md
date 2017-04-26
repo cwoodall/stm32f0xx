@@ -10,7 +10,7 @@ applicable.
 [STM32F0xx.svd]: resources/STM32F0xx.svd
 [svd2rust]: https://github.com/japaric/svd2rust
 
-# [Documentation](https://docs.rs/stm32f0xx/0.1.0/stm32f0xx/)
+# [Documentation](https://docs.rs/stm32f0xx/)
 
 # License
 
